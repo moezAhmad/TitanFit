@@ -4,7 +4,7 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
 
-<!--  Chip  Filters-->
+    <!--  Chip  Filters-->
     <string name="text_filter_1">STRETCHES</string>
     <string name="text_filter_2">BODY WEIGHT</string>
     <string name="text_filter_3">BARBELL</string>
@@ -12,6 +12,8 @@
     <string name="text_filter_5">CABLES</string>
     <string name="text_filter_6">KETTLEBELLS</string>
     <string name="text_filter_7">BAND</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

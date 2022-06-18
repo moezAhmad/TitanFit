@@ -3,23 +3,34 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/navigation_dashboard">
+    app:startDestination="@id/navigation_muscle">
+
+
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.app.titan_fit.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
-
-    <fragment
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_muscle"
         android:name="com.app.titan_fit.ui.muscle.MuscleFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_muscle" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.app.titan_fit.ui.notifications.NotificationsFragment"
+        android:id="@+id/navigation_settings"
+        android:name="com.app.titan_fit.ui.SettingsFragment"
         android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/calorieCalculatorFragment"
+        android:name="com.app.titan_fit.ui.CalorieCalculatorFragment"
+        android:label="fragment_calorie_calculator"
+        tools:layout="@layout/fragment_calorie_calculator" />
+    <fragment
+        android:id="@+id/macroCalculatorFragment"
+        android:name="com.app.titan_fit.ui.MacroCalculatorFragment"
+        android:label="fragment_macro_calculator"
+        tools:layout="@layout/fragment_macro_calculator" />
+    <fragment
+        android:id="@+id/contactUsFragment"
+        android:name="com.app.titan_fit.ui.ContactUsFragment"
+        android:label="fragment_contact_us"
+        tools:layout="@layout/fragment_contact_us" />
 </navigation>

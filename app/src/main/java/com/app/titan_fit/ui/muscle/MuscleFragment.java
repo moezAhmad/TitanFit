@@ -4,20 +4,25 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.app.titan_fit.R;
+import com.app.titan_fit.User;
 import com.app.titan_fit.databinding.FragmentMuscleBinding;
+
+import java.util.Objects;
 
 public class MuscleFragment extends Fragment {
 
     private MuscleViewModel muscleViewModel;
     private FragmentMuscleBinding binding;
+    private ImageView imgBody;
+    private ImageView rotate;
+    private Boolean front = true;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -26,13 +31,43 @@ public class MuscleFragment extends Fragment {
 
         binding = FragmentMuscleBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+        imgBody = binding.bodyImage;
+        rotate = binding.rotate;
 
-//        muscleViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-//            @Override
-//            public void onChanged(@Nullable String s) {
-//                textView.setText(s);
-//            }
-//        });
+        muscleViewModel.getUserType().observe(getViewLifecycleOwner(), s -> {
+            switch (s){
+                case User.MALE_USER:
+                    imgBody.setImageResource(R.drawable.male_front);
+                    front = true;
+                    break;
+                case User.FEMALE_USER:
+                    imgBody.setImageResource(R.drawable.female_front);
+                    front = true;
+                    break;
+            }
+        });
+        rotate.setOnClickListener(view -> {
+            if(Objects.equals(muscleViewModel.getUserType().getValue(), User.MALE_USER)){
+                if(front){
+                    front = false;
+                    imgBody.setImageResource(R.drawable.male_back);
+                }else {
+                    front = true;
+                    imgBody.setImageResource(R.drawable.male_front);
+                }
+            }
+            else if(Objects.equals(muscleViewModel.getUserType().getValue(), User.FEMALE_USER)){
+                if(front){
+                    front = false;
+                    imgBody.setImageResource(R.drawable.female_back);
+                }else {
+                    front = true;
+                    imgBody.setImageResource(R.drawable.female_front);
+                }
+            }
+        });
+
+
         return root;
     }
 

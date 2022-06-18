@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <item
+                android:id="@+id/calorieCalculatorFragment"
+                android:title="Calorie Calculator"
+                android:checkable="true"/>
+            <item
+                android:id="@+id/macroCalculatorFragment"
+                android:title="Macro Calculator"
+                android:checkable="true"/>
+            <item
+                android:id="@+id/contactUsFragment"
+                android:title="Contact Us"
+                android:checkable="true"/>
+
+</menu>
