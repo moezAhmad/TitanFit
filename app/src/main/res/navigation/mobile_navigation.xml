@@ -20,7 +20,7 @@
         tools:layout="@layout/fragment_settings" />
     <fragment
         android:id="@+id/calorieCalculatorFragment"
-        android:name="com.app.titan_fit.ui.CalorieCalculatorFragment"
+        android:name="com.app.titan_fit.ui.calorie.CalorieCalculatorFragment"
         android:label="fragment_calorie_calculator"
         tools:layout="@layout/fragment_calorie_calculator" />
     <fragment

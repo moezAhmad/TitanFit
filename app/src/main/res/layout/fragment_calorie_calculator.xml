@@ -1,14 +1,237 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.CalorieCalculatorFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.calorie.CalorieCalculatorFragment">
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:padding="20dp"
+            android:text="Calorie Calculator"
+            android:textColor="?attr/colorOnPrimary"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/age"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="75dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title">
+
+            <TextView
+                android:id="@+id/ageTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Age"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toStartOf="@+id/age_slider"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@id/age"
+                app:layout_constraintTop_toTopOf="@id/age" />
+
+            <com.google.android.material.slider.RangeSlider
+                android:id="@+id/age_slider"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:stepSize="1"
+                android:valueFrom="10"
+                android:valueTo="70"
+                app:layout_constraintEnd_toEndOf="@id/age"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/age"
+                app:layout_constraintTop_toTopOf="@id/age"
+                app:layout_constraintWidth_percent=".8" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/weight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="10dp"
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/age">
+
+            <TextView
+                android:id="@+id/weightTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:text="Weight"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toStartOf="@id/weight_slider"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@id/weight"
+                app:layout_constraintTop_toBottomOf="@id/weight"
+                app:layout_constraintTop_toTopOf="@id/weight" />
+
+            <com.google.android.material.slider.RangeSlider
+                android:id="@+id/weight_slider"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:stepSize="1"
+                android:valueFrom="10"
+                android:valueTo="70"
+                app:layout_constraintEnd_toEndOf="@id/weight"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@id/weight"
+                app:layout_constraintTop_toBottomOf="@id/weight"
+                app:layout_constraintTop_toTopOf="@id/weight"
+                app:layout_constraintWidth_percent=".8" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:id="@+id/height"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="10dp"
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/weight">
+            <TextView
+                android:id="@+id/heightTV"
+                android:layout_width="match_parent"
+                android:textAlignment="center"
+                android:layout_height="wrap_content"
+                android:text="Height"
+                android:textSize="20sp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/ft"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/age">
+
+                <TextView
+                    android:id="@+id/ftTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="35dp"
+                    android:text="Feet"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toStartOf="@id/ft_slider"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@id/ft"
+                    app:layout_constraintTop_toTopOf="@id/ft"/>
+
+                <com.google.android.material.slider.RangeSlider
+                    android:id="@+id/ft_slider"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:stepSize="1"
+                    android:valueFrom="10"
+                    android:valueTo="70"
+                    app:layout_constraintEnd_toEndOf="@id/ft"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@id/ft"
+                    app:layout_constraintTop_toTopOf="@id/ft"
+                    app:layout_constraintWidth_percent=".8" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/inch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/age">
+
+                <TextView
+                    android:id="@+id/inchTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="20dp"
+                    android:text="Inches"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toStartOf="@id/inch_slider"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@id/inch"
+                    app:layout_constraintTop_toTopOf="@id/inch"/>
+
+                <com.google.android.material.slider.RangeSlider
+                    android:id="@+id/inch_slider"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:stepSize="1"
+                    android:valueFrom="10"
+                    android:valueTo="70"
+                    app:layout_constraintEnd_toEndOf="@id/inch"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@id/inch"
+                    app:layout_constraintTop_toTopOf="@id/inch"
+                    app:layout_constraintWidth_percent=".8"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/exercise_fltr"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintWidth_percent=".65"
+            android:text="Little to no exercise"
+            android:layout_margin="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/height" />
+
+        <Button
+            android:id="@+id/weight_filter"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintWidth_percent=".65"
+            android:layout_margin="10dp"
+            android:text="Stay the same weight"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/exercise_fltr" />
+
+        <Button
+            android:id="@+id/calculate_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Calculate"
+            android:layout_margin="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/weight_filter" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>

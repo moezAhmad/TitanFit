@@ -23,7 +23,8 @@
             android:paddingTop="30dp"
             android:paddingRight="15dp"
             android:paddingBottom="10dp"
-            app:singleLine="true">
+            app:singleLine="true"
+            app:singleSelection="true">
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/filter_1"

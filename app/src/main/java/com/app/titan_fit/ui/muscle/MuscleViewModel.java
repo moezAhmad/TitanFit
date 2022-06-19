@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.app.titan_fit.User;
+import com.app.titan_fit.AppConstants;
 
 public class MuscleViewModel extends ViewModel {
 
@@ -12,7 +12,7 @@ public class MuscleViewModel extends ViewModel {
 
     public MuscleViewModel() {
         userType = new MutableLiveData<>();
-        userType.setValue(User.MALE_USER);
+        userType.setValue(AppConstants.MALE_USER);
     }
 
     public LiveData<String> getUserType() {
