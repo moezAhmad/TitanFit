@@ -1,14 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.MacroCalculatorFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.macro.MacroCalculatorFragment">
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:padding="20dp"
+            android:text="Macro Calculator"
+            android:textColor="?attr/colorOnPrimary"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
 
-</FrameLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/calorie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="10dp"
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp"
+            android:layout_marginTop="150dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title">
+
+            <TextView
+                android:id="@+id/calorieTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Calories"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/calorie_slider"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@id/calorie"
+                app:layout_constraintTop_toBottomOf="@id/calorie"
+                app:layout_constraintTop_toTopOf="@id/calorie" />
+
+            <com.google.android.material.slider.RangeSlider
+                android:id="@+id/calorie_slider"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:stepSize="1"
+                android:valueFrom="10"
+                android:valueTo="70"
+                app:layout_constraintEnd_toEndOf="@id/calorie"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@id/calorie"
+                app:layout_constraintTop_toBottomOf="@id/calorie"
+                app:layout_constraintTop_toTopOf="@id/calorie"
+                app:layout_constraintWidth_percent=".7" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/meals"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="10dp"
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/calorie">
+
+            <TextView
+                android:id="@+id/mealsTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Meals/Day"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/meals_slider"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@id/meals"
+                app:layout_constraintTop_toTopOf="@id/meals" />
+
+            <com.google.android.material.slider.RangeSlider
+                android:id="@+id/meals_slider"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:stepSize="1"
+                android:valueFrom="10"
+                android:valueTo="70"
+                app:layout_constraintEnd_toEndOf="@id/meals"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@id/meals"
+                app:layout_constraintTop_toBottomOf="@id/meals"
+                app:layout_constraintTop_toTopOf="@id/meals"
+                app:layout_constraintWidth_percent=".7" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/macro_fltr"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintWidth_percent=".65"
+            android:text="Moderate"
+            android:layout_marginTop="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/meals" />
+
+        <Button
+            android:id="@+id/calculate_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Calculate"
+            android:layout_margin="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/macro_fltr" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>

@@ -20,4 +20,8 @@ public class AppConstants {
     public static final String WEIGHT_7 = "Gain 1 Pound per week";
     public static final String WEIGHT_8 = "Gain 1.5 Pounds per week";
     public static final String WEIGHT_9 = "Gain 2 Pounds per week";
+
+    public static final String DIET_1 = "High Card";
+    public static final String DIET_2 = "Moderate";
+    public static final String DIET_3 = "Zone Diet";
 }

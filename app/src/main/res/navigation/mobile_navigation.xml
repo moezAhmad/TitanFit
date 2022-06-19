@@ -25,7 +25,7 @@
         tools:layout="@layout/fragment_calorie_calculator" />
     <fragment
         android:id="@+id/macroCalculatorFragment"
-        android:name="com.app.titan_fit.ui.MacroCalculatorFragment"
+        android:name="com.app.titan_fit.ui.macro.MacroCalculatorFragment"
         android:label="fragment_macro_calculator"
         tools:layout="@layout/fragment_macro_calculator" />
     <fragment

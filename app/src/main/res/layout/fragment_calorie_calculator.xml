@@ -40,9 +40,9 @@
                 android:id="@+id/ageTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:text="Age"
                 android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/age_slider"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@id/age"
@@ -79,10 +79,10 @@
                 android:id="@+id/weightTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp"
                 android:text="Weight"
                 android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/weight_slider"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@id/weight"
@@ -135,14 +135,14 @@
                     android:id="@+id/ftTV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:layout_marginRight="35dp"
                     android:text="Feet"
                     android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@id/ft_slider"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@id/ft"
-                    app:layout_constraintTop_toTopOf="@id/ft"/>
+                    app:layout_constraintTop_toTopOf="@id/ft" />
 
                 <com.google.android.material.slider.RangeSlider
                     android:id="@+id/ft_slider"
@@ -171,14 +171,14 @@
                     android:id="@+id/inchTV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:layout_marginRight="20dp"
                     android:text="Inches"
                     android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@id/inch_slider"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@id/inch"
-                    app:layout_constraintTop_toTopOf="@id/inch"/>
+                    app:layout_constraintTop_toTopOf="@id/inch" />
 
                 <com.google.android.material.slider.RangeSlider
                     android:id="@+id/inch_slider"
