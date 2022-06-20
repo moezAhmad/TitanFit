@@ -1,13 +1,13 @@
 package com.app.titan_fit.ui.calorie;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,7 +16,6 @@ import android.widget.Button;
 
 
 import com.app.titan_fit.AppConstants;
-import com.app.titan_fit.MainActivity;
 import com.app.titan_fit.R;
 import com.app.titan_fit.databinding.FragmentCalorieCalculatorBinding;
 import com.google.android.material.slider.RangeSlider;
@@ -32,6 +31,7 @@ public class CalorieCalculatorFragment extends Fragment {
     private RangeSlider inchSlider;
     private Button exerciseFltr;
     private Button weightFltr;
+    private Button calculate;
     private final int[] weightCheck = {4};
     private final int[] exerciseCheck = {0};
 
@@ -49,19 +49,22 @@ public class CalorieCalculatorFragment extends Fragment {
         inchSlider = binding.inchSlider;
         exerciseFltr = binding.exerciseFltr;
         weightFltr = binding.weightFilter;
+        calculate = binding.calculateBtn;
 
         exerciseFltr.setOnClickListener(view -> setExerciseFilter());
         weightFltr.setOnClickListener(view -> setWeightFilter());
+        calculate.setOnClickListener(view -> {
+            Navigation.findNavController(view).navigate(R.id.action_calorieCalculatorFragment_to_calorieResultFragment);
+        });
 
         calorieCalculatorViewModel = new
                 ViewModelProvider(this).get(CalorieCalculatorViewModel.class);
-        calorieCalculatorViewModel.getWeight().observe(getViewLifecycleOwner(), s->{
-            weightFltr.setText(calorieCalculatorViewModel.getWeight().getValue());
+        calorieCalculatorViewModel.getWeightFltr().observe(getViewLifecycleOwner(), s->{
+            weightFltr.setText(calorieCalculatorViewModel.getWeightFltr().getValue());
         });
-        calorieCalculatorViewModel.getExercise().observe(getViewLifecycleOwner(),s->{
-            exerciseFltr.setText(calorieCalculatorViewModel.getExercise().getValue());
+        calorieCalculatorViewModel.getExerciseFltr().observe(getViewLifecycleOwner(), s->{
+            exerciseFltr.setText(calorieCalculatorViewModel.getExerciseFltr().getValue());
         });
-
         return root;
     }
     @Override
@@ -84,15 +87,15 @@ public class CalorieCalculatorFragment extends Fragment {
            exerciseCheck[0] = i;
             switch (i){
                 case 0:
-                    calorieCalculatorViewModel.getExercise().setValue(AppConstants.EXERCISE_1); break;
+                    calorieCalculatorViewModel.getExerciseFltr().setValue(AppConstants.EXERCISE_1); break;
                 case 1:
-                    calorieCalculatorViewModel.getExercise().setValue(AppConstants.EXERCISE_2); break;
+                    calorieCalculatorViewModel.getExerciseFltr().setValue(AppConstants.EXERCISE_2); break;
                 case 2:
-                    calorieCalculatorViewModel.getExercise().setValue(AppConstants.EXERCISE_3); break;
+                    calorieCalculatorViewModel.getExerciseFltr().setValue(AppConstants.EXERCISE_3); break;
                 case 3:
-                    calorieCalculatorViewModel.getExercise().setValue(AppConstants.EXERCISE_4); break;
+                    calorieCalculatorViewModel.getExerciseFltr().setValue(AppConstants.EXERCISE_4); break;
                 case 4:
-                    calorieCalculatorViewModel.getExercise().setValue(AppConstants.EXERCISE_5); break;
+                    calorieCalculatorViewModel.getExerciseFltr().setValue(AppConstants.EXERCISE_5); break;
             }
            dialogInterface.dismiss();
         });
@@ -117,23 +120,23 @@ public class CalorieCalculatorFragment extends Fragment {
             weightCheck[0] = i;
             switch (i){
                 case 0:
-                    calorieCalculatorViewModel.getWeight().setValue(AppConstants.WEIGHT_1); break;
+                    calorieCalculatorViewModel.getWeightFltr().setValue(AppConstants.WEIGHT_1); break;
                 case 1:
-                    calorieCalculatorViewModel.getWeight().setValue(AppConstants.WEIGHT_2); break;
+                    calorieCalculatorViewModel.getWeightFltr().setValue(AppConstants.WEIGHT_2); break;
                 case 2:
-                    calorieCalculatorViewModel.getWeight().setValue(AppConstants.WEIGHT_3); break;
+                    calorieCalculatorViewModel.getWeightFltr().setValue(AppConstants.WEIGHT_3); break;
                 case 3:
-                    calorieCalculatorViewModel.getWeight().setValue(AppConstants.WEIGHT_4); break;
+                    calorieCalculatorViewModel.getWeightFltr().setValue(AppConstants.WEIGHT_4); break;
                 case 4:
-                    calorieCalculatorViewModel.getWeight().setValue(AppConstants.WEIGHT_5); break;
+                    calorieCalculatorViewModel.getWeightFltr().setValue(AppConstants.WEIGHT_5); break;
                 case 5:
-                    calorieCalculatorViewModel.getWeight().setValue(AppConstants.WEIGHT_6); break;
+                    calorieCalculatorViewModel.getWeightFltr().setValue(AppConstants.WEIGHT_6); break;
                 case 6:
-                    calorieCalculatorViewModel.getWeight().setValue(AppConstants.WEIGHT_7); break;
+                    calorieCalculatorViewModel.getWeightFltr().setValue(AppConstants.WEIGHT_7); break;
                 case 7:
-                    calorieCalculatorViewModel.getWeight().setValue(AppConstants.WEIGHT_8); break;
+                    calorieCalculatorViewModel.getWeightFltr().setValue(AppConstants.WEIGHT_8); break;
                 case 8:
-                    calorieCalculatorViewModel.getWeight().setValue(AppConstants.WEIGHT_9); break;
+                    calorieCalculatorViewModel.getWeightFltr().setValue(AppConstants.WEIGHT_9); break;
 
             }
             dialogInterface.dismiss();

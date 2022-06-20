@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,6 +24,7 @@ public class MacroCalculatorFragment extends Fragment {
     private FragmentMacroCalculatorBinding binding;
     private Context context;
     private Button macroFltr;
+    private Button calculate;
     private int[] dietCheck = {1};
 
     @Override
@@ -32,12 +34,16 @@ public class MacroCalculatorFragment extends Fragment {
         View root = binding.getRoot();
         context = container.getContext();
         macroFltr = binding.macroFltr;
+        calculate = binding.calculateBtn;
         macroCalculatorViewModel = new
                 ViewModelProvider(this).get(MacroCalculatorViewModel.class);
         macroCalculatorViewModel.getDiet().observe(getViewLifecycleOwner(),s->{
             macroFltr.setText(macroCalculatorViewModel.getDiet().getValue());
         });
         macroFltr.setOnClickListener(view -> { setDiet(); });
+        calculate.setOnClickListener(view -> {
+            Navigation.findNavController(view).navigate(R.id.action_macroCalculatorFragment_to_macroResultFragment);
+        });
 
         return root;
     }

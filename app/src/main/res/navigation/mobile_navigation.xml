@@ -22,15 +22,49 @@
         android:id="@+id/calorieCalculatorFragment"
         android:name="com.app.titan_fit.ui.calorie.CalorieCalculatorFragment"
         android:label="fragment_calorie_calculator"
-        tools:layout="@layout/fragment_calorie_calculator" />
+        tools:layout="@layout/fragment_calorie_calculator" >
+        <action
+            android:id="@+id/action_calorieCalculatorFragment_to_calorieResultFragment"
+            app:destination="@id/calorieResultFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
     <fragment
         android:id="@+id/macroCalculatorFragment"
         android:name="com.app.titan_fit.ui.macro.MacroCalculatorFragment"
         android:label="fragment_macro_calculator"
-        tools:layout="@layout/fragment_macro_calculator" />
+        tools:layout="@layout/fragment_macro_calculator" >
+        <action
+            android:id="@+id/action_macroCalculatorFragment_to_macroResultFragment"
+            app:destination="@id/macroResultFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
     <fragment
         android:id="@+id/contactUsFragment"
         android:name="com.app.titan_fit.ui.ContactUsFragment"
         android:label="fragment_contact_us"
         tools:layout="@layout/fragment_contact_us" />
+    <fragment
+        android:id="@+id/calorieResultFragment"
+        android:name="com.app.titan_fit.ui.CalorieResultFragment"
+        android:label="fragment_calorie_result"
+        tools:layout="@layout/fragment_calorie_result" >
+        <action
+            android:id="@+id/action_calorieResultFragment_to_navigation_muscle"
+            app:destination="@id/navigation_muscle"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/macroResultFragment"
+        android:name="com.app.titan_fit.ui.MacroResultFragment"
+        android:label="fragment_macro_result"
+        tools:layout="@layout/fragment_macro_result" >
+        <action
+            android:id="@+id/action_macroResultFragment_to_navigation_muscle"
+            app:destination="@id/navigation_muscle"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
 </navigation>

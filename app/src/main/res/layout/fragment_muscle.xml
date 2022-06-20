@@ -79,13 +79,14 @@
         </com.google.android.material.chip.ChipGroup>
 
     </HorizontalScrollView>
-
+    
     <ImageView
         android:id="@+id/body_image"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
+        android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -93,10 +94,132 @@
         android:src="@drawable/male_front"/>
 
     <ImageView
+        android:id="@+id/male_front_calves"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/male_front_calves"
+        android:paddingRight="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent=".25"
+        app:layout_constraintHorizontal_bias="0.53"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
+        app:layout_constraintVertical_bias="1"
+        app:layout_constraintWidth_percent=".52" />
+
+    <ImageView
+        android:id="@+id/male_front_quadriceps"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/male_front_quadriceps"
+        android:scaleType="fitXY"
+        app:layout_constraintWidth_percent=".35"
+        app:layout_constraintHeight_percent=".21"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintVertical_bias="0.57"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
+         />
+
+    <ImageView
+        android:id="@+id/male_front_abs"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        android:translationZ="10dp"
+        android:src="@drawable/male_front_abs"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent=".13"
+        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
+        app:layout_constraintVertical_bias="0.31"
+        app:layout_constraintWidth_percent=".18" />
+
+    <ImageView
+        android:id="@+id/male_front_brachiallis"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        android:translationZ="1dp"
+        app:layout_constraintHeight_percent="0.12"
+        app:layout_constraintWidth_percent=".78"
+        app:layout_constraintVertical_bias=".38"
+        android:src="@drawable/male_front_brachiallis"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+
+    <ImageView
+        android:id="@+id/male_front_biceps"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        android:translationZ="1dp"
+        android:src="@drawable/male_front_biceps"
+        app:layout_constraintWidth_percent=".56"
+        app:layout_constraintHeight_percent=".1"
+        app:layout_constraintVertical_bias=".28"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+
+    <ImageView
+        android:id="@+id/male_front_chest"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/male_front_chest"
+        android:translationZ="10dp"
+        app:layout_constraintHeight_percent=".09"
+        app:layout_constraintWidth_percent=".4"
+        app:layout_constraintVertical_bias=".2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+
+    <ImageView
+        android:id="@+id/male_front_delts"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/male_front_delts"
+        app:layout_constraintHeight_percent=".1"
+        app:layout_constraintWidth_percent=".55"
+        app:layout_constraintVertical_bias=".2"
+        app:layout_constraintHorizontal_bias=".55"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+
+    <ImageView
+        android:id="@+id/male_front_traps"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/male_front_traps"
+        app:layout_constraintHeight_percent=".07"
+        app:layout_constraintWidth_percent=".24"
+        app:layout_constraintVertical_bias=".13"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+    <ImageView
         android:id="@+id/rotate"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:src="@drawable/rotate"
+        android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="@+id/body_image"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="@+id/guideline1"
