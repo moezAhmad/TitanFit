@@ -95,6 +95,7 @@
         app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
         app:layout_constraintVertical_bias="0.0" />
 
+<!--    Male Front-->
     <ImageView
         android:id="@+id/male_front_calves"
         android:layout_width="0dp"
@@ -225,6 +226,177 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+    <!--Male Front-->
+
+    <!--    Male Back-->
+    <ImageView
+        android:id="@+id/male_back_calves"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        android:visibility="gone"
+        app:layout_constraintWidth_percent=".497"
+        app:layout_constraintHeight_percent=".133"
+        app:layout_constraintHorizontal_bias=".506"
+        app:layout_constraintVertical_bias=".808"
+        android:src="@drawable/male_back_calves"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+
+    <ImageView
+        android:id="@+id/male_back_hamstring"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        android:visibility="gone"
+        android:src="@drawable/male_back_hamstring"
+        app:layout_constraintWidth_percent=".401"
+        app:layout_constraintHeight_percent=".221"
+        app:layout_constraintVertical_bias=".653"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+
+    <ImageView
+        android:id="@+id/male_back_hips"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        android:translationZ="10dp"
+        android:visibility="gone"
+        app:layout_constraintWidth_percent=".337"
+        app:layout_constraintHeight_percent=".119"
+        app:layout_constraintVertical_bias=".48"
+        app:layout_constraintHorizontal_bias=".503"
+        android:src="@drawable/male_back_hips"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+
+    <ImageView
+        android:id="@+id/male_lower_back"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        android:visibility="gone"
+        android:src="@drawable/male_lower_back"
+        android:translationZ="20dp"
+        app:layout_constraintWidth_percent=".19"
+        app:layout_constraintHeight_percent=".113"
+        app:layout_constraintVertical_bias=".37"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+
+    <ImageView
+        android:id="@+id/male_back_lats"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        android:visibility="gone"
+        android:src="@drawable/male_back_lats"
+        android:translationZ="10dp"
+        app:layout_constraintHeight_percent=".15"
+        app:layout_constraintWidth_percent=".35"
+        app:layout_constraintVertical_bias=".30"
+        app:layout_constraintHorizontal_bias=".503"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+
+    <ImageView
+        android:id="@+id/male_upper_back"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        android:visibility="gone"
+        android:translationZ="10dp"
+        app:layout_constraintWidth_percent=".222"
+        app:layout_constraintHeight_percent=".154"
+        app:layout_constraintVertical_bias=".18"
+        app:layout_constraintHorizontal_bias=".5"
+        android:src="@drawable/male_upper_back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+
+    <ImageView
+        android:id="@+id/male_back_brachiallis"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        android:visibility="gone"
+        android:src="@drawable/male_back_brachiallis"
+        android:translationZ="0dp"
+        app:layout_constraintHeight_percent=".165"
+        app:layout_constraintWidth_percent=".82"
+        app:layout_constraintVertical_bias=".364"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+
+    <ImageView
+        android:id="@+id/male_back_triceps"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        android:visibility="gone"
+        android:src="@drawable/male_back_triceps"
+        android:translationZ="0dp"
+        app:layout_constraintHeight_percent=".104"
+        app:layout_constraintWidth_percent=".6"
+        app:layout_constraintVertical_bias=".26"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+
+    <ImageView
+        android:id="@+id/male_back_delts"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        android:visibility="gone"
+        android:src="@drawable/male_back_delts"
+        app:layout_constraintHeight_percent=".073"
+        app:layout_constraintWidth_percent=".524"
+        app:layout_constraintHorizontal_bias=".504"
+        app:layout_constraintVertical_bias=".181"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+
+    <ImageView
+        android:id="@+id/male_back_traps"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        android:visibility="gone"
+        android:src="@drawable/male_back_traps"
+        app:layout_constraintHeight_percent=".04"
+        app:layout_constraintWidth_percent=".206"
+        app:layout_constraintHorizontal_bias=".496"
+        app:layout_constraintVertical_bias=".125"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+    <!--    Male Back-->
+
+    <!--    Female Front-->
+    <!--    Female Front-->
+    <!--    Female Back-->
+    <!--    Female Back-->
+
     <ImageView
         android:id="@+id/rotate"
         android:layout_width="0dp"

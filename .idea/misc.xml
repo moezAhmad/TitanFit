@@ -10,6 +10,14 @@
         <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/drawable/ic_close.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/drawable/ic_settings.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/drawable/macro_img.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/drawable/male_back_brachiallis.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/drawable/male_back_calves.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/drawable/male_back_delts.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/drawable/male_back_hamstring.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/drawable/male_back_hips.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/drawable/male_back_lats.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/drawable/male_back_traps.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/drawable/male_back_triceps.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/drawable/male_front.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/drawable/male_front_abs.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/drawable/male_front_biceps.xml" value="0.26614583333333336" />
@@ -17,8 +25,11 @@
         <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/drawable/male_front_calves.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/drawable/male_front_chest.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/drawable/male_front_delts.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/drawable/male_front_quadriceps.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/drawable/male_front_quariceps.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/drawable/male_front_traps.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/drawable/male_lower_back.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/drawable/male_upper_back.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/layout/fragment_calorie_calculator.xml" value="0.264" />
         <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/layout/fragment_calorie_result.xml" value="0.2318840579710145" />
@@ -26,7 +37,7 @@
         <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/layout/fragment_macro_calculator.xml" value="0.176" />
         <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/layout/fragment_macro_result.xml" value="0.2318840579710145" />
-        <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/layout/fragment_muscle.xml" value="0.176" />
+        <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/layout/fragment_muscle.xml" value="0.2869097429766886" />
         <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/layout/fragment_nav_drawer.xml" value="0.2" />
         <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/layout/fragment_notifications.xml" value="0.25" />
         <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/layout/fragment_settings.xml" value="0.25" />
