@@ -52,7 +52,7 @@ public class MuscleFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         muscleViewModel =
-                new ViewModelProvider(this).get(MuscleViewModel.class);
+                new ViewModelProvider(requireActivity()).get(MuscleViewModel.class);
         binding = FragmentMuscleBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         imgBody = binding.bodyImage;
@@ -85,12 +85,14 @@ public class MuscleFragment extends Fragment {
             switch (s){
                 case AppConstants.MALE_USER:
                     imgBody.setImageResource(R.drawable.male_front);
+                    Toast.makeText(context, muscleViewModel.getUserType().getValue(), Toast.LENGTH_SHORT).show();
                     front = true;
                     maleBackVisibleToGone();
                     maleFrontGoneToVisible();
                     break;
                 case AppConstants.FEMALE_USER:
                     imgBody.setImageResource(R.drawable.female_front);
+                    Toast.makeText(context, muscleViewModel.getUserType().getValue(), Toast.LENGTH_SHORT).show();
                     front = true;
                     break;
             }

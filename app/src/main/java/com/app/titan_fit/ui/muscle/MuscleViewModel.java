@@ -15,7 +15,7 @@ public class MuscleViewModel extends ViewModel {
         userType.setValue(AppConstants.MALE_USER);
     }
 
-    public LiveData<String> getUserType() {
+    public MutableLiveData<String> getUserType() {
         return userType;
     }
 }
