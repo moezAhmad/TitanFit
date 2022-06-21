@@ -47,6 +47,17 @@ public class MuscleFragment extends Fragment {
     private ImageView maleBackTriceps;
     private ImageView maleBackDelts;
     private ImageView maleBackTraps;
+    //Female Back
+    private ImageView femaleBackCalves;
+    private ImageView femaleBackHamstring;
+    private ImageView femaleBackHips;
+    private ImageView femaleLowerBack;
+    private ImageView femaleBackLats;
+    private ImageView femaleUpperBack;
+    private ImageView femaleBackBranchiallis;
+    private ImageView femaleBackTriceps;
+    private ImageView femaleBackDelts;
+    private ImageView femaleBackTraps;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -79,6 +90,18 @@ public class MuscleFragment extends Fragment {
         maleBackTriceps = binding.maleBackTriceps;
         maleBackDelts = binding.maleBackDelts;
         maleBackTraps = binding.maleBackTraps;
+        //Female Back
+        femaleBackCalves = binding.femaleBackCalves;
+        femaleBackHamstring = binding.femaleBackHamstring;
+        femaleBackHips = binding.femaleBackHips;
+        femaleLowerBack = binding.femaleLowerBack;
+        femaleBackLats = binding.femaleBackLats;
+        femaleUpperBack = binding.femaleUpperBack;
+        femaleBackBranchiallis = binding.femaleBackBranchiallis;
+        femaleBackTriceps = binding.femaleBackTriceps;
+        femaleBackDelts = binding.femaleBackDelts;
+        femaleBackTraps = binding.femaleBackTraps;
+
 
 
         muscleViewModel.getUserType().observe(getViewLifecycleOwner(), s -> {
@@ -87,6 +110,7 @@ public class MuscleFragment extends Fragment {
                     imgBody.setImageResource(R.drawable.male_front);
                     Toast.makeText(context, muscleViewModel.getUserType().getValue(), Toast.LENGTH_SHORT).show();
                     front = true;
+                    femaleBackVisibleToGone();
                     maleBackVisibleToGone();
                     maleFrontGoneToVisible();
                     break;
@@ -94,6 +118,9 @@ public class MuscleFragment extends Fragment {
                     imgBody.setImageResource(R.drawable.female_front);
                     Toast.makeText(context, muscleViewModel.getUserType().getValue(), Toast.LENGTH_SHORT).show();
                     front = true;
+                    femaleBackVisibleToGone();
+                    maleBackVisibleToGone();
+                    maleFrontVisibleToGone();
                     break;
             }
         });
@@ -102,11 +129,13 @@ public class MuscleFragment extends Fragment {
                 if(front){
                     front = false;
                     maleFrontVisibleToGone();
+                    femaleBackVisibleToGone();
                     maleBackGoneToVisible();
                     imgBody.setImageResource(R.drawable.male_back);
                 }else {
                     front = true;
                     maleBackVisibleToGone();
+                    femaleBackVisibleToGone();
                     maleFrontGoneToVisible();
                     imgBody.setImageResource(R.drawable.male_front);
                 }
@@ -114,9 +143,15 @@ public class MuscleFragment extends Fragment {
             else if(Objects.equals(muscleViewModel.getUserType().getValue(), AppConstants.FEMALE_USER)){
                 if(front){
                     front = false;
+                    maleFrontVisibleToGone();
+                    maleBackVisibleToGone();
+                    femaleBackGoneToVisible();
                     imgBody.setImageResource(R.drawable.female_back);
                 }else {
                     front = true;
+                    maleFrontVisibleToGone();
+                    maleBackVisibleToGone();
+                    femaleBackVisibleToGone();
                     imgBody.setImageResource(R.drawable.female_front);
                 }
             }
@@ -140,6 +175,17 @@ public class MuscleFragment extends Fragment {
         maleBackTriceps.setOnClickListener(view -> Toast.makeText(context, "maleBackTriceps", Toast.LENGTH_SHORT).show());
         maleBackDelts.setOnClickListener(view -> Toast.makeText(context, "maleBackDelts", Toast.LENGTH_SHORT).show());
         maleBackTraps.setOnClickListener(view -> Toast.makeText(context, "maleBackTraps", Toast.LENGTH_SHORT).show());
+
+        femaleBackCalves.setOnClickListener(view -> Toast.makeText(context, "femaleBackCalves", Toast.LENGTH_SHORT).show());
+        femaleBackHamstring.setOnClickListener(view -> Toast.makeText(context, "femaleBackHamstring", Toast.LENGTH_SHORT).show());
+        femaleBackHips.setOnClickListener(view -> Toast.makeText(context, "femaleBackHips", Toast.LENGTH_SHORT).show());
+        femaleLowerBack.setOnClickListener(view -> Toast.makeText(context, "femaleLowerBack", Toast.LENGTH_SHORT).show());
+        femaleBackLats.setOnClickListener(view -> Toast.makeText(context, "femaleBackLats", Toast.LENGTH_SHORT).show());
+        femaleUpperBack.setOnClickListener(view -> Toast.makeText(context, "femaleUpperBack", Toast.LENGTH_SHORT).show());
+        femaleBackBranchiallis.setOnClickListener(view -> Toast.makeText(context, "femaleBackBranchiallis", Toast.LENGTH_SHORT).show());
+        femaleBackTriceps.setOnClickListener(view -> Toast.makeText(context, "femaleBackTriceps", Toast.LENGTH_SHORT).show());
+        femaleBackDelts.setOnClickListener(view -> Toast.makeText(context, "femaleBackDelts", Toast.LENGTH_SHORT).show());
+        femaleBackTraps.setOnClickListener(view -> Toast.makeText(context, "femaleBackTraps", Toast.LENGTH_SHORT).show());
         return root;
     }
 
@@ -192,5 +238,29 @@ public class MuscleFragment extends Fragment {
         maleBackTriceps.setVisibility(View.GONE);
         maleBackDelts.setVisibility(View.GONE);
         maleBackTraps.setVisibility(View.GONE);
+    }
+    private void femaleBackGoneToVisible(){
+        femaleBackCalves.setVisibility(View.VISIBLE);
+        femaleBackHamstring.setVisibility(View.VISIBLE);
+        femaleBackHips.setVisibility(View.VISIBLE);
+        femaleLowerBack.setVisibility(View.VISIBLE);
+        femaleBackLats.setVisibility(View.VISIBLE);
+        femaleUpperBack.setVisibility(View.VISIBLE);
+        femaleBackBranchiallis.setVisibility(View.VISIBLE);
+        femaleBackTriceps.setVisibility(View.VISIBLE);
+        femaleBackDelts.setVisibility(View.VISIBLE);
+        femaleBackTraps.setVisibility(View.VISIBLE);
+    }
+    private void femaleBackVisibleToGone(){
+        femaleBackCalves.setVisibility(View.GONE);
+        femaleBackHamstring.setVisibility(View.GONE);
+        femaleBackHips.setVisibility(View.GONE);
+        femaleLowerBack.setVisibility(View.GONE);
+        femaleBackLats.setVisibility(View.GONE);
+        femaleUpperBack.setVisibility(View.GONE);
+        femaleBackBranchiallis.setVisibility(View.GONE);
+        femaleBackTriceps.setVisibility(View.GONE);
+        femaleBackDelts.setVisibility(View.GONE);
+        femaleBackTraps.setVisibility(View.GONE);
     }
 }
