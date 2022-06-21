@@ -87,7 +87,7 @@
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:scaleType="fitXY"
-        android:src="@drawable/female_back"
+        android:src="@drawable/female_front"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -393,6 +393,137 @@
     <!--    Male Back-->
 
     <!--    Female Front-->
+    <ImageView
+        android:id="@+id/female_front_traps"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/female_front_traps"
+        android:visibility="gone"
+        app:layout_constraintHeight_percent="0.04"
+        app:layout_constraintWidth_percent=".26"
+        app:layout_constraintHorizontal_bias=".5"
+        app:layout_constraintVertical_bias=".173"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+
+    <ImageView
+        android:id="@+id/female_front_quadriceps"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/female_front_quadriceps"
+        android:visibility="gone"
+        app:layout_constraintHeight_percent="0.21"
+        app:layout_constraintWidth_percent=".421"
+        app:layout_constraintHorizontal_bias=".5"
+        app:layout_constraintVertical_bias=".6"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+
+    <ImageView
+        android:id="@+id/female_front_delts"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/female_front_delts"
+        android:translationZ="0dp"
+        android:visibility="gone"
+        app:layout_constraintHeight_percent="0.064"
+        app:layout_constraintWidth_percent=".536"
+        app:layout_constraintHorizontal_bias=".5"
+        app:layout_constraintVertical_bias=".21"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+
+    <ImageView
+        android:id="@+id/female_front_chest"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/female_front_chest"
+        android:translationZ="10dp"
+        android:visibility="gone"
+        app:layout_constraintHeight_percent="0.078"
+        app:layout_constraintWidth_percent=".424"
+        app:layout_constraintHorizontal_bias=".497"
+        app:layout_constraintVertical_bias=".227"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+
+    <ImageView
+        android:id="@+id/female_front_calves"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/female_front_calves"
+        android:visibility="gone"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias=".98"
+        app:layout_constraintWidth_percent=".53"
+        app:layout_constraintHeight_percent=".2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+
+    <ImageView
+        android:id="@+id/female_front_branchiallis"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/female_front_branchiallis"
+        android:translationZ="0dp"
+        android:visibility="gone"
+        app:layout_constraintHeight_percent="0.126"
+        app:layout_constraintWidth_percent=".79"
+        app:layout_constraintVertical_bias=".39"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+
+    <ImageView
+        android:id="@+id/female_front_biceps"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/female_front_biceps"
+        android:translationZ="0dp"
+        android:visibility="gone"
+        app:layout_constraintWidth_percent=".582"
+        app:layout_constraintHeight_percent=".082"
+        app:layout_constraintVertical_bias=".283"
+        app:layout_constraintHorizontal_bias=".503"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+
+    <ImageView
+        android:id="@+id/female_front_abs"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/female_front_abs"
+        android:translationZ="10dp"
+        android:visibility="gone"
+        app:layout_constraintWidth_percent=".197"
+        app:layout_constraintHeight_percent=".102"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintVertical_bias="0.33"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
     <!--    Female Front-->
     <!--    Female Back-->
     <ImageView
@@ -401,7 +532,7 @@
         android:layout_height="0dp"
         android:scaleType="fitXY"
         android:src="@drawable/female_upper_back"
-        android:translationZ="20dp"
+        android:translationZ="5dp"
         android:visibility="gone"
         app:layout_constraintWidth_percent=".31"
         app:layout_constraintHeight_percent=".151"
