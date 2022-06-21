@@ -32,8 +32,8 @@ public class CalorieCalculatorFragment extends Fragment {
     private Button exerciseFltr;
     private Button weightFltr;
     private Button calculate;
-    private final int[] weightCheck = {4};
-    private final int[] exerciseCheck = {0};
+    private final int[] weightCheck = {-1};
+    private final int[] exerciseCheck = {-1};
 
 
 
@@ -51,6 +51,11 @@ public class CalorieCalculatorFragment extends Fragment {
         weightFltr = binding.weightFilter;
         calculate = binding.calculateBtn;
 
+        //Listeners
+        ageSlider.addOnChangeListener((slider, value, fromUser) -> calorieCalculatorViewModel.getAge().setValue((int)value));
+        weightSlider.addOnChangeListener((slider, value, fromUser) -> calorieCalculatorViewModel.getWeight().setValue((int)value));
+        ftSlider.addOnChangeListener((slider, value, fromUser) -> calorieCalculatorViewModel.getFt().setValue((int) value));
+        inchSlider.addOnChangeListener((slider, value, fromUser) -> calorieCalculatorViewModel.getInches().setValue((int)value));
         exerciseFltr.setOnClickListener(view -> setExerciseFilter());
         weightFltr.setOnClickListener(view -> setWeightFilter());
         calculate.setOnClickListener(view -> {
@@ -58,12 +63,25 @@ public class CalorieCalculatorFragment extends Fragment {
         });
 
         calorieCalculatorViewModel = new
-                ViewModelProvider(this).get(CalorieCalculatorViewModel.class);
+                ViewModelProvider(requireActivity()).get(CalorieCalculatorViewModel.class);
+        //Observers
+        calorieCalculatorViewModel.getAge().observe(getViewLifecycleOwner(),s->{
+            ageSlider.setValues(Float.valueOf(s));
+        });
+        calorieCalculatorViewModel.getWeight().observe(getViewLifecycleOwner(),s->{
+            weightSlider.setValues(Float.valueOf(s));
+        });
+        calorieCalculatorViewModel.getFt().observe(getViewLifecycleOwner(),s->{
+            ftSlider.setValues(Float.valueOf(s));
+        });
+        calorieCalculatorViewModel.getInches().observe(getViewLifecycleOwner(),s->{
+            inchSlider.setValues(Float.valueOf(s));
+        });
         calorieCalculatorViewModel.getWeightFltr().observe(getViewLifecycleOwner(), s->{
-            weightFltr.setText(calorieCalculatorViewModel.getWeightFltr().getValue());
+            weightFltr.setText(s);
         });
         calorieCalculatorViewModel.getExerciseFltr().observe(getViewLifecycleOwner(), s->{
-            exerciseFltr.setText(calorieCalculatorViewModel.getExerciseFltr().getValue());
+            exerciseFltr.setText(s);
         });
         return root;
     }
@@ -143,5 +161,9 @@ public class CalorieCalculatorFragment extends Fragment {
         });
         AlertDialog customAlertDialog = alertDialog.create();
         customAlertDialog.show();
+    }
+    private void calculateCalories(){
+
+
     }
 }

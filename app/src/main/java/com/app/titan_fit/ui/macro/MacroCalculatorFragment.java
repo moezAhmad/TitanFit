@@ -16,13 +16,15 @@ import android.widget.Button;
 import com.app.titan_fit.AppConstants;
 import com.app.titan_fit.R;
 import com.app.titan_fit.databinding.FragmentMacroCalculatorBinding;
-import com.app.titan_fit.ui.calorie.CalorieCalculatorViewModel;
+import com.google.android.material.slider.RangeSlider;
 
 public class MacroCalculatorFragment extends Fragment {
 
     private MacroCalculatorViewModel macroCalculatorViewModel;
     private FragmentMacroCalculatorBinding binding;
     private Context context;
+    private RangeSlider calories_slider;
+    private RangeSlider meals_slider;
     private Button macroFltr;
     private Button calculate;
     private int[] dietCheck = {1};
@@ -33,13 +35,21 @@ public class MacroCalculatorFragment extends Fragment {
         binding = FragmentMacroCalculatorBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         context = container.getContext();
+        calories_slider = binding.calorieSlider;
+        meals_slider = binding.mealsSlider;
         macroFltr = binding.macroFltr;
         calculate = binding.calculateBtn;
+
         macroCalculatorViewModel = new
                 ViewModelProvider(this).get(MacroCalculatorViewModel.class);
-        macroCalculatorViewModel.getDiet().observe(getViewLifecycleOwner(),s->{
-            macroFltr.setText(macroCalculatorViewModel.getDiet().getValue());
-        });
+        //Observers
+        macroCalculatorViewModel.getCalories().observe(getViewLifecycleOwner(),s->{ calories_slider.setValues(Float.valueOf(s)); });
+        macroCalculatorViewModel.getMeals().observe(getViewLifecycleOwner(),s->meals_slider.setValues(Float.valueOf(s)));
+        macroCalculatorViewModel.getDiet().observe(getViewLifecycleOwner(),s->{ macroFltr.setText(s); });
+
+        //Listeners
+        calories_slider.addOnChangeListener((slider, value, fromUser) -> macroCalculatorViewModel.getCalories().setValue((int) value));
+        meals_slider.addOnChangeListener((slider, value, fromUser) -> macroCalculatorViewModel.getMeals().setValue((int) value));
         macroFltr.setOnClickListener(view -> { setDiet(); });
         calculate.setOnClickListener(view -> {
             Navigation.findNavController(view).navigate(R.id.action_macroCalculatorFragment_to_macroResultFragment);
@@ -69,6 +79,9 @@ public class MacroCalculatorFragment extends Fragment {
         });
         AlertDialog customAlertDialog = alertDialog.create();
         customAlertDialog.show();
+    }
+    private void calculateMacros(){
+        
     }
     @Override
     public void onDestroyView() {

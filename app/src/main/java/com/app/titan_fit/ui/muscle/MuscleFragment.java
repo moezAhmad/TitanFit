@@ -126,7 +126,6 @@ public class MuscleFragment extends Fragment {
             switch (s){
                 case AppConstants.MALE_USER:
                     imgBody.setImageResource(R.drawable.male_front);
-                    Toast.makeText(context, muscleViewModel.getUserType().getValue(), Toast.LENGTH_SHORT).show();
                     front = true;
                     femaleBackVisibleToGone();
                     femaleFrontVisibleToGone();
@@ -135,7 +134,6 @@ public class MuscleFragment extends Fragment {
                     break;
                 case AppConstants.FEMALE_USER:
                     imgBody.setImageResource(R.drawable.female_front);
-                    Toast.makeText(context, muscleViewModel.getUserType().getValue(), Toast.LENGTH_SHORT).show();
                     front = true;
                     femaleBackVisibleToGone();
                     maleBackVisibleToGone();

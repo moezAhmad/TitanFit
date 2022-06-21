@@ -64,11 +64,9 @@ public class SettingsFragment extends Fragment {
             switch (i){
                 case 0:
                     muscleViewModel.getUserType().setValue(AppConstants.MALE_USER);
-                    Toast.makeText(context, muscleViewModel.getUserType().getValue(), Toast.LENGTH_SHORT).show();
                     break;
                 case 1:
                     muscleViewModel.getUserType().setValue(AppConstants.FEMALE_USER);
-                    Toast.makeText(context, muscleViewModel.getUserType().getValue(), Toast.LENGTH_SHORT).show();
                     break;
             }
             dialogInterface.dismiss();
