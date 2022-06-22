@@ -3,6 +3,7 @@ package com.app.titan_fit.ui.macro;
 import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
@@ -16,10 +17,13 @@ import android.widget.Button;
 import com.app.titan_fit.AppConstants;
 import com.app.titan_fit.R;
 import com.app.titan_fit.databinding.FragmentMacroCalculatorBinding;
+import com.app.titan_fit.ui.muscle.MuscleViewModel;
 import com.google.android.material.slider.RangeSlider;
 
-public class MacroCalculatorFragment extends Fragment {
+import java.util.Objects;
 
+public class MacroCalculatorFragment extends Fragment {
+    private MuscleViewModel muscleViewModel;
     private MacroCalculatorViewModel macroCalculatorViewModel;
     private FragmentMacroCalculatorBinding binding;
     private Context context;
@@ -30,7 +34,7 @@ public class MacroCalculatorFragment extends Fragment {
     private int[] dietCheck = {1};
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentMacroCalculatorBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
@@ -39,19 +43,22 @@ public class MacroCalculatorFragment extends Fragment {
         meals_slider = binding.mealsSlider;
         macroFltr = binding.macroFltr;
         calculate = binding.calculateBtn;
-
+        //View Models
+        muscleViewModel = new
+                ViewModelProvider(requireActivity()).get(MuscleViewModel.class);
         macroCalculatorViewModel = new
-                ViewModelProvider(this).get(MacroCalculatorViewModel.class);
+                ViewModelProvider(requireActivity()).get(MacroCalculatorViewModel.class);
         //Observers
-        macroCalculatorViewModel.getCalories().observe(getViewLifecycleOwner(),s->{ calories_slider.setValues(Float.valueOf(s)); });
+        macroCalculatorViewModel.getCalories().observe(getViewLifecycleOwner(),s-> calories_slider.setValues(Float.valueOf(s)));
         macroCalculatorViewModel.getMeals().observe(getViewLifecycleOwner(),s->meals_slider.setValues(Float.valueOf(s)));
-        macroCalculatorViewModel.getDiet().observe(getViewLifecycleOwner(),s->{ macroFltr.setText(s); });
+        macroCalculatorViewModel.getDiet().observe(getViewLifecycleOwner(),s-> macroFltr.setText(s));
 
         //Listeners
         calories_slider.addOnChangeListener((slider, value, fromUser) -> macroCalculatorViewModel.getCalories().setValue((int) value));
         meals_slider.addOnChangeListener((slider, value, fromUser) -> macroCalculatorViewModel.getMeals().setValue((int) value));
-        macroFltr.setOnClickListener(view -> { setDiet(); });
+        macroFltr.setOnClickListener(view -> setDiet());
         calculate.setOnClickListener(view -> {
+            calculateMacros();
             Navigation.findNavController(view).navigate(R.id.action_macroCalculatorFragment_to_macroResultFragment);
         });
 
@@ -62,7 +69,7 @@ public class MacroCalculatorFragment extends Fragment {
         alertDialog.setIcon(R.drawable.logo);
         alertDialog.setTitle("Choose an item");
         final String[] listItems = new String[]{
-                "6/25/15 (High Card)",
+                "60/25/15 (High Card)",
                 "50/30/20 (Moderate)",
                 "40/30/30 (Zone Diet)"};
         alertDialog.setSingleChoiceItems(listItems, dietCheck[0], (dialogInterface, i) -> {
@@ -81,7 +88,25 @@ public class MacroCalculatorFragment extends Fragment {
         customAlertDialog.show();
     }
     private void calculateMacros(){
-        
+        int calories = Objects.requireNonNull(macroCalculatorViewModel.getCalories().getValue());
+        int meals = Objects.requireNonNull(macroCalculatorViewModel.getMeals().getValue());
+        switch (Objects.requireNonNull(macroCalculatorViewModel.getDiet().getValue())){
+            case AppConstants.DIET_1:
+                macroCalculatorViewModel.getCarbs().setValue((int) ((60 * calories / 100.0)/4.0));
+                macroCalculatorViewModel.getProteins().setValue((int) ((25 * calories / 100.0)/4.0));
+                macroCalculatorViewModel.getFats().setValue((int)((15 * calories / 100.0)/9.0));
+                break;
+            case AppConstants.DIET_2:
+                macroCalculatorViewModel.getCarbs().setValue((int) ((50 * calories / 100.0)/4.0));
+                macroCalculatorViewModel.getProteins().setValue((int) ((30 * calories / 100.0)/4.0));
+                macroCalculatorViewModel.getFats().setValue((int)((20 * calories / 100.0)/9.0));
+                break;
+            case AppConstants.DIET_3:
+                macroCalculatorViewModel.getCarbs().setValue((int) ((40 * calories / 100.0)/4.0));
+                macroCalculatorViewModel.getProteins().setValue((int) ((30 * calories / 100.0)/4.0));
+                macroCalculatorViewModel.getFats().setValue((int)((30 * calories / 100.0)/9.0));
+                break;
+        }
     }
     @Override
     public void onDestroyView() {

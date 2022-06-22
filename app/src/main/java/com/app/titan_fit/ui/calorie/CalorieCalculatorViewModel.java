@@ -20,10 +20,10 @@ public class CalorieCalculatorViewModel extends ViewModel {
     public CalorieCalculatorViewModel() {
         exerciseFltr = new MutableLiveData<>();
         weightFltr = new MutableLiveData<>();
-        age = new MutableLiveData<>();
-        weight = new MutableLiveData<>();
-        feet = new MutableLiveData<>();
-        inches = new MutableLiveData<>();
+        age = new MutableLiveData<>(20);
+        weight = new MutableLiveData<>(60);
+        feet = new MutableLiveData<>(5);
+        inches = new MutableLiveData<>(1);
         calories = new MutableLiveData<>();
         exerciseFltr.setValue(AppConstants.EXERCISE_1);
         weightFltr.setValue(AppConstants.WEIGHT_5);

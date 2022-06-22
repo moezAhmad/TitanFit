@@ -9,20 +9,26 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 
 import com.app.titan_fit.AppConstants;
 import com.app.titan_fit.R;
 import com.app.titan_fit.databinding.FragmentCalorieCalculatorBinding;
+import com.app.titan_fit.ui.muscle.MuscleViewModel;
 import com.google.android.material.slider.RangeSlider;
+
+import java.util.Objects;
 
 
 public class CalorieCalculatorFragment extends Fragment {
     private CalorieCalculatorViewModel calorieCalculatorViewModel;
+    private MuscleViewModel muscleViewModel;
     private Context context;
     private FragmentCalorieCalculatorBinding binding;
     private RangeSlider ageSlider;
@@ -40,6 +46,7 @@ public class CalorieCalculatorFragment extends Fragment {
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        assert container != null;
         context = container.getContext();
         binding = FragmentCalorieCalculatorBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
@@ -51,6 +58,11 @@ public class CalorieCalculatorFragment extends Fragment {
         weightFltr = binding.weightFilter;
         calculate = binding.calculateBtn;
 
+        //View Models
+        calorieCalculatorViewModel = new
+                ViewModelProvider(requireActivity()).get(CalorieCalculatorViewModel.class);
+        muscleViewModel = new
+                ViewModelProvider(requireActivity()).get(MuscleViewModel.class);
         //Listeners
         ageSlider.addOnChangeListener((slider, value, fromUser) -> calorieCalculatorViewModel.getAge().setValue((int)value));
         weightSlider.addOnChangeListener((slider, value, fromUser) -> calorieCalculatorViewModel.getWeight().setValue((int)value));
@@ -59,30 +71,16 @@ public class CalorieCalculatorFragment extends Fragment {
         exerciseFltr.setOnClickListener(view -> setExerciseFilter());
         weightFltr.setOnClickListener(view -> setWeightFilter());
         calculate.setOnClickListener(view -> {
+            calculateCalories();
             Navigation.findNavController(view).navigate(R.id.action_calorieCalculatorFragment_to_calorieResultFragment);
         });
-
-        calorieCalculatorViewModel = new
-                ViewModelProvider(requireActivity()).get(CalorieCalculatorViewModel.class);
         //Observers
-        calorieCalculatorViewModel.getAge().observe(getViewLifecycleOwner(),s->{
-            ageSlider.setValues(Float.valueOf(s));
-        });
-        calorieCalculatorViewModel.getWeight().observe(getViewLifecycleOwner(),s->{
-            weightSlider.setValues(Float.valueOf(s));
-        });
-        calorieCalculatorViewModel.getFt().observe(getViewLifecycleOwner(),s->{
-            ftSlider.setValues(Float.valueOf(s));
-        });
-        calorieCalculatorViewModel.getInches().observe(getViewLifecycleOwner(),s->{
-            inchSlider.setValues(Float.valueOf(s));
-        });
-        calorieCalculatorViewModel.getWeightFltr().observe(getViewLifecycleOwner(), s->{
-            weightFltr.setText(s);
-        });
-        calorieCalculatorViewModel.getExerciseFltr().observe(getViewLifecycleOwner(), s->{
-            exerciseFltr.setText(s);
-        });
+        calorieCalculatorViewModel.getAge().observe(getViewLifecycleOwner(),s-> ageSlider.setValues(Float.valueOf(s)));
+        calorieCalculatorViewModel.getWeight().observe(getViewLifecycleOwner(),s-> weightSlider.setValues(Float.valueOf(s)));
+        calorieCalculatorViewModel.getFt().observe(getViewLifecycleOwner(),s-> ftSlider.setValues(Float.valueOf(s)));
+        calorieCalculatorViewModel.getInches().observe(getViewLifecycleOwner(),s-> inchSlider.setValues(Float.valueOf(s)));
+        calorieCalculatorViewModel.getWeightFltr().observe(getViewLifecycleOwner(), s-> weightFltr.setText(s));
+        calorieCalculatorViewModel.getExerciseFltr().observe(getViewLifecycleOwner(), s-> exerciseFltr.setText(s));
         return root;
     }
     @Override
@@ -163,7 +161,67 @@ public class CalorieCalculatorFragment extends Fragment {
         customAlertDialog.show();
     }
     private void calculateCalories(){
+        int age = Objects.requireNonNull(calorieCalculatorViewModel.getAge().getValue());
+        int weight = Objects.requireNonNull(calorieCalculatorViewModel.getWeight().getValue());
+        double height = (Objects.requireNonNull(calorieCalculatorViewModel.getFt().getValue()) * 30.48)
+                      + (Objects.requireNonNull(calorieCalculatorViewModel.getInches().getValue()) * 2.54);
 
+        Toast.makeText(context, age + "  "+weight + "  " + height, Toast.LENGTH_SHORT).show();
+        double calories = 0;
+        switch (Objects.requireNonNull(muscleViewModel.getUserType().getValue())){
+            case AppConstants.MALE_USER:
+                calories = (10 * weight)  + (6.25 * height) - (5 * age)  + 5;
+                break;
+            case AppConstants.FEMALE_USER:
+                calories = (10 * weight)  + (6.25 * height) - (5 * age)  - 161;
+                break;
+        }
+        Toast.makeText(context, age + "  "+weight + "  " + height + "  " + calories, Toast.LENGTH_SHORT).show();
+
+        switch (Objects.requireNonNull(calorieCalculatorViewModel.getExerciseFltr().getValue())){
+            case AppConstants.EXERCISE_1:
+                calories *= 1.2;
+                break;
+            case AppConstants.EXERCISE_2:
+                calories *= 1.55;
+                break;
+            case AppConstants.EXERCISE_3:
+                calories *= 1.85;
+                break;
+            case AppConstants.EXERCISE_4:
+                calories *= 2.2;
+                break;
+            case AppConstants.EXERCISE_5:
+                calories *= 2.4;
+                break;
+        }
+        switch (Objects.requireNonNull(calorieCalculatorViewModel.getWeightFltr().getValue())){
+            case AppConstants.WEIGHT_1:
+                calories -= 2000;
+                break;
+            case AppConstants.WEIGHT_2:
+                calories -= 1500;
+                break;
+            case AppConstants.WEIGHT_3:
+                calories -= 1000;
+                break;
+            case AppConstants.WEIGHT_4:
+                calories -= 500;
+                break;
+            case AppConstants.WEIGHT_6:
+                calories += 500;
+                break;
+            case AppConstants.WEIGHT_7:
+                calories += 1000;
+                break;
+            case AppConstants.WEIGHT_8:
+                calories += 1500;
+                break;
+            case AppConstants.WEIGHT_9:
+                calories += 2000;
+                break;
+        }
+        calorieCalculatorViewModel.getCalories().setValue((int)calories);
 
     }
 }

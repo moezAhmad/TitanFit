@@ -16,8 +16,8 @@ public class MacroCalculatorViewModel extends ViewModel {
     public MacroCalculatorViewModel() {
         diet = new MutableLiveData<>();
         diet.setValue(AppConstants.DIET_2);
-        calories = new MutableLiveData<>();
-        meals = new MutableLiveData<>();
+        calories = new MutableLiveData<>(2000);
+        meals = new MutableLiveData<>(3);
         carbs = new MutableLiveData<>();
         proteins = new MutableLiveData<>();
         fats = new MutableLiveData<>();
