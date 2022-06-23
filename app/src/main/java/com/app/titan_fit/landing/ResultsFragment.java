@@ -2,6 +2,7 @@ package com.app.titan_fit.landing;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -26,6 +27,7 @@ import java.util.Objects;
 
 public class ResultsFragment extends Fragment {
     private FragmentResultsBinding binding;
+    private SharedPreferences sharedPrefs;
     private MuscleViewModel muscleViewModel;
     private CalorieCalculatorViewModel calorieCalculatorViewModel;
     private MacroCalculatorViewModel macroCalculatorViewModel;
@@ -39,6 +41,7 @@ public class ResultsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentResultsBinding.inflate(inflater,container,false);
+        sharedPrefs = requireActivity().getSharedPreferences(AppConstants.SHARED_PREFRENCES, Context.MODE_PRIVATE);
         muscleViewModel = new ViewModelProvider(requireActivity()).get(MuscleViewModel.class);
         calorieCalculatorViewModel = new ViewModelProvider(requireActivity()).get(CalorieCalculatorViewModel.class);
         macroCalculatorViewModel = new ViewModelProvider(requireActivity()).get(MacroCalculatorViewModel.class);
@@ -52,6 +55,7 @@ public class ResultsFragment extends Fragment {
         calculateMacros();
         continueBtn= binding.continueBtn;
         continueBtn.setOnClickListener(view -> {
+            saveData();
             Intent intent = new Intent(requireActivity(), MainActivity.class);
             requireActivity().startActivity(intent);
         });
@@ -145,5 +149,22 @@ public class ResultsFragment extends Fragment {
                 macroCalculatorViewModel.getFats().setValue((int)((30 * calories / 100.0)/9.0));
                 break;
         }
+    }
+    private void saveData(){
+        SharedPreferences.Editor editor = sharedPrefs.edit();
+        editor.putString(AppConstants.USER_PREFS,muscleViewModel.getUserType().getValue());
+        editor.putString(AppConstants.WEIGHT_FLTR_PREFS,calorieCalculatorViewModel.getWeightFltr().getValue());
+        editor.putString(AppConstants.EXERCISE_FLTR_PREFS,calorieCalculatorViewModel.getExerciseFltr().getValue());
+        editor.putInt(AppConstants.AGE_PREFS,calorieCalculatorViewModel.getAge().getValue());
+        editor.putInt(AppConstants.WEIGHT_PREFS,calorieCalculatorViewModel.getWeight().getValue());
+        editor.putInt(AppConstants.FEET_PREFS,calorieCalculatorViewModel.getFt().getValue());
+        editor.putInt(AppConstants.INCHES_PREFS,calorieCalculatorViewModel.getInches().getValue());
+        editor.putInt(AppConstants.CALORIES_PREFS,calorieCalculatorViewModel.getCalories().getValue());
+
+        editor.putString(AppConstants.DIET_PREFS,macroCalculatorViewModel.getDiet().getValue());
+        editor.putInt(AppConstants.CARBS_PREFS,macroCalculatorViewModel.getCarbs().getValue());
+        editor.putInt(AppConstants.PROTEINS_PREFS,macroCalculatorViewModel.getProteins().getValue());
+        editor.putInt(AppConstants.FATS_PREFS,macroCalculatorViewModel.getFats().getValue());
+        editor.apply();
     }
 }

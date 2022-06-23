@@ -16,6 +16,7 @@ import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
@@ -68,20 +69,7 @@ public class Landing extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        SharedPreferences.Editor editor = sharedPrefs.edit();
-        editor.putString(AppConstants.USER_PREFS,muscleViewModel.getUserType().getValue());
-        editor.putString(AppConstants.WEIGHT_FLTR_PREFS,calorieCalculatorViewModel.getWeightFltr().getValue());
-        editor.putString(AppConstants.EXERCISE_FLTR_PREFS,calorieCalculatorViewModel.getExerciseFltr().getValue());
-        editor.putInt(AppConstants.AGE_PREFS,calorieCalculatorViewModel.getAge().getValue());
-        editor.putInt(AppConstants.WEIGHT_PREFS,calorieCalculatorViewModel.getWeight().getValue());
-        editor.putInt(AppConstants.FEET_PREFS,calorieCalculatorViewModel.getFt().getValue());
-        editor.putInt(AppConstants.INCHES_PREFS,calorieCalculatorViewModel.getInches().getValue());
-        editor.putInt(AppConstants.CALORIES_PREFS,calorieCalculatorViewModel.getCalories().getValue());
+        Toast.makeText(this, "on destroy called", Toast.LENGTH_SHORT).show();
 
-        editor.putString(AppConstants.DIET_PREFS,"");
-        editor.putInt(AppConstants.CARBS_PREFS,-1);
-        editor.putInt(AppConstants.PROTEINS_PREFS,-1);
-        editor.putInt(AppConstants.FATS_PREFS,-1);
-        editor.apply();
     }
 }
