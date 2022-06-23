@@ -113,4 +113,5 @@ public class MacroCalculatorFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
+
 }

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/LandingFragment">
+
+    <fragment
+        android:id="@+id/LandingFragment"
+        android:name="com.app.titan_fit.landing.LandingFragment"
+        android:label="Landing"
+        tools:layout="@layout/fragment_landing">
+
+
+        <action
+            android:id="@+id/action_LandingFragment_to_measurementFragment"
+            app:destination="@id/measurementFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/measurementFragment"
+        android:name="com.app.titan_fit.landing.MeasurementFragment"
+        android:label="Measurements"
+        tools:layout="@layout/fragment_measurement">
+        <action
+            android:id="@+id/action_measurementFragment_to_workOutRoutuneFragment"
+            app:destination="@id/workOutRoutuneFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/workOutRoutuneFragment"
+        android:name="com.app.titan_fit.landing.WorkOutRoutuneFragment"
+        android:label="fragment_work_out_routune"
+        tools:layout="@layout/fragment_work_out_routune" >
+        <action
+            android:id="@+id/action_workOutRoutuneFragment_to_weightFragment"
+            app:destination="@id/weightFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/weightFragment"
+        android:name="com.app.titan_fit.landing.WeightFragment"
+        android:label="fragment_weight"
+        tools:layout="@layout/fragment_weight" >
+        <action
+            android:id="@+id/action_weightFragment_to_dietFragment"
+            app:destination="@id/dietFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/dietFragment"
+        android:name="com.app.titan_fit.landing.DietFragment"
+        android:label="fragment_diet"
+        tools:layout="@layout/fragment_diet" >
+        <action
+            android:id="@+id/action_dietFragment_to_resultsFragment"
+            app:destination="@id/resultsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultsFragment"
+        android:name="com.app.titan_fit.landing.ResultsFragment"
+        android:label="fragment_results"
+        tools:layout="@layout/fragment_results" />
+
+</navigation>

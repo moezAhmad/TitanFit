@@ -1,5 +1,8 @@
 package com.app.titan_fit.ui.calorie;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
@@ -40,4 +43,10 @@ public class CalorieCalculatorViewModel extends ViewModel {
     public MutableLiveData<Integer> getFt() { return feet; }
     public MutableLiveData<Integer> getInches() { return inches; }
     public MutableLiveData<Integer> getCalories() { return calories; }
+
+    @Override
+    protected void onCleared() {
+        super.onCleared();
+
+    }
 }
