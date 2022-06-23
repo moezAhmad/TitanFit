@@ -31,6 +31,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checkable="true"
+                app:chipBackgroundColor="?attr/colorOnPrimary"
+                app:chipCornerRadius="5dp"
                 android:text="@string/text_filter_1" />
 
             <com.google.android.material.chip.Chip
@@ -38,6 +40,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checkable="true"
+                app:chipBackgroundColor="?attr/colorOnPrimary"
+                app:chipCornerRadius="5dp"
                 android:text="@string/text_filter_2" />
 
             <com.google.android.material.chip.Chip
@@ -45,6 +49,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checkable="true"
+                app:chipBackgroundColor="?attr/colorOnPrimary"
+                app:chipCornerRadius="5dp"
                 android:text="@string/text_filter_3" />
 
             <com.google.android.material.chip.Chip
@@ -52,6 +58,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checkable="true"
+                app:chipBackgroundColor="?attr/colorOnPrimary"
+                app:chipCornerRadius="5dp"
                 android:text="@string/text_filter_4" />
 
             <com.google.android.material.chip.Chip
@@ -59,6 +67,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checkable="true"
+                app:chipBackgroundColor="?attr/colorOnPrimary"
+                app:chipCornerRadius="5dp"
                 android:text="@string/text_filter_5" />
 
             <com.google.android.material.chip.Chip
@@ -66,6 +76,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checkable="true"
+                app:chipBackgroundColor="?attr/colorOnPrimary"
+                app:chipCornerRadius="5dp"
                 android:text="@string/text_filter_6" />
 
             <com.google.android.material.chip.Chip
@@ -73,6 +85,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checkable="true"
+                app:chipBackgroundColor="?attr/colorOnPrimary"
+                app:chipCornerRadius="5dp"
                 android:text="@string/text_filter_7" />
 
 
@@ -86,8 +100,8 @@
         android:layout_height="0dp"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/female_front"
+        android:scaleType="center"
+        android:src="@drawable/male_front"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
