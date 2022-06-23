@@ -31,6 +31,7 @@ public class MeasurementFragment extends Fragment {
     private Button continueBtn;
     private Button userFltr;
     private TextInputLayout age;
+    private TextInputLayout weight;
     private TextInputLayout feet;
     private TextInputLayout inches;
     private int[] userCheck = {-1};
@@ -47,6 +48,7 @@ public class MeasurementFragment extends Fragment {
         View root = binding.getRoot();
         userFltr = binding.userFilter;
         age = binding.age;
+        weight = binding.weight;
         feet= binding.feet;
         inches = binding.inch;
         continueBtn = binding.continueBtn;
@@ -59,12 +61,32 @@ public class MeasurementFragment extends Fragment {
                 age.setError("required");
                 return;
             }
+            if(weight.getEditText().getText().toString().trim().equals("")){
+                weight.setError("required");
+                return;
+            }
             if(this.feet.getEditText().getText().toString().trim().equals("")){
                 feet.setError("required");
                 return;
             }
             if(this.inches.getEditText().getText().toString().trim().equals("")){
                 inches.setError("required");
+                return;
+            }
+            if(Integer.parseInt(age.getEditText().getText().toString())<1||Integer.parseInt(age.getEditText().getText().toString())>100){
+                age.setError("Invalid value Age(1-100)");
+                return;
+            }
+            if(Integer.parseInt(weight.getEditText().getText().toString())<1||Integer.parseInt(weight.getEditText().getText().toString())>200){
+                weight.setError("Invalid value Weight(1-200)");
+                return;
+            }
+            if(Integer.parseInt(feet.getEditText().getText().toString())<2||Integer.parseInt(feet.getEditText().getText().toString())>7){
+                feet.setError("Invalid value Feet(2-7)");
+                return;
+            }
+            if(Integer.parseInt(inches.getEditText().getText().toString())<1||Integer.parseInt(inches.getEditText().getText().toString())>12){
+                inches.setError("Invalid value Inches(1-12)");
                 return;
             }
             setViewModels();
@@ -82,6 +104,7 @@ public class MeasurementFragment extends Fragment {
 
     private void setViewModels(){
         calorieCalculatorViewModel.getAge().setValue(Integer.valueOf(age.getEditText().getText().toString()));
+        calorieCalculatorViewModel.getWeight().setValue(Integer.valueOf(weight.getEditText().getText().toString()));
         calorieCalculatorViewModel.getFt().setValue(Integer.valueOf(feet.getEditText().getText().toString()));
         calorieCalculatorViewModel.getInches().setValue(Integer.valueOf(inches.getEditText().getText().toString()));
     }
