@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/drawable/bottom_nav_background.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/drawable/calorie_img.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/drawable/drawer_burger.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/drawable/female_back.xml" value="0.26614583333333336" />
@@ -50,6 +51,7 @@
         <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/drawable/male_lower_back.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/drawable/male_upper_back.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/drawable/rotate.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/drawable/selectable_item_background.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/layout/activity_landing.xml" value="0.25" />
         <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/layout/activity_main.xml" value="0.152" />
         <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/layout/content_landing.xml" value="0.25" />
@@ -62,13 +64,14 @@
         <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/layout/fragment_landing.xml" value="0.25" />
         <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/layout/fragment_macro_calculator.xml" value="0.176" />
         <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/layout/fragment_macro_result.xml" value="0.2" />
-        <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/layout/fragment_measurement.xml" value="0.2" />
-        <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/layout/fragment_muscle.xml" value="0.2" />
+        <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/layout/fragment_measurement.xml" value="0.4" />
+        <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/layout/fragment_muscle.xml" value="0.176" />
         <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/layout/fragment_nav_drawer.xml" value="0.2" />
         <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/layout/fragment_notifications.xml" value="0.25" />
         <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/layout/fragment_results.xml" value="0.25" />
         <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/layout/fragment_second.xml" value="0.25" />
         <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/layout/fragment_settings.xml" value="0.25" />
+        <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/layout/fragment_videos.xml" value="0.12708333333333333" />
         <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/layout/fragment_weight.xml" value="0.264" />
         <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/layout/fragment_work_out_routune.xml" value="0.264" />
         <entry key="..\:/Users/MoezAhmad/Desktop/TitanFit/app/src/main/res/layout/nav_drawer.xml" value="0.25" />

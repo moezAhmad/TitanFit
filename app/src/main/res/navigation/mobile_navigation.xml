@@ -11,7 +11,13 @@
         android:id="@+id/navigation_muscle"
         android:name="com.app.titan_fit.ui.muscle.MuscleFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_muscle" />
+        tools:layout="@layout/fragment_muscle" >
+        <action
+            android:id="@+id/action_navigation_muscle_to_videosFragment"
+            app:destination="@id/videosFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_settings"
@@ -67,4 +73,9 @@
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim" />
     </fragment>
+    <fragment
+        android:id="@+id/videosFragment"
+        android:name="com.app.titan_fit.ui.videos.VideosFragment"
+        android:label="fragment_videos"
+        tools:layout="@layout/fragment_videos" />
 </navigation>

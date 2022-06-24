@@ -99,6 +99,7 @@ public class MainActivity extends AppCompatActivity{
             macroCalculatorViewModel.getCarbs().setValue(carbs);
             macroCalculatorViewModel.getProteins().setValue(proteins);
             macroCalculatorViewModel.getFats().setValue(fats);
+            macroCalculatorViewModel.getCalories().setValue((calories/100)*100);
         }
 
 
