@@ -47,4 +47,13 @@ public class Snippet {
     public void setThumbnails(Thumbnails thumbnails) {
         this.thumbnails = thumbnails;
     }
+
+    @Override
+    public String toString() {
+        return "Snippet{" +
+                "title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", thumbnails=" + thumbnails +
+                '}';
+    }
 }

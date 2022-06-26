@@ -23,4 +23,5 @@ public class VideoModel {
     public void setItems(List<Video> items) {
         this.items = items;
     }
+
 }

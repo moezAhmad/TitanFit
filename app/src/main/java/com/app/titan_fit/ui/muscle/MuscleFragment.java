@@ -468,7 +468,6 @@ public class MuscleFragment extends Fragment {
     private void getJson(String playListId, ImageView imageView, View view) {
         String url = YoutubeAPI.BASE_URL + YoutubeAPI.PLAY_LIST + playListId + YoutubeAPI.KEY;
         Call<VideoModel> data = YoutubeAPI.getYoutubeVideo().getYT(url);
-        Log.e(TAG, "getJson: " + data.toString());
         data.enqueue(new Callback<VideoModel>() {
             @Override
             public void onResponse(Call<VideoModel> call, Response<VideoModel> response) {
@@ -478,6 +477,7 @@ public class MuscleFragment extends Fragment {
                     Log.v(TAG, "on Response" + response);
                     VideoModel vm = response.body();
                     videosViewModel.getVideos().setValue(vm.getItems());
+                    Toast.makeText(context, "Loading Exercises", Toast.LENGTH_SHORT).show();
                     showVideos(view);
                 }
             }
@@ -485,6 +485,7 @@ public class MuscleFragment extends Fragment {
             @Override
             public void onFailure(Call<VideoModel> call, Throwable t) {
                 Log.e(TAG, "onFailure: ", t);
+                Toast.makeText(context, "Poor network connection", Toast.LENGTH_SHORT).show();
             }
         });
     }

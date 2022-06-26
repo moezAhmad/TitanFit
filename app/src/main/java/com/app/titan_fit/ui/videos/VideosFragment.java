@@ -37,7 +37,6 @@ public class VideosFragment extends Fragment {
         manager = new LinearLayoutManager(container.getContext());
         exercises.setAdapter(adapter);
         exercises.setLayoutManager(manager);
-
         return root;
     }
 }

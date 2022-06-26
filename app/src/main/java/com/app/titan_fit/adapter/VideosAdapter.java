@@ -48,8 +48,6 @@ public class VideosAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
             Picasso.get()
                     .load(getThumbnail)
                     .placeholder(R.mipmap.ic_launcher)
-                    .fit()
-                    .centerCrop()
                     .into(thumbnail, new Callback() {
                         @Override
                         public void onSuccess() {
@@ -61,6 +59,8 @@ public class VideosAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
                             Log.e(TAG, "onError:", e);
                         }
                     });
+            title.setText(getTitle);
+            description.setText(getDescription);
         }
     }
 

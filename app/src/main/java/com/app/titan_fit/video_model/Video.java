@@ -33,4 +33,12 @@ public class Video {
     public void setSnippet(Snippet snippet) {
         this.snippet = snippet;
     }
+
+    @Override
+    public String toString() {
+        return "Video{" +
+                "id='" + id + '\'' +
+                ", snippet=" + snippet +
+                '}';
+    }
 }
