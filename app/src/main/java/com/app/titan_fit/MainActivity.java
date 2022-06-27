@@ -31,9 +31,12 @@ import com.app.titan_fit.databinding.ActivityMainBinding;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.youtube.player.YouTubeBaseActivity;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
-
+    private FirebaseAuth mAuth;
+    private FirebaseUser user;
     private ActivityMainBinding binding;
     private BottomNavigationView navView;
     private DrawerLayout drawer;
@@ -51,10 +54,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
+        mAuth = FirebaseAuth.getInstance();
+        user = mAuth.getCurrentUser();
         muscleViewModel = new ViewModelProvider(this).get(MuscleViewModel.class);
         calorieCalculatorViewModel = new ViewModelProvider(this).get(CalorieCalculatorViewModel.class);
         macroCalculatorViewModel = new ViewModelProvider(this).get(MacroCalculatorViewModel.class);
-        sharedPrefs = getSharedPreferences(AppConstants.SHARED_PREFRENCES, Context.MODE_PRIVATE);
+        sharedPrefs = getSharedPreferences(user.getEmail(), Context.MODE_PRIVATE);
         setContentView(binding.getRoot());
         navView = binding.bottomNavView;
         drawer = binding.container;
@@ -110,6 +115,16 @@ public class MainActivity extends AppCompatActivity {
                 drawer.closeDrawer(Gravity.LEFT);
             }
         });
+    }
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser == null){
+            Intent intent = new Intent(this, Landing.class);
+            startActivity(intent);
+        }
     }
 
 

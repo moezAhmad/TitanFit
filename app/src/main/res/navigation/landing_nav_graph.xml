@@ -11,12 +11,9 @@
         android:label="Landing"
         tools:layout="@layout/fragment_landing">
 
-
         <action
-            android:id="@+id/action_LandingFragment_to_measurementFragment"
-            app:destination="@id/measurementFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim" />
+            android:id="@+id/action_LandingFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/measurementFragment"
@@ -67,5 +64,27 @@
         android:name="com.app.titan_fit.landing.ResultsFragment"
         android:label="fragment_results"
         tools:layout="@layout/fragment_results" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.app.titan_fit.ui.auth.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_signupFragment"
+            app:destination="@id/signupFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signupFragment"
+        android:name="com.app.titan_fit.ui.auth.SignupFragment"
+        android:label="fragment_signup"
+        tools:layout="@layout/fragment_signup" >
+        <action
+            android:id="@+id/action_signupFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_signupFragment_to_measurementFragment"
+            app:destination="@id/measurementFragment" />
+    </fragment>
+
 
 </navigation>

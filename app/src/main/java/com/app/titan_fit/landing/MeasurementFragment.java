@@ -1,6 +1,7 @@
 package com.app.titan_fit.landing;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -17,11 +18,14 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
 import com.app.titan_fit.AppConstants;
+import com.app.titan_fit.MainActivity;
 import com.app.titan_fit.R;
 import com.app.titan_fit.databinding.FragmentMeasurementBinding;
 import com.app.titan_fit.ui.calorie.CalorieCalculatorViewModel;
 import com.app.titan_fit.ui.muscle.MuscleViewModel;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MeasurementFragment extends Fragment {
     private Context context;
@@ -30,6 +34,7 @@ public class MeasurementFragment extends Fragment {
     private CalorieCalculatorViewModel calorieCalculatorViewModel;
     private Button continueBtn;
     private Button userFltr;
+    private TextInputLayout name;
     private TextInputLayout age;
     private TextInputLayout weight;
     private TextInputLayout feet;
@@ -47,6 +52,7 @@ public class MeasurementFragment extends Fragment {
         calorieCalculatorViewModel = new ViewModelProvider(requireActivity()).get(CalorieCalculatorViewModel.class);
         View root = binding.getRoot();
         userFltr = binding.userFilter;
+        name = binding.name;
         age = binding.age;
         weight = binding.weight;
         feet= binding.feet;
@@ -57,6 +63,10 @@ public class MeasurementFragment extends Fragment {
         muscleViewModel.getUserType().observe(getViewLifecycleOwner(),s->userFltr.setText(s));
         userFltr.setOnClickListener(view -> setUser());
         continueBtn.setOnClickListener(view -> {
+            if(this.name.getEditText().getText().toString().trim().equals("")){
+                name.setError("required");
+                return;
+            }
             if(this.age.getEditText().getText().toString().trim().equals("")){
                 age.setError("required");
                 return;
@@ -103,6 +113,7 @@ public class MeasurementFragment extends Fragment {
     }
 
     private void setViewModels(){
+        muscleViewModel.getName().setValue(name.getEditText().getText().toString());
         calorieCalculatorViewModel.getAge().setValue(Integer.valueOf(age.getEditText().getText().toString()));
         calorieCalculatorViewModel.getWeight().setValue(Integer.valueOf(weight.getEditText().getText().toString()));
         calorieCalculatorViewModel.getFt().setValue(Integer.valueOf(feet.getEditText().getText().toString()));
@@ -137,5 +148,4 @@ public class MeasurementFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
-
 }

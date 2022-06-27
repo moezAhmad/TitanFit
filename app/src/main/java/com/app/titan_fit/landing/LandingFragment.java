@@ -26,7 +26,7 @@ public class LandingFragment extends Fragment {
         continueBtn = binding.continueBtn;
 
         continueBtn.setOnClickListener(view -> {
-            Navigation.findNavController(view).navigate(R.id.action_LandingFragment_to_measurementFragment);
+            Navigation.findNavController(view).navigate(R.id.action_LandingFragment_to_loginFragment);
         });
         return binding.getRoot();
 

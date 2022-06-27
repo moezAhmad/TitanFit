@@ -22,10 +22,14 @@ import com.app.titan_fit.databinding.FragmentResultsBinding;
 import com.app.titan_fit.ui.calorie.CalorieCalculatorViewModel;
 import com.app.titan_fit.ui.macro.MacroCalculatorViewModel;
 import com.app.titan_fit.ui.muscle.MuscleViewModel;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.Objects;
 
 public class ResultsFragment extends Fragment {
+    private FirebaseAuth mAuth;
+    private FirebaseUser user;
     private FragmentResultsBinding binding;
     private SharedPreferences sharedPrefs;
     private MuscleViewModel muscleViewModel;
@@ -41,7 +45,9 @@ public class ResultsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentResultsBinding.inflate(inflater,container,false);
-        sharedPrefs = requireActivity().getSharedPreferences(AppConstants.SHARED_PREFRENCES, Context.MODE_PRIVATE);
+        mAuth = FirebaseAuth.getInstance();
+        user = mAuth.getCurrentUser();
+        sharedPrefs = requireActivity().getSharedPreferences(user.getEmail(), Context.MODE_PRIVATE);
         muscleViewModel = new ViewModelProvider(requireActivity()).get(MuscleViewModel.class);
         calorieCalculatorViewModel = new ViewModelProvider(requireActivity()).get(CalorieCalculatorViewModel.class);
         macroCalculatorViewModel = new ViewModelProvider(requireActivity()).get(MacroCalculatorViewModel.class);
