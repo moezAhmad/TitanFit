@@ -68,14 +68,13 @@ public class CalorieCalculatorFragment extends Fragment {
         exerciseFltr.setOnClickListener(view -> setExerciseFilter());
         weightFltr.setOnClickListener(view -> setWeightFilter());
         calculate.setOnClickListener(view -> {
-            calculateCalories();
-            Navigation.findNavController(view).navigate(R.id.action_calorieCalculatorFragment_to_calorieResultFragment);
+            calculateCalories(view);
         });
         //Observers
-        calorieCalculatorViewModel.getAge().observe(getViewLifecycleOwner(),s-> ageSlider.getEditText().setText(s));
-        calorieCalculatorViewModel.getWeight().observe(getViewLifecycleOwner(),s-> weightSlider.getEditText().setText(s));
-        calorieCalculatorViewModel.getFt().observe(getViewLifecycleOwner(),s-> ftSlider.getEditText().setText(s));
-        calorieCalculatorViewModel.getInches().observe(getViewLifecycleOwner(),s-> inchSlider.getEditText().setText(s));
+        calorieCalculatorViewModel.getAge().observe(getViewLifecycleOwner(),s-> ageSlider.getEditText().setText(Integer.toString(s)));
+        calorieCalculatorViewModel.getWeight().observe(getViewLifecycleOwner(),s-> weightSlider.getEditText().setText(Integer.toString(s)));
+        calorieCalculatorViewModel.getFt().observe(getViewLifecycleOwner(),s-> ftSlider.getEditText().setText(Integer.toString(s)));
+        calorieCalculatorViewModel.getInches().observe(getViewLifecycleOwner(),s-> inchSlider.getEditText().setText(Integer.toString(s)));
         calorieCalculatorViewModel.getWeightFltr().observe(getViewLifecycleOwner(), s-> weightFltr.setText(s));
         calorieCalculatorViewModel.getExerciseFltr().observe(getViewLifecycleOwner(), s-> exerciseFltr.setText(s));
         return root;
@@ -157,20 +156,20 @@ public class CalorieCalculatorFragment extends Fragment {
         AlertDialog customAlertDialog = alertDialog.create();
         customAlertDialog.show();
     }
-    private void calculateCalories(){
-        if(ageSlider.getEditText().getText().toString().trim().equals("")){
+    private void calculateCalories(View view){
+        if(Objects.requireNonNull(ageSlider.getEditText()).getText().toString().trim().equals("")){
             ageSlider.setError("required");
             return;
         }
-        if(weightSlider.getEditText().getText().toString().trim().equals("")){
+        if(Objects.requireNonNull(weightSlider.getEditText()).getText().toString().trim().equals("")){
             weightSlider.setError("required");
             return;
         }
-        if(ftSlider.getEditText().getText().toString().trim().equals("")){
+        if(Objects.requireNonNull(ftSlider.getEditText()).getText().toString().trim().equals("")){
             ftSlider.setError("required");
             return;
         }
-        if(inchSlider.getEditText().getText().toString().trim().equals("")){
+        if(Objects.requireNonNull(inchSlider.getEditText()).getText().toString().trim().equals("")){
             inchSlider.setError("required");
             return;
         }
@@ -254,6 +253,6 @@ public class CalorieCalculatorFragment extends Fragment {
                 break;
         }
         calorieCalculatorViewModel.getCalories().setValue((int)calories);
-
+        Navigation.findNavController(view).navigate(R.id.action_calorieCalculatorFragment_to_calorieResultFragment);
     }
 }

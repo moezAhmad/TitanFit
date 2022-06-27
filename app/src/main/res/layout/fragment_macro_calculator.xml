@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="10dp"
-            android:layout_marginTop="150dp"
+            android:layout_marginTop="15dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/title">
@@ -54,6 +54,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Calories"
+                app:boxStrokeColor="?attr/colorSecondary"
+                app:hintTextColor="?attr/colorSecondary"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -91,13 +93,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Meals"
+                app:boxStrokeColor="?attr/colorSecondary"
+                app:hintTextColor="?attr/colorSecondary"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="number"
-                    />
+                    android:inputType="number" />
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
         <Button
@@ -105,7 +108,7 @@
             style="?attr/materialButtonOutlinedStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintWidth_percent=".65"
+            app:layout_constraintWidth_percent=".95"
             android:text="Moderate"
             android:textColor="?attr/colorSecondary"
             android:layout_marginTop="30dp"
@@ -119,7 +122,8 @@
             android:layout_height="wrap_content"
             android:text="Calculate"
             android:backgroundTint="?attr/colorSecondary"
-            android:layout_margin="25dp"
+            android:layout_marginTop="50dp"
+            app:layout_constraintWidth_percent=".95"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/macro_fltr" />

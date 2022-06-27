@@ -27,10 +27,10 @@
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_nav_view"
             android:layout_width="0dp"
-            android:layout_height="80dp"
+            android:layout_height="70dp"
             android:background="@drawable/bottom_nav_background"
             app:itemIconSize="30dp"
-            app:itemIconTint="#A6E8E8E8"
+            app:itemIconTint="?attr/colorPrimary"
             app:labelVisibilityMode="selected"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -51,6 +51,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:menu="@menu/drawer_nav_menu"
+        android:background="?attr/colorPrimaryVariant"
         android:layout_gravity="left"/>
 
 </androidx.drawerlayout.widget.DrawerLayout>

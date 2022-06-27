@@ -50,15 +50,14 @@ public class MacroCalculatorFragment extends Fragment {
         macroCalculatorViewModel = new
                 ViewModelProvider(requireActivity()).get(MacroCalculatorViewModel.class);
         //Observers
-        macroCalculatorViewModel.getCalories().observe(getViewLifecycleOwner(),s-> calories_slider.getEditText().setText(s));
-        macroCalculatorViewModel.getMeals().observe(getViewLifecycleOwner(),s->meals_slider.getEditText().setText(s));
+        macroCalculatorViewModel.getCalories().observe(getViewLifecycleOwner(),s-> calories_slider.getEditText().setText(Integer.toString(s)));
+        macroCalculatorViewModel.getMeals().observe(getViewLifecycleOwner(),s->meals_slider.getEditText().setText(Integer.toString(s)));
         macroCalculatorViewModel.getDiet().observe(getViewLifecycleOwner(),s-> macroFltr.setText(s));
 
         //Listeners
         macroFltr.setOnClickListener(view -> setDiet());
         calculate.setOnClickListener(view -> {
-            calculateMacros();
-            Navigation.findNavController(view).navigate(R.id.action_macroCalculatorFragment_to_macroResultFragment);
+            calculateMacros(view);
         });
 
         return root;
@@ -86,7 +85,7 @@ public class MacroCalculatorFragment extends Fragment {
         AlertDialog customAlertDialog = alertDialog.create();
         customAlertDialog.show();
     }
-    private void calculateMacros(){
+    private void calculateMacros(View view){
         if(calories_slider.getEditText().getText().toString().trim().equals("")){
             calories_slider.setError("required");
             return;
@@ -116,6 +115,7 @@ public class MacroCalculatorFragment extends Fragment {
                 macroCalculatorViewModel.getFats().setValue((int)((30 * calories / 100.0)/9.0));
                 break;
         }
+        Navigation.findNavController(view).navigate(R.id.action_macroCalculatorFragment_to_macroResultFragment);
     }
     @Override
     public void onDestroyView() {
