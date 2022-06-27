@@ -19,6 +19,7 @@ import com.app.titan_fit.R;
 import com.app.titan_fit.databinding.FragmentMacroCalculatorBinding;
 import com.app.titan_fit.ui.muscle.MuscleViewModel;
 import com.google.android.material.slider.RangeSlider;
+import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.Objects;
 
@@ -27,8 +28,8 @@ public class MacroCalculatorFragment extends Fragment {
     private MacroCalculatorViewModel macroCalculatorViewModel;
     private FragmentMacroCalculatorBinding binding;
     private Context context;
-    private RangeSlider calories_slider;
-    private RangeSlider meals_slider;
+    private TextInputLayout calories_slider;
+    private TextInputLayout meals_slider;
     private Button macroFltr;
     private Button calculate;
     private int[] dietCheck = {1};
@@ -49,13 +50,11 @@ public class MacroCalculatorFragment extends Fragment {
         macroCalculatorViewModel = new
                 ViewModelProvider(requireActivity()).get(MacroCalculatorViewModel.class);
         //Observers
-        macroCalculatorViewModel.getCalories().observe(getViewLifecycleOwner(),s-> calories_slider.setValues(Float.valueOf(s)));
-        macroCalculatorViewModel.getMeals().observe(getViewLifecycleOwner(),s->meals_slider.setValues(Float.valueOf(s)));
+        macroCalculatorViewModel.getCalories().observe(getViewLifecycleOwner(),s-> calories_slider.getEditText().setText(s));
+        macroCalculatorViewModel.getMeals().observe(getViewLifecycleOwner(),s->meals_slider.getEditText().setText(s));
         macroCalculatorViewModel.getDiet().observe(getViewLifecycleOwner(),s-> macroFltr.setText(s));
 
         //Listeners
-        calories_slider.addOnChangeListener((slider, value, fromUser) -> macroCalculatorViewModel.getCalories().setValue((int) value));
-        meals_slider.addOnChangeListener((slider, value, fromUser) -> macroCalculatorViewModel.getMeals().setValue((int) value));
         macroFltr.setOnClickListener(view -> setDiet());
         calculate.setOnClickListener(view -> {
             calculateMacros();
@@ -88,6 +87,16 @@ public class MacroCalculatorFragment extends Fragment {
         customAlertDialog.show();
     }
     private void calculateMacros(){
+        if(calories_slider.getEditText().getText().toString().trim().equals("")){
+            calories_slider.setError("required");
+            return;
+        }
+        if(meals_slider.getEditText().getText().toString().trim().equals("")){
+            meals_slider.setError("required");
+            return;
+        }
+        macroCalculatorViewModel.getCalories().setValue(Integer.parseInt(calories_slider.getEditText().getText().toString()));
+        macroCalculatorViewModel.getMeals().setValue(Integer.parseInt(meals_slider.getEditText().getText().toString()));
         int calories = Objects.requireNonNull(macroCalculatorViewModel.getCalories().getValue());
         int meals = Objects.requireNonNull(macroCalculatorViewModel.getMeals().getValue());
         switch (Objects.requireNonNull(macroCalculatorViewModel.getDiet().getValue())){

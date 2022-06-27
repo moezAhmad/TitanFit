@@ -30,8 +30,9 @@ import androidx.navigation.ui.NavigationUI;
 import com.app.titan_fit.databinding.ActivityMainBinding;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.youtube.player.YouTubeBaseActivity;
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
     private BottomNavigationView navView;
@@ -110,5 +111,6 @@ public class MainActivity extends AppCompatActivity{
             }
         });
     }
+
 
 }

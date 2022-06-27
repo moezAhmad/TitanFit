@@ -10,7 +10,7 @@
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary"
+            android:background="?attr/colorSecondary"
             android:padding="20dp"
             android:text="Measurements"
             android:textColor="?attr/colorOnPrimary"
@@ -48,12 +48,14 @@
                     android:text="Select your Gender"
                     android:textColor="?attr/colorOnSecondary"
                     android:textSize="15sp" />
+
                 <Button
                     android:id="@+id/user_filter"
                     style="?attr/materialButtonOutlinedStyle"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
                     android:text="Male"
+                    android:textColor="?attr/colorSecondary"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -83,8 +85,8 @@
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Age"
-                    android:textColorHint="?attr/colorPrimary">
+                    android:hint="Age (yr)"
+                    >
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
@@ -116,8 +118,8 @@
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Weight"
-                    android:textColorHint="?attr/colorPrimary">
+                    android:hint="Weight (Kg)"
+                    >
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
@@ -154,8 +156,7 @@
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:hint="Ft"
-                        android:textColorHint="?attr/colorPrimary"
+                        android:hint="Feet"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0"
@@ -176,7 +177,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:hint="In"
-                        android:textColorHint="?attr/colorPrimary"
+
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="1"

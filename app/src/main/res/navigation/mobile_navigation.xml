@@ -20,7 +20,7 @@
     </fragment>
 
     <fragment
-        android:id="@+id/navigation_settings"
+        android:id="@+id/navigation_dashboard"
         android:name="com.app.titan_fit.ui.SettingsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_settings" />

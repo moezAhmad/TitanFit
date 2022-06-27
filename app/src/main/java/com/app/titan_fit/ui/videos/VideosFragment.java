@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelStoreOwner;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -16,6 +17,8 @@ import com.app.titan_fit.R;
 import com.app.titan_fit.adapter.VideosAdapter;
 import com.app.titan_fit.databinding.FragmentVideosBinding;
 import com.app.titan_fit.video_model.Video;
+import com.google.android.youtube.player.YouTubePlayer;
+import com.google.android.youtube.player.YouTubePlayerSupportFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +30,9 @@ public class VideosFragment extends Fragment {
 
     private VideosAdapter adapter;
     private LinearLayoutManager manager;
+
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentVideosBinding.inflate(inflater,container,false);

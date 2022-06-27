@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="20dp"
-    >
+    android:layout_marginBottom="20dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -27,11 +26,16 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/thumbnail"
+                android:id="@+id/youtube_thumbnail"
                 android:layout_width="match_parent"
-                android:layout_height="180dp"
+                android:layout_height="250dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/calorie_img" />
+                android:src="@drawable/macro_img"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -40,7 +44,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/thumbnail">
+                app:layout_constraintTop_toBottomOf="@+id/thumbnail_container">
 
                 <TextView
                     android:id="@+id/title"

@@ -12,7 +12,7 @@
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary"
+            android:background="?attr/colorSecondary"
             android:padding="20dp"
             android:text="Macro Calculator"
             android:textColor="?attr/colorOnPrimary"
@@ -23,14 +23,12 @@
             app:layout_constraintTop_toTopOf="parent"
             />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:id="@+id/calorie"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="10dp"
-            android:paddingRight="20dp"
-            android:paddingLeft="20dp"
+            android:orientation="vertical"
+            android:padding="10dp"
             android:layout_marginTop="150dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -42,6 +40,7 @@
                 android:layout_height="wrap_content"
                 android:text="Calories"
                 android:textSize="20sp"
+                android:textColor="?attr/colorOnSecondary"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/calorie_slider"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -49,29 +48,28 @@
                 app:layout_constraintTop_toBottomOf="@id/calorie"
                 app:layout_constraintTop_toTopOf="@id/calorie" />
 
-            <com.google.android.material.slider.RangeSlider
-                android:id="@+id/calorie_slider"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:stepSize="100"
-                android:valueFrom="0"
-                android:valueTo="10000"
-                app:layout_constraintEnd_toEndOf="@id/calorie"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="@id/calorie"
-                app:layout_constraintTop_toBottomOf="@id/calorie"
-                app:layout_constraintTop_toTopOf="@id/calorie"
-                app:layout_constraintWidth_percent=".7" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/calorie_slider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Calories"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
             android:id="@+id/meals"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="10dp"
-            android:paddingRight="20dp"
-            android:paddingLeft="20dp"
+            android:orientation="vertical"
+            android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/calorie">
@@ -82,26 +80,26 @@
                 android:layout_height="wrap_content"
                 android:text="Meals/Day"
                 android:textSize="20sp"
+                android:textColor="?attr/colorOnSecondary"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/meals_slider"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@id/meals"
                 app:layout_constraintTop_toTopOf="@id/meals" />
-
-            <com.google.android.material.slider.RangeSlider
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/meals_slider"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:stepSize="1"
-                android:valueFrom="1"
-                android:valueTo="7"
-                app:layout_constraintEnd_toEndOf="@id/meals"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="@id/meals"
-                app:layout_constraintTop_toBottomOf="@id/meals"
-                app:layout_constraintTop_toTopOf="@id/meals"
-                app:layout_constraintWidth_percent=".7" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                android:hint="Meals"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
         <Button
             android:id="@+id/macro_fltr"
             style="?attr/materialButtonOutlinedStyle"
@@ -109,6 +107,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintWidth_percent=".65"
             android:text="Moderate"
+            android:textColor="?attr/colorSecondary"
             android:layout_marginTop="30dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -119,6 +118,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Calculate"
+            android:backgroundTint="?attr/colorSecondary"
             android:layout_margin="25dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

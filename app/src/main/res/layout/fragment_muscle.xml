@@ -6,94 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".ui.muscle.MuscleFragment">
 
-    <HorizontalScrollView
-        android:id="@+id/horizontalScrollView"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/title"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
+        android:layout_height="0dp"
+        android:background="?attr/colorSecondary"
+        android:padding="20dp"
+        app:layout_constraintHeight_percent=".11"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        >
 
-        <com.google.android.material.chip.ChipGroup
-            android:id="@+id/filters"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="15dp"
-            android:paddingTop="30dp"
-            android:paddingRight="15dp"
-            android:paddingBottom="10dp"
-            app:singleLine="true"
-            app:singleSelection="true">
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/filter_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checkable="true"
-                app:chipBackgroundColor="?attr/colorOnPrimary"
-                app:chipCornerRadius="5dp"
-                android:text="@string/text_filter_1" />
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/filter_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checkable="true"
-                app:chipBackgroundColor="?attr/colorOnPrimary"
-                app:chipCornerRadius="5dp"
-                android:text="@string/text_filter_2" />
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/filter_3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checkable="true"
-                app:chipBackgroundColor="?attr/colorOnPrimary"
-                app:chipCornerRadius="5dp"
-                android:text="@string/text_filter_3" />
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/filter_4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checkable="true"
-                app:chipBackgroundColor="?attr/colorOnPrimary"
-                app:chipCornerRadius="5dp"
-                android:text="@string/text_filter_4" />
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/filter_5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checkable="true"
-                app:chipBackgroundColor="?attr/colorOnPrimary"
-                app:chipCornerRadius="5dp"
-                android:text="@string/text_filter_5" />
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/filter_6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checkable="true"
-                app:chipBackgroundColor="?attr/colorOnPrimary"
-                app:chipCornerRadius="5dp"
-                android:text="@string/text_filter_6" />
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/filter_7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checkable="true"
-                app:chipBackgroundColor="?attr/colorOnPrimary"
-                app:chipCornerRadius="5dp"
-                android:text="@string/text_filter_7" />
-
-
-        </com.google.android.material.chip.ChipGroup>
-
-    </HorizontalScrollView>
-
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:src="@drawable/text_titan_fit"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
     <ImageView
         android:id="@+id/body_image"
         android:layout_width="match_parent"
@@ -106,7 +39,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
+        app:layout_constraintTop_toBottomOf="@+id/title"
         app:layout_constraintVertical_bias="0.0" />
 
 <!--    Male Front-->

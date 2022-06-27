@@ -22,6 +22,7 @@ import com.app.titan_fit.R;
 import com.app.titan_fit.databinding.FragmentCalorieCalculatorBinding;
 import com.app.titan_fit.ui.muscle.MuscleViewModel;
 import com.google.android.material.slider.RangeSlider;
+import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.Objects;
 
@@ -31,10 +32,10 @@ public class CalorieCalculatorFragment extends Fragment {
     private MuscleViewModel muscleViewModel;
     private Context context;
     private FragmentCalorieCalculatorBinding binding;
-    private RangeSlider ageSlider;
-    private RangeSlider weightSlider;
-    private RangeSlider ftSlider;
-    private RangeSlider inchSlider;
+    private TextInputLayout ageSlider;
+    private TextInputLayout weightSlider;
+    private TextInputLayout ftSlider;
+    private TextInputLayout inchSlider;
     private Button exerciseFltr;
     private Button weightFltr;
     private Button calculate;
@@ -64,10 +65,6 @@ public class CalorieCalculatorFragment extends Fragment {
         muscleViewModel = new
                 ViewModelProvider(requireActivity()).get(MuscleViewModel.class);
         //Listeners
-        ageSlider.addOnChangeListener((slider, value, fromUser) -> calorieCalculatorViewModel.getAge().setValue((int)value));
-        weightSlider.addOnChangeListener((slider, value, fromUser) -> calorieCalculatorViewModel.getWeight().setValue((int)value));
-        ftSlider.addOnChangeListener((slider, value, fromUser) -> calorieCalculatorViewModel.getFt().setValue((int) value));
-        inchSlider.addOnChangeListener((slider, value, fromUser) -> calorieCalculatorViewModel.getInches().setValue((int)value));
         exerciseFltr.setOnClickListener(view -> setExerciseFilter());
         weightFltr.setOnClickListener(view -> setWeightFilter());
         calculate.setOnClickListener(view -> {
@@ -75,10 +72,10 @@ public class CalorieCalculatorFragment extends Fragment {
             Navigation.findNavController(view).navigate(R.id.action_calorieCalculatorFragment_to_calorieResultFragment);
         });
         //Observers
-        calorieCalculatorViewModel.getAge().observe(getViewLifecycleOwner(),s-> ageSlider.setValues(Float.valueOf(s)));
-        calorieCalculatorViewModel.getWeight().observe(getViewLifecycleOwner(),s-> weightSlider.setValues(Float.valueOf(s)));
-        calorieCalculatorViewModel.getFt().observe(getViewLifecycleOwner(),s-> ftSlider.setValues(Float.valueOf(s)));
-        calorieCalculatorViewModel.getInches().observe(getViewLifecycleOwner(),s-> inchSlider.setValues(Float.valueOf(s)));
+        calorieCalculatorViewModel.getAge().observe(getViewLifecycleOwner(),s-> ageSlider.getEditText().setText(s));
+        calorieCalculatorViewModel.getWeight().observe(getViewLifecycleOwner(),s-> weightSlider.getEditText().setText(s));
+        calorieCalculatorViewModel.getFt().observe(getViewLifecycleOwner(),s-> ftSlider.getEditText().setText(s));
+        calorieCalculatorViewModel.getInches().observe(getViewLifecycleOwner(),s-> inchSlider.getEditText().setText(s));
         calorieCalculatorViewModel.getWeightFltr().observe(getViewLifecycleOwner(), s-> weightFltr.setText(s));
         calorieCalculatorViewModel.getExerciseFltr().observe(getViewLifecycleOwner(), s-> exerciseFltr.setText(s));
         return root;
@@ -161,11 +158,46 @@ public class CalorieCalculatorFragment extends Fragment {
         customAlertDialog.show();
     }
     private void calculateCalories(){
+        if(ageSlider.getEditText().getText().toString().trim().equals("")){
+            ageSlider.setError("required");
+            return;
+        }
+        if(weightSlider.getEditText().getText().toString().trim().equals("")){
+            weightSlider.setError("required");
+            return;
+        }
+        if(ftSlider.getEditText().getText().toString().trim().equals("")){
+            ftSlider.setError("required");
+            return;
+        }
+        if(inchSlider.getEditText().getText().toString().trim().equals("")){
+            inchSlider.setError("required");
+            return;
+        }
+        if(Integer.parseInt(ageSlider.getEditText().getText().toString())<1||Integer.parseInt(ageSlider.getEditText().getText().toString())>100){
+            ageSlider.setError("Invalid value Age(1-100)");
+            return;
+        }
+        if(Integer.parseInt(weightSlider.getEditText().getText().toString())<1||Integer.parseInt(weightSlider.getEditText().getText().toString())>200){
+            weightSlider.setError("Invalid value Weight(1-200)");
+            return;
+        }
+        if(Integer.parseInt(ftSlider.getEditText().getText().toString())<2||Integer.parseInt(ftSlider.getEditText().getText().toString())>7){
+            ftSlider.setError("Invalid value Feet(2-7)");
+            return;
+        }
+        if(Integer.parseInt(inchSlider.getEditText().getText().toString())<1||Integer.parseInt(inchSlider.getEditText().getText().toString())>12){
+            inchSlider.setError("Invalid value Inches(1-12)");
+            return;
+        }
+        calorieCalculatorViewModel.getAge().setValue(Integer.parseInt(ageSlider.getEditText().getText().toString()));
+        calorieCalculatorViewModel.getWeight().setValue(Integer.parseInt(weightSlider.getEditText().getText().toString()));
+        calorieCalculatorViewModel.getFt().setValue(Integer.parseInt(ftSlider.getEditText().getText().toString()));
+        calorieCalculatorViewModel.getInches().setValue(Integer.parseInt(inchSlider.getEditText().getText().toString()));
         int age = Objects.requireNonNull(calorieCalculatorViewModel.getAge().getValue());
         int weight = Objects.requireNonNull(calorieCalculatorViewModel.getWeight().getValue());
         double height = (Objects.requireNonNull(calorieCalculatorViewModel.getFt().getValue()) * 30.48)
                       + (Objects.requireNonNull(calorieCalculatorViewModel.getInches().getValue()) * 2.54);
-
         Toast.makeText(context, age + "  "+weight + "  " + height, Toast.LENGTH_SHORT).show();
         double calories = 0;
         switch (Objects.requireNonNull(muscleViewModel.getUserType().getValue())){
