@@ -38,31 +38,31 @@ public class WeightFragment extends Fragment {
             Toast.makeText(container.getContext(), checkedIds.toString() + " " + checkedIds.size() , Toast.LENGTH_SHORT).show();
             if(checkedIds.size()>0){
                 switch (checkedIds.get(0)){
-                    case 2131230965:
+                    case R.id.filter_1:
                         calorieCalculatorViewModel.getWeightFltr().setValue(AppConstants.WEIGHT_1);
                         break;
-                    case 2131230966:
+                    case R.id.filter_2:
                         calorieCalculatorViewModel.getExerciseFltr().setValue(AppConstants.WEIGHT_2);
                         break;
-                    case 2131230967:
+                    case R.id.filter_3:
                         calorieCalculatorViewModel.getWeightFltr().setValue(AppConstants.WEIGHT_3);
                         break;
-                    case 2131230968:
+                    case R.id.filter_4:
                         calorieCalculatorViewModel.getWeightFltr().setValue(AppConstants.WEIGHT_4);
                         break;
-                    case 2131230969:
+                    case R.id.filter_5:
                         calorieCalculatorViewModel.getWeightFltr().setValue(AppConstants.WEIGHT_5);
                         break;
-                    case 2131230970:
+                    case R.id.filter_6:
                         calorieCalculatorViewModel.getWeightFltr().setValue(AppConstants.WEIGHT_6);
                         break;
-                    case 2131230971:
+                    case R.id.filter_7:
                         calorieCalculatorViewModel.getWeightFltr().setValue(AppConstants.WEIGHT_7);
                         break;
-                    case 2131231353:
+                    case R.id.filter_8:
                         calorieCalculatorViewModel.getWeightFltr().setValue(AppConstants.WEIGHT_8);
                         break;
-                    case 2131231354:
+                    case R.id.filter_9:
                         calorieCalculatorViewModel.getWeightFltr().setValue(AppConstants.WEIGHT_9);
                         break;
                 }

@@ -1,4 +1,4 @@
-package com.app.titan_fit.ui;
+package com.app.titan_fit.ui.macro;
 
 import android.os.Bundle;
 
@@ -14,7 +14,6 @@ import android.widget.TextView;
 
 import com.app.titan_fit.R;
 import com.app.titan_fit.databinding.FragmentMacroResultBinding;
-import com.app.titan_fit.ui.macro.MacroCalculatorViewModel;
 
 public class MacroResultFragment extends Fragment {
     private MacroCalculatorViewModel macroCalculatorViewModel;

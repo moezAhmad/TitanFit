@@ -33,13 +33,13 @@ public class DietFragment extends Fragment {
             Toast.makeText(container.getContext(), checkedIds.toString() + " " + checkedIds.size(), Toast.LENGTH_SHORT).show();
             if(checkedIds.size()>0){
                 switch (checkedIds.get(0)){
-                    case 2131231361:
+                    case R.id.zone_diet:
                         macroCalculatorViewModel.getDiet().setValue(AppConstants.DIET_3);
                         break;
-                    case 2131231360:
+                    case R.id.moderate:
                         macroCalculatorViewModel.getDiet().setValue(AppConstants.DIET_2);
                         break;
-                    case 2131231359:
+                    case R.id.high_carb:
                         macroCalculatorViewModel.getDiet().setValue(AppConstants.DIET_1);
                         break;
                 }

@@ -1,4 +1,4 @@
-package com.app.titan_fit.ui;
+package com.app.titan_fit.ui.calorie;
 
 import android.os.Bundle;
 
@@ -13,9 +13,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.app.titan_fit.R;
-import com.app.titan_fit.databinding.FragmentCalorieCalculatorBinding;
 import com.app.titan_fit.databinding.FragmentCalorieResultBinding;
-import com.app.titan_fit.ui.calorie.CalorieCalculatorViewModel;
 
 public class CalorieResultFragment extends Fragment {
     private FragmentCalorieResultBinding binding;

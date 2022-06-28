@@ -21,9 +21,9 @@
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.app.titan_fit.ui.SettingsFragment"
+        android:name="com.app.titan_fit.ui.DashboardFragment"
         android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_settings" />
+        tools:layout="@layout/fragment_dashboard" />
     <fragment
         android:id="@+id/calorieCalculatorFragment"
         android:name="com.app.titan_fit.ui.calorie.CalorieCalculatorFragment"
@@ -53,25 +53,29 @@
         tools:layout="@layout/fragment_contact_us" />
     <fragment
         android:id="@+id/calorieResultFragment"
-        android:name="com.app.titan_fit.ui.CalorieResultFragment"
+        android:name="com.app.titan_fit.ui.calorie.CalorieResultFragment"
         android:label="fragment_calorie_result"
         tools:layout="@layout/fragment_calorie_result" >
         <action
             android:id="@+id/action_calorieResultFragment_to_navigation_muscle"
             app:destination="@id/navigation_muscle"
             app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim" />
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popUpTo="@+id/calorieCalculatorFragment"
+            app:popUpToInclusive="true"/>
     </fragment>
     <fragment
         android:id="@+id/macroResultFragment"
-        android:name="com.app.titan_fit.ui.MacroResultFragment"
+        android:name="com.app.titan_fit.ui.macro.MacroResultFragment"
         android:label="fragment_macro_result"
         tools:layout="@layout/fragment_macro_result" >
         <action
             android:id="@+id/action_macroResultFragment_to_navigation_muscle"
             app:destination="@id/navigation_muscle"
             app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim" />
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popUpTo="@+id/macroCalculatorFragment"
+            app:popUpToInclusive="true"/>
     </fragment>
     <fragment
         android:id="@+id/videosFragment"

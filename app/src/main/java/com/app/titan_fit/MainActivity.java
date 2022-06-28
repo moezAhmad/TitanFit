@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         mAuth = FirebaseAuth.getInstance();
+        user = mAuth.getCurrentUser();
         muscleViewModel = new ViewModelProvider(this).get(MuscleViewModel.class);
         calorieCalculatorViewModel = new ViewModelProvider(this).get(CalorieCalculatorViewModel.class);
         macroCalculatorViewModel = new ViewModelProvider(this).get(MacroCalculatorViewModel.class);
@@ -66,6 +67,12 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupWithNavController(navView, navController);
         NavigationUI.setupWithNavController(navDrawer,navController);
+        navDrawer.getMenu().findItem(R.id.signOut).setOnMenuItemClickListener(menuItem -> {
+            mAuth.signOut();
+            Intent intent = new Intent(this, Landing.class);
+            startActivity(intent);
+            return true;
+        });
 
         setContentView(binding.getRoot());
         closeButton.setOnClickListener(new View.OnClickListener() {
@@ -79,7 +86,6 @@ public class MainActivity extends AppCompatActivity {
     public void onStart() {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
-        user = mAuth.getCurrentUser();
         if(user == null){
             Intent intent = new Intent(this, Landing.class);
             startActivity(intent);
@@ -101,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
         int carbs = sharedPrefs.getInt(AppConstants.CARBS_PREFS,-1);
         int proteins = sharedPrefs.getInt(AppConstants.PROTEINS_PREFS,-1);
         int fats = sharedPrefs.getInt(AppConstants.FATS_PREFS,-1);
-//        Toast.makeText(this, age + " " + weight + " " + feet + " " + inches + " " + diet, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, name+ " " + user + " " + weight_fltr+ " " +exercise_fltr+ " " +age + " " + weight + " " + feet + " " + inches + " " + diet, Toast.LENGTH_LONG).show();
         if(name.equals("")||user.equals("")||weight_fltr.equals("")||exercise_fltr.equals("")||age==-1||weight==-1||feet==-1||inches==-1||calories==-1||
                 diet.equals("")||carbs==-1||proteins==-1||fats==-1){
             mAuth.signOut();

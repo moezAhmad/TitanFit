@@ -14,4 +14,8 @@
                 android:title="Contact Us"
                 android:checkable="true"/>
 
+            <item
+                android:id="@+id/signOut"
+                android:title="Sign Out"
+                android:checkable="true"/>
 </menu>

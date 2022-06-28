@@ -18,14 +18,14 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.app.titan_fit.AppConstants;
 import com.app.titan_fit.R;
-import com.app.titan_fit.databinding.FragmentSettingsBinding;
+import com.app.titan_fit.databinding.FragmentDashboardBinding;
 import com.app.titan_fit.ui.muscle.MuscleViewModel;
 
 
-public class SettingsFragment extends Fragment {
+public class DashboardFragment extends Fragment {
 
 
-    private FragmentSettingsBinding binding;
+    private FragmentDashboardBinding binding;
     private MuscleViewModel muscleViewModel;
     private Button userFltr;
     private Context context;
@@ -34,7 +34,7 @@ public class SettingsFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         context = container.getContext();
-        binding = FragmentSettingsBinding.inflate(inflater, container, false);
+        binding = FragmentDashboardBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         userFltr = binding.userFilter;
         muscleViewModel =

@@ -38,19 +38,19 @@ public class WorkOutRoutuneFragment extends Fragment {
             Toast.makeText(container.getContext(), checkedIds.toString() + " " + checkedIds.size(), Toast.LENGTH_SHORT).show();
            if(checkedIds.size()>0){
                switch (checkedIds.get(0)){
-                   case 2131231348:
+                   case R.id.noExercise:
                        calorieCalculatorViewModel.getExerciseFltr().setValue(AppConstants.EXERCISE_1);
                        break;
-                   case 2131231346:
+                   case R.id.littleExercise:
                        calorieCalculatorViewModel.getExerciseFltr().setValue(AppConstants.EXERCISE_2);
                        break;
-                   case 2131231347:
+                   case R.id.moderateExercise:
                        calorieCalculatorViewModel.getExerciseFltr().setValue(AppConstants.EXERCISE_3);
                        break;
-                   case 2131231345:
+                   case R.id.heavyExercise:
                        calorieCalculatorViewModel.getExerciseFltr().setValue(AppConstants.EXERCISE_4);
                        break;
-                   case 2131231350:
+                   case R.id.veryHeavyExercise:
                        calorieCalculatorViewModel.getExerciseFltr().setValue(AppConstants.EXERCISE_5);
                        break;
                }
