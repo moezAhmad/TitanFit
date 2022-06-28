@@ -104,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
 //        Toast.makeText(this, age + " " + weight + " " + feet + " " + inches + " " + diet, Toast.LENGTH_SHORT).show();
         if(name.equals("")||user.equals("")||weight_fltr.equals("")||exercise_fltr.equals("")||age==-1||weight==-1||feet==-1||inches==-1||calories==-1||
                 diet.equals("")||carbs==-1||proteins==-1||fats==-1){
+            mAuth.signOut();
             Intent intent = new Intent(this, Landing.class);
             startActivity(intent);
         }else {
@@ -121,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
             macroCalculatorViewModel.getCarbs().setValue(carbs);
             macroCalculatorViewModel.getProteins().setValue(proteins);
             macroCalculatorViewModel.getFats().setValue(fats);
-            macroCalculatorViewModel.getCalories().setValue((calories/100)*100);
+            macroCalculatorViewModel.getCalories().setValue(calories);
         }
 
     }

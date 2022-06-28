@@ -46,6 +46,7 @@ public class ResultsFragment extends Fragment {
                              Bundle savedInstanceState) {
         binding = FragmentResultsBinding.inflate(inflater,container,false);
         mAuth = FirebaseAuth.getInstance();
+        user = mAuth.getCurrentUser();
         muscleViewModel = new ViewModelProvider(requireActivity()).get(MuscleViewModel.class);
         calorieCalculatorViewModel = new ViewModelProvider(requireActivity()).get(CalorieCalculatorViewModel.class);
         macroCalculatorViewModel = new ViewModelProvider(requireActivity()).get(MacroCalculatorViewModel.class);
@@ -56,6 +57,9 @@ public class ResultsFragment extends Fragment {
         fatsResults = binding.fatsResult;
         View root = binding.getRoot();
         continueBtn= binding.continueBtn;
+        sharedPrefs = requireActivity().getSharedPreferences(user.getEmail(), Context.MODE_PRIVATE);
+        calculateCalories();
+        calculateMacros();
         continueBtn.setOnClickListener(view -> {
             saveData();
             Intent intent = new Intent(requireActivity(), MainActivity.class);
@@ -174,20 +178,5 @@ public class ResultsFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
-    }
-    @Override
-    public void onStart() {
-        super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
-        user = mAuth.getCurrentUser();
-        if(user != null){
-            sharedPrefs = requireActivity().getSharedPreferences(user.getEmail(), Context.MODE_PRIVATE);
-            calculateCalories();
-            calculateMacros();
-            Intent intent = new Intent(requireActivity(), MainActivity.class);
-            startActivity(intent);
-        }
-
-
     }
 }

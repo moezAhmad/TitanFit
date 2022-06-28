@@ -85,7 +85,7 @@ public class LoginFragment extends Fragment {
                                 int proteins = sharedPrefs.getInt(AppConstants.PROTEINS_PREFS, -1);
                                 int fats = sharedPrefs.getInt(AppConstants.FATS_PREFS, -1);
                                 Toast.makeText(requireActivity(), age + " " + weight + " " + feet + " " + inches + " " + diet, Toast.LENGTH_SHORT).show();
-                                if (user.equals("") || weight_fltr.equals("") || exercise_fltr.equals("") || age == -1 || weight == -1 || feet == -1 || inches == -1 || calories == -1 ||
+                                if (name.equals("")||user.equals("") || weight_fltr.equals("") || exercise_fltr.equals("") || age == -1 || weight == -1 || feet == -1 || inches == -1 || calories == -1 ||
                                         diet.equals("") || carbs == -1 || proteins == -1 || fats == -1) {
                                     Navigation.findNavController(requireView()).navigate(R.id.action_loginFragment_to_measurementFragment);
                                     return;
