@@ -71,12 +71,6 @@ public class Landing extends AppCompatActivity {
     }
 
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Toast.makeText(this, "on destroy called", Toast.LENGTH_SHORT).show();
-
-    }
-    @Override
     public void onStart() {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.

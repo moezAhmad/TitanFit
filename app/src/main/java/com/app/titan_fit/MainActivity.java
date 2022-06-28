@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }else {
             muscleViewModel.getUserType().setValue(user);
-
+            muscleViewModel.getName().setValue(name);
             calorieCalculatorViewModel.getWeightFltr().setValue(weight_fltr);
             calorieCalculatorViewModel.getExerciseFltr().setValue(exercise_fltr);
             calorieCalculatorViewModel.getAge().setValue(age);
