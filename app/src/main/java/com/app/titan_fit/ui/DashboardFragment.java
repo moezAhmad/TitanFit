@@ -67,7 +67,6 @@ public class DashboardFragment extends Fragment {
         calorieCalculatorViewModel = new ViewModelProvider(requireActivity()).get(CalorieCalculatorViewModel.class);
         muscleViewModel = new ViewModelProvider(requireActivity()).get(MuscleViewModel.class);
         macroCalculatorViewModel = new ViewModelProvider(requireActivity()).get(MacroCalculatorViewModel.class);
-        setViews();
         userFltr.setOnClickListener(view -> setUser());
         return root;
     }
@@ -113,5 +112,11 @@ public class DashboardFragment extends Fragment {
         String ft = calorieCalculatorViewModel.getFt().getValue().toString();
         String in = calorieCalculatorViewModel.getInches().getValue().toString();
         height.setText(ft+"'"+in+"''");
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        setViews();
     }
 }

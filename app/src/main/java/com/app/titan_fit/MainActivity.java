@@ -64,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
         drawer = binding.container;
         navDrawer = binding.drawerNavView;
         closeButton = binding.drawerNavView.getHeaderView(0).findViewById(R.id.close_btn);
+        updateViewModel();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupWithNavController(navView, navController);
         NavigationUI.setupWithNavController(navDrawer,navController);
@@ -82,10 +83,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    @Override
-    public void onStart() {
-        super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
+    private void updateViewModel(){
         if(user == null){
             Intent intent = new Intent(this, Landing.class);
             startActivity(intent);
@@ -132,6 +130,5 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
-
 
 }
