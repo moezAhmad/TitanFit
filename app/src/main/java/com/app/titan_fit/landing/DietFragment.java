@@ -61,4 +61,9 @@ public class DietFragment extends Fragment {
         });
         return root;
     }
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
+    }
 }

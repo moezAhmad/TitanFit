@@ -84,4 +84,9 @@ public class WeightFragment extends Fragment {
 
         return root;
     }
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
+    }
 }

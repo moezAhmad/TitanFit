@@ -26,6 +26,7 @@ public class AppConstants {
     public static final String DIET_3 = "Zone Diet";
 
     public static final String SHARED_PREFRENCES = "my_user_preferences";
+    public static final String NAME_PREFS = "name";
     public static final String USER_PREFS = "user";
     public static final String EXERCISE_FLTR_PREFS = "exercise_filter";
     public static final String WEIGHT_FLTR_PREFS = "weight_filter";

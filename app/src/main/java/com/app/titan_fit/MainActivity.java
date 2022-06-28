@@ -55,11 +55,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         mAuth = FirebaseAuth.getInstance();
-        user = mAuth.getCurrentUser();
         muscleViewModel = new ViewModelProvider(this).get(MuscleViewModel.class);
         calorieCalculatorViewModel = new ViewModelProvider(this).get(CalorieCalculatorViewModel.class);
         macroCalculatorViewModel = new ViewModelProvider(this).get(MacroCalculatorViewModel.class);
-        sharedPrefs = getSharedPreferences(user.getEmail(), Context.MODE_PRIVATE);
         setContentView(binding.getRoot());
         navView = binding.bottomNavView;
         drawer = binding.container;
@@ -70,7 +68,25 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navDrawer,navController);
 
         setContentView(binding.getRoot());
-
+        closeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawer.closeDrawer(Gravity.LEFT);
+            }
+        });
+    }
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        user = mAuth.getCurrentUser();
+        if(user == null){
+            Intent intent = new Intent(this, Landing.class);
+            startActivity(intent);
+            return;
+        }
+        sharedPrefs = getSharedPreferences(user.getEmail(), Context.MODE_PRIVATE);
+        String name = sharedPrefs.getString(AppConstants.NAME_PREFS,"");
         String user = sharedPrefs.getString(AppConstants.USER_PREFS,"");
 
         String weight_fltr = sharedPrefs.getString(AppConstants.WEIGHT_FLTR_PREFS,"");
@@ -86,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
         int proteins = sharedPrefs.getInt(AppConstants.PROTEINS_PREFS,-1);
         int fats = sharedPrefs.getInt(AppConstants.FATS_PREFS,-1);
 //        Toast.makeText(this, age + " " + weight + " " + feet + " " + inches + " " + diet, Toast.LENGTH_SHORT).show();
-        if(user.equals("")||weight_fltr.equals("")||exercise_fltr.equals("")||age==-1||weight==-1||feet==-1||inches==-1||calories==-1||
+        if(name.equals("")||user.equals("")||weight_fltr.equals("")||exercise_fltr.equals("")||age==-1||weight==-1||feet==-1||inches==-1||calories==-1||
                 diet.equals("")||carbs==-1||proteins==-1||fats==-1){
             Intent intent = new Intent(this, Landing.class);
             startActivity(intent);
@@ -108,23 +124,6 @@ public class MainActivity extends AppCompatActivity {
             macroCalculatorViewModel.getCalories().setValue((calories/100)*100);
         }
 
-
-        closeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                drawer.closeDrawer(Gravity.LEFT);
-            }
-        });
-    }
-    @Override
-    public void onStart() {
-        super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser == null){
-            Intent intent = new Intent(this, Landing.class);
-            startActivity(intent);
-        }
     }
 
 

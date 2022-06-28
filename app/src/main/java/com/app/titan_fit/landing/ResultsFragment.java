@@ -46,8 +46,6 @@ public class ResultsFragment extends Fragment {
                              Bundle savedInstanceState) {
         binding = FragmentResultsBinding.inflate(inflater,container,false);
         mAuth = FirebaseAuth.getInstance();
-        user = mAuth.getCurrentUser();
-        sharedPrefs = requireActivity().getSharedPreferences(user.getEmail(), Context.MODE_PRIVATE);
         muscleViewModel = new ViewModelProvider(requireActivity()).get(MuscleViewModel.class);
         calorieCalculatorViewModel = new ViewModelProvider(requireActivity()).get(CalorieCalculatorViewModel.class);
         macroCalculatorViewModel = new ViewModelProvider(requireActivity()).get(MacroCalculatorViewModel.class);
@@ -57,8 +55,6 @@ public class ResultsFragment extends Fragment {
         proteinsResults = binding.protiensResult;
         fatsResults = binding.fatsResult;
         View root = binding.getRoot();
-        calculateCalories();
-        calculateMacros();
         continueBtn= binding.continueBtn;
         continueBtn.setOnClickListener(view -> {
             saveData();
@@ -158,6 +154,7 @@ public class ResultsFragment extends Fragment {
     }
     private void saveData(){
         SharedPreferences.Editor editor = sharedPrefs.edit();
+        editor.putString(AppConstants.NAME_PREFS,muscleViewModel.getName().getValue());
         editor.putString(AppConstants.USER_PREFS,muscleViewModel.getUserType().getValue());
         editor.putString(AppConstants.WEIGHT_FLTR_PREFS,calorieCalculatorViewModel.getWeightFltr().getValue());
         editor.putString(AppConstants.EXERCISE_FLTR_PREFS,calorieCalculatorViewModel.getExerciseFltr().getValue());
@@ -172,5 +169,25 @@ public class ResultsFragment extends Fragment {
         editor.putInt(AppConstants.PROTEINS_PREFS,macroCalculatorViewModel.getProteins().getValue());
         editor.putInt(AppConstants.FATS_PREFS,macroCalculatorViewModel.getFats().getValue());
         editor.apply();
+    }
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
+    }
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        user = mAuth.getCurrentUser();
+        if(user != null){
+            sharedPrefs = requireActivity().getSharedPreferences(user.getEmail(), Context.MODE_PRIVATE);
+            calculateCalories();
+            calculateMacros();
+            Intent intent = new Intent(requireActivity(), MainActivity.class);
+            startActivity(intent);
+        }
+
+
     }
 }
