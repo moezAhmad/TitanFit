@@ -137,7 +137,6 @@ public class ResultsFragment extends Fragment {
     }
     private void calculateMacros(){
         int calories = Objects.requireNonNull(macroCalculatorViewModel.getCalories().getValue());
-        int meals = Objects.requireNonNull(macroCalculatorViewModel.getMeals().getValue());
         switch (Objects.requireNonNull(macroCalculatorViewModel.getDiet().getValue())){
             case AppConstants.DIET_1:
                 macroCalculatorViewModel.getCarbs().setValue((int) ((60 * calories / 100.0)/4.0));
@@ -158,20 +157,20 @@ public class ResultsFragment extends Fragment {
     }
     private void saveData(){
         SharedPreferences.Editor editor = sharedPrefs.edit();
-        editor.putString(AppConstants.NAME_PREFS,muscleViewModel.getName().getValue());
-        editor.putString(AppConstants.USER_PREFS,muscleViewModel.getUserType().getValue());
-        editor.putString(AppConstants.WEIGHT_FLTR_PREFS,calorieCalculatorViewModel.getWeightFltr().getValue());
-        editor.putString(AppConstants.EXERCISE_FLTR_PREFS,calorieCalculatorViewModel.getExerciseFltr().getValue());
-        editor.putInt(AppConstants.AGE_PREFS,calorieCalculatorViewModel.getAge().getValue());
-        editor.putInt(AppConstants.WEIGHT_PREFS,calorieCalculatorViewModel.getWeight().getValue());
-        editor.putInt(AppConstants.FEET_PREFS,calorieCalculatorViewModel.getFt().getValue());
-        editor.putInt(AppConstants.INCHES_PREFS,calorieCalculatorViewModel.getInches().getValue());
-        editor.putInt(AppConstants.CALORIES_PREFS,calorieCalculatorViewModel.getCalories().getValue());
+        editor.putString(AppConstants.NAME_PREFS, Objects.requireNonNull(muscleViewModel.getName().getValue()).trim());
+        editor.putString(AppConstants.USER_PREFS, Objects.requireNonNull(muscleViewModel.getUserType().getValue()).trim());
+        editor.putString(AppConstants.WEIGHT_FLTR_PREFS, Objects.requireNonNull(calorieCalculatorViewModel.getWeightFltr().getValue()).trim());
+        editor.putString(AppConstants.EXERCISE_FLTR_PREFS, Objects.requireNonNull(calorieCalculatorViewModel.getExerciseFltr().getValue()).trim());
+        editor.putInt(AppConstants.AGE_PREFS,Objects.requireNonNull(calorieCalculatorViewModel.getAge().getValue()));
+        editor.putInt(AppConstants.WEIGHT_PREFS,Objects.requireNonNull(calorieCalculatorViewModel.getWeight().getValue()));
+        editor.putInt(AppConstants.FEET_PREFS,Objects.requireNonNull(calorieCalculatorViewModel.getFt().getValue()));
+        editor.putInt(AppConstants.INCHES_PREFS,Objects.requireNonNull(calorieCalculatorViewModel.getInches().getValue()));
+        editor.putInt(AppConstants.CALORIES_PREFS,Objects.requireNonNull(calorieCalculatorViewModel.getCalories().getValue()));
 
-        editor.putString(AppConstants.DIET_PREFS,macroCalculatorViewModel.getDiet().getValue());
-        editor.putInt(AppConstants.CARBS_PREFS,macroCalculatorViewModel.getCarbs().getValue());
-        editor.putInt(AppConstants.PROTEINS_PREFS,macroCalculatorViewModel.getProteins().getValue());
-        editor.putInt(AppConstants.FATS_PREFS,macroCalculatorViewModel.getFats().getValue());
+        editor.putString(AppConstants.DIET_PREFS, Objects.requireNonNull(macroCalculatorViewModel.getDiet().getValue()).trim());
+        editor.putInt(AppConstants.CARBS_PREFS,Objects.requireNonNull(macroCalculatorViewModel.getCarbs().getValue()));
+        editor.putInt(AppConstants.PROTEINS_PREFS,Objects.requireNonNull(macroCalculatorViewModel.getProteins().getValue()));
+        editor.putInt(AppConstants.FATS_PREFS,Objects.requireNonNull(macroCalculatorViewModel.getFats().getValue()));
         editor.apply();
     }
     @Override

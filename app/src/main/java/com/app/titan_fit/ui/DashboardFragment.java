@@ -108,8 +108,8 @@ public class DashboardFragment extends Fragment {
         muscleViewModel.getName().observe(getViewLifecycleOwner(),s->name.setText(String.valueOf(s)));
         muscleViewModel.getUserType().observe(getViewLifecycleOwner(),s->userFltr.setText(s));
         email.setText(user.getEmail());
-        calorieCalculatorViewModel.getAge().observe(getViewLifecycleOwner(),s->age.setText(String.valueOf(s) + "years"));
-        calorieCalculatorViewModel.getWeight().observe(getViewLifecycleOwner(),s->weight.setText(String.valueOf(s) + "Kg"));
+        calorieCalculatorViewModel.getAge().observe(getViewLifecycleOwner(),s->age.setText(String.valueOf(s) + " years"));
+        calorieCalculatorViewModel.getWeight().observe(getViewLifecycleOwner(),s->weight.setText(String.valueOf(s) + " Kg"));
         String ft = calorieCalculatorViewModel.getFt().getValue().toString();
         String in = calorieCalculatorViewModel.getInches().getValue().toString();
         height.setText(ft+"'"+in+"''");

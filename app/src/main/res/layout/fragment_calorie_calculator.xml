@@ -40,7 +40,7 @@
                 android:layout_height="wrap_content"
                 android:text="How old are you?"
                 android:textColor="?attr/colorOnSecondary"
-                android:textSize="20sp"
+                android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.1"
@@ -81,7 +81,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="20dp"
                 android:text="What is your weight?"
-                android:textSize="20sp"
+                android:textSize="14sp"
                 android:textColor="?attr/colorOnSecondary" />
 
 
@@ -116,7 +116,7 @@
                 android:layout_height="wrap_content"
                 android:text="What is your height?"
                 android:textColor="?attr/colorOnSecondary"
-                android:textSize="20sp" />
+                android:textSize="14sp" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/heightInput"
