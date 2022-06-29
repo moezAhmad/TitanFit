@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".MealPlanFragment">
+    tools:context=".ui.meal.MealPlanFragment"
+    tools:viewBindingIgnore="true">
 
     <TextView
         android:id="@+id/title"
@@ -868,7 +869,7 @@
                 android:id="@+id/foodItems"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="gone"
+                android:visibility="visible"
                 android:padding="15dp"
                 app:layout_constraintTop_toTopOf="parent">
 
@@ -1394,7 +1395,7 @@
                 android:id="@+id/detail_lose_weight"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="visible"
+                android:visibility="gone"
                 android:padding="15dp"
                 app:layout_constraintTop_toTopOf="parent">
                 <TextView
@@ -2716,14 +2717,14 @@
                     android:id="@+id/chicken_sweet_corn_heading"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Chicken Satay Salad"
+                    android:text="Chicken and Sweet Corn Tacos"
                     android:textColor="?attr/colorSecondary"
                     android:textSize="18sp"
                     android:layout_marginTop="25dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/detail_lose_weight_title" />
+                    app:layout_constraintTop_toBottomOf="@+id/spaghetti_meatBall_methodsCV" />
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/chicken_sweet_corn_ingredientsCV"
                     android:layout_width="match_parent"
@@ -2762,7 +2763,7 @@
                             android:alpha=".9"
                             android:drawableStart="@drawable/list_bullet"
                             android:drawablePadding="10dp"
-                            android:text="1 tbsp tamari"
+                            android:text="2 tbsp rapeseed oil"
                             android:textColor="?attr/colorOnSecondary"
                             android:textSize="15sp" />
                         <TextView
@@ -2772,7 +2773,7 @@
                             android:alpha=".9"
                             android:drawableStart="@drawable/list_bullet"
                             android:drawablePadding="10dp"
-                            android:text="1 tsp medium curry powder"
+                            android:text="2 tbsp taco or fajita seasoning"
                             android:textColor="?attr/colorOnSecondary"
                             android:textSize="15sp" />
                         <TextView
@@ -2782,7 +2783,7 @@
                             android:alpha=".9"
                             android:drawableStart="@drawable/list_bullet"
                             android:drawablePadding="10dp"
-                            android:text="1/4 tsp ground cumin"
+                            android:text="5-6 skinless chicken breasts, sliced"
                             android:textColor="?attr/colorOnSecondary"
                             android:textSize="15sp" />
                         <TextView
@@ -2792,7 +2793,7 @@
                             android:alpha=".9"
                             android:drawableStart="@drawable/list_bullet"
                             android:drawablePadding="10dp"
-                            android:text="1 garlic clove, finely grated"
+                            android:text="¼ red cabbage , finely shredded"
                             android:textColor="?attr/colorOnSecondary"
                             android:textSize="15sp" />
                         <TextView
@@ -2802,7 +2803,7 @@
                             android:alpha=".9"
                             android:drawableStart="@drawable/list_bullet"
                             android:drawablePadding="10dp"
-                            android:text="1 tsp clear honey"
+                            android:text="3 limes , 1 juiced, 2 cut into wedges"
                             android:textColor="?attr/colorOnSecondary"
                             android:textSize="15sp" />
                         <TextView
@@ -2812,7 +2813,7 @@
                             android:alpha=".9"
                             android:drawableStart="@drawable/list_bullet"
                             android:drawablePadding="10dp"
-                            android:text="2 skinless chicken breast fillets (or use turkey breast)"
+                            android:text="small bunch of coriander , chopped"
                             android:textColor="?attr/colorOnSecondary"
                             android:textSize="15sp" />
                         <TextView
@@ -2822,7 +2823,7 @@
                             android:alpha=".9"
                             android:drawableStart="@drawable/list_bullet"
                             android:drawablePadding="10dp"
-                            android:text="1 tbsp crunchy peanut butter (choose a sugar free version with no palm oil, if possible)"
+                            android:text="4 sweetcorn cob , kernels sliced off, or 400g frozen sweetcorn"
                             android:textColor="?attr/colorOnSecondary"
                             android:textSize="15sp" />
                         <TextView
@@ -2832,7 +2833,7 @@
                             android:alpha=".9"
                             android:drawableStart="@drawable/list_bullet"
                             android:drawablePadding="10dp"
-                            android:text="1 tbsp sweet chilli sauce"
+                            android:text="400g can black beans , drained and rinsed"
                             android:textColor="?attr/colorOnSecondary"
                             android:textSize="15sp" />
                         <TextView
@@ -2842,7 +2843,7 @@
                             android:alpha=".9"
                             android:drawableStart="@drawable/list_bullet"
                             android:drawablePadding="10dp"
-                            android:text="1 tbsp lime juice"
+                            android:text="2 garlic cloves , crushed"
                             android:textColor="?attr/colorOnSecondary"
                             android:textSize="15sp" />
                         <TextView
@@ -2852,7 +2853,7 @@
                             android:alpha=".9"
                             android:drawableStart="@drawable/list_bullet"
                             android:drawablePadding="10dp"
-                            android:text="sunflower oil, for wiping the pan"
+                            android:text="4 tbsp fat-free yogurt , to serve"
                             android:textColor="?attr/colorOnSecondary"
                             android:textSize="15sp" />
                         <TextView
@@ -2862,27 +2863,7 @@
                             android:alpha=".9"
                             android:drawableStart="@drawable/list_bullet"
                             android:drawablePadding="10dp"
-                            android:text="2 Little Gem lettuce hearts, cut into wedges"
-                            android:textColor="?attr/colorOnSecondary"
-                            android:textSize="15sp" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:alpha=".9"
-                            android:drawableStart="@drawable/list_bullet"
-                            android:drawablePadding="10dp"
-                            android:text="1/4 cucumber, halved and sliced"
-                            android:textColor="?attr/colorOnSecondary"
-                            android:textSize="15sp" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:alpha=".9"
-                            android:drawableStart="@drawable/list_bullet"
-                            android:drawablePadding="10dp"
-                            android:text="1 banana shallot, halved and thinly sliced coriander, chopped seeds from ½ pomegranate"
+                            android:text="chilli sauce , to serve"
                             android:textColor="?attr/colorOnSecondary"
                             android:textSize="15sp" />
                     </LinearLayout>
@@ -2953,7 +2934,7 @@
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:text="353"
+                                android:text="382"
                                 android:textAlignment="center"
                                 android:textColor="?attr/colorOnSecondary"
                                 android:background="@color/grey"
@@ -2998,7 +2979,7 @@
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:text="10g"
+                                android:text="8g"
                                 android:textAlignment="center"
                                 android:textColor="?attr/colorOnSecondary"
                                 android:background="@color/grey"
@@ -3043,7 +3024,7 @@
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:text="2g"
+                                android:text="1g"
                                 android:textAlignment="center"
                                 android:textColor="?attr/colorOnSecondary"
                                 android:background="@color/grey"
@@ -3088,7 +3069,7 @@
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:text="424g"
+                                android:text="45g"
                                 android:textAlignment="center"
                                 android:textColor="?attr/colorOnSecondary"
                                 android:background="@color/grey"
@@ -3133,7 +3114,7 @@
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:text="21g"
+                                android:text="5g"
                                 android:textAlignment="center"
                                 android:textColor="?attr/colorOnSecondary"
                                 android:background="@color/grey"
@@ -3223,7 +3204,7 @@
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:text="38g"
+                                android:text="30g"
                                 android:textAlignment="center"
                                 android:textColor="?attr/colorOnSecondary"
                                 android:background="@color/grey"
@@ -3268,7 +3249,7 @@
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:text="1.6g"
+                                android:text="0.4g"
                                 android:textAlignment="center"
                                 android:textColor="?attr/colorOnSecondary"
                                 android:background="@color/grey"
@@ -3319,7 +3300,7 @@
                             android:alpha=".9"
                             android:drawableStart="@drawable/list_bullet"
                             android:drawablePadding="10dp"
-                            android:text="Pour the tamari into a large dish and stir in the curry powder, cumin, garlic and honey. Mix well. Slice the chicken breasts in half horizontally to make 4 fillets in total, then add to the marinade and mix well to coat. Set aside in the fridge for at least 1 hr, or overnight, to allow the flavours to penetrate the chicken."
+                            android:text="Combine the flour with half the oil and a small pinch of salt in a bowl. Pour over 125-150ml warm water, then bring together into a soft dough with your hands. Cut into six equal pieces, then cut four of the pieces in half again, so you have eight small pieces and two large. Roll all the pieces out on a floured work surface until they’re as thin as you can get them."
                             android:textColor="?attr/colorOnSecondary"
                             android:textSize="15sp" />
                         <TextView
@@ -3329,7 +3310,7 @@
                             android:alpha=".9"
                             android:drawableStart="@drawable/list_bullet"
                             android:drawablePadding="10dp"
-                            android:text="Meanwhile, mix the peanut butter with the chilli sauce, lime juice, and 1 tbsp water to make a spoonable sauce. When ready to cook the chicken, wipe a large non-stick frying pan with a little oil. Add the chicken and cook, covered with a lid, for 5-6 mins on a medium heat, turning the fillets over for the last min, until cooked but still moist. Set aside, covered, to rest for a few mins."
+                            android:text="Heat a dry frying pan over a medium-high heat and cook the small and large tortillas for 2-3 mins on each side until golden and toasted (do this one at a time). Leave the large tortillas to cool, then cover and reserve for use in the lunchboxes (see tip below). Keep the small tortillas warm in foil."
                             android:textColor="?attr/colorOnSecondary"
                             android:textSize="15sp" />
                         <TextView
@@ -3339,7 +3320,2058 @@
                             android:alpha=".9"
                             android:drawableStart="@drawable/list_bullet"
                             android:drawablePadding="10dp"
-                            android:text="While the chicken rests, toss the lettuce wedges with the cucumber, shallot, coriander and pomegranate, and pile onto plates. Spoon over a little sauce. Slice the chicken, pile on top of the salad and spoon over the remaining sauce. Eat while the chicken is still warm."
+                            android:text="Sprinkle the taco seasoning over the chicken in a bowl, and toss to combine. Toss the cabbage with the lime juice, half the coriander and some seasoning in another bowl, then leave to pickle."
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="Meanwhile, heat two frying pans over a high heat. Divide the remaining oil between the pans and fry the sweetcorn and a pinch of salt until sizzling and turning golden, stirring occasionally – you want the sweetcorn to char slightly, as this adds flavour, so you may need to leave it to cook undisturbed for a bit. While the sweetcorn cooks and chars, fry the chicken in the larger pan until cooked through and golden (you may need to do this in batches)."
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="Tip the black beans and garlic into the sweetcorn and stir to warm through. Squeeze over two of the lime wedges"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="Reserve two spoonfuls each of the chicken (about 1 chicken breast) and sweetcorn mix for use in the lunchboxes (see tip, below), then serve the rest in bowls alongside the cabbage, yogurt, lime wedges, remaining coriander, chilli sauce and tortillas for everyone to dig into."
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/detail_gain_weight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:padding="15dp"
+                app:layout_constraintTop_toTopOf="parent">
+                <TextView
+                    android:id="@+id/detail_gain_weight_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Healthy Meal Plan to Gain Weight"
+                    android:textColor="?attr/colorSecondary"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/roast_chicken_pie_heading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Roast Chicken Pie"
+                    android:textColor="?attr/colorSecondary"
+                    android:textSize="18sp"
+                    android:layout_marginTop="25dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/detail_gain_weight_title" />
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/roast_chicken_pie_ingredientsCV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/roast_chicken_pie_heading"
+                    app:strokeColor="#16000000"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/roast_chicken_pie_ingredients_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:id="@+id/roast_chicken_pie_ingredients_prim"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ingredients"
+                            android:textAlignment="center"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="250g flour"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="1 tsp salt"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="60g cold butter"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="60g cold lard"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:text="For the Filling"
+                            android:textColor="?attr/colorSecondary"
+                            android:textSize="16sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="1 whole chicken, rubbed with butter or drizzled with olive oil"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="1 tbsp olive oil"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="6 rashers smoked streaky bacon, chopped into lardons"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="3 leeks, sliced into rounds"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="45g butter"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="45g plain flour"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="225ml milk"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="200ml chicken stock"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="100g petits pois"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="1 tsp wholegrain mustard"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="25g pack parsley, roughly chopped"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="1 egg, beaten, to glaze"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/roast_chicken_pie_fats_caloriesCV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    app:strokeColor="#50000000"
+                    app:strokeWidth="1dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/roast_chicken_pie_ingredientsCV">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/roast_chicken_piefats_calories_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:id="@+id/roast_chicken_piefats_heading_prim"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Calories and Fats"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="18sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/roast_chicken_piekcal_container"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/roast_chicken_piefats_heading_prim">
+
+                            <androidx.constraintlayout.widget.Guideline
+                                android:id="@+id/roast_chicken_pieguideline4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintGuide_percent=".42" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="?attr/colorSecondary"
+                                android:text="kcal"
+                                android:textAlignment="center"
+                                android:textColor="?attr/colorPrimary"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/roast_chicken_pieguideline4"
+                                app:layout_constraintHorizontal_bias="0.02"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="751"
+                                android:textAlignment="center"
+                                android:textColor="?attr/colorOnSecondary"
+                                android:background="@color/grey"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0"
+                                app:layout_constraintStart_toStartOf="@+id/roast_chicken_pieguideline4"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/roast_chicken_piefat_container"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/roast_chicken_piekcal_container">
+
+                            <androidx.constraintlayout.widget.Guideline
+                                android:id="@+id/roast_chicken_pieguideline"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintGuide_percent=".42" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="?attr/colorSecondary"
+                                android:text="Fats"
+                                android:textAlignment="center"
+                                android:textColor="?attr/colorPrimary"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/roast_chicken_pieguideline"
+                                app:layout_constraintHorizontal_bias="0.02"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="43g"
+                                android:textAlignment="center"
+                                android:textColor="?attr/colorOnSecondary"
+                                android:background="@color/grey"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0"
+                                app:layout_constraintStart_toStartOf="@+id/roast_chicken_pieguideline"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/roast_chicken_piesaturates_container"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/roast_chicken_piefat_container">
+
+                            <androidx.constraintlayout.widget.Guideline
+                                android:id="@+id/roast_chicken_pieguideline1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintGuide_percent=".42" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="?attr/colorSecondary"
+                                android:text="Saturates"
+                                android:textAlignment="center"
+                                android:textColor="?attr/colorPrimary"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/roast_chicken_pieguideline1"
+                                app:layout_constraintHorizontal_bias="0.02"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="19g"
+                                android:textAlignment="center"
+                                android:textColor="?attr/colorOnSecondary"
+                                android:background="@color/grey"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0"
+                                app:layout_constraintStart_toStartOf="@+id/roast_chicken_pieguideline1"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/roast_chicken_piecarbs_container"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/roast_chicken_piesaturates_container">
+
+                            <androidx.constraintlayout.widget.Guideline
+                                android:id="@+id/roast_chicken_pieguideline2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintGuide_percent=".42" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="?attr/colorSecondary"
+                                android:text="Carbs"
+                                android:textAlignment="center"
+                                android:textColor="?attr/colorPrimary"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/roast_chicken_pieguideline2"
+                                app:layout_constraintHorizontal_bias="0.02"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="44g"
+                                android:textAlignment="center"
+                                android:textColor="?attr/colorOnSecondary"
+                                android:background="@color/grey"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0"
+                                app:layout_constraintStart_toStartOf="@+id/roast_chicken_pieguideline2"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/roast_chicken_piesugars_container"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/roast_chicken_piecarbs_container">
+
+                            <androidx.constraintlayout.widget.Guideline
+                                android:id="@+id/roast_chicken_pieguideline3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintGuide_percent=".42" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="?attr/colorSecondary"
+                                android:text="Sugars"
+                                android:textAlignment="center"
+                                android:textColor="?attr/colorPrimary"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/roast_chicken_pieguideline3"
+                                app:layout_constraintHorizontal_bias="0.02"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="5g"
+                                android:textAlignment="center"
+                                android:textColor="?attr/colorOnSecondary"
+                                android:background="@color/grey"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0"
+                                app:layout_constraintStart_toStartOf="@+id/roast_chicken_pieguideline3"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/roast_chicken_piefiber_container"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/roast_chicken_piesugars_container">
+
+                            <androidx.constraintlayout.widget.Guideline
+                                android:id="@+id/roast_chicken_pieguideline5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintGuide_percent=".42" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="?attr/colorSecondary"
+                                android:text="Fibers"
+                                android:textAlignment="center"
+                                android:textColor="?attr/colorPrimary"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/roast_chicken_pieguideline5"
+                                app:layout_constraintHorizontal_bias="0.02"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="6g"
+                                android:textAlignment="center"
+                                android:textColor="?attr/colorOnSecondary"
+                                android:background="@color/grey"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0"
+                                app:layout_constraintStart_toStartOf="@+id/roast_chicken_pieguideline5"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/roast_chicken_pieprotein_container"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/roast_chicken_piefiber_container">
+
+                            <androidx.constraintlayout.widget.Guideline
+                                android:id="@+id/roast_chicken_pieguideline6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintGuide_percent=".42" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="?attr/colorSecondary"
+                                android:text="Proteins"
+                                android:textAlignment="center"
+                                android:textColor="?attr/colorPrimary"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/roast_chicken_pieguideline6"
+                                app:layout_constraintHorizontal_bias="0.02"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="46g"
+                                android:textAlignment="center"
+                                android:textColor="?attr/colorOnSecondary"
+                                android:background="@color/grey"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0"
+                                app:layout_constraintStart_toStartOf="@+id/roast_chicken_pieguideline6"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/roast_chicken_piesalt_container"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/roast_chicken_pieprotein_container">
+
+                            <androidx.constraintlayout.widget.Guideline
+                                android:id="@+id/roast_chicken_pieguideline7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintGuide_percent=".42" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="?attr/colorSecondary"
+                                android:text="Salts"
+                                android:textAlignment="center"
+                                android:textColor="?attr/colorPrimary"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/roast_chicken_pieguideline7"
+                                app:layout_constraintHorizontal_bias="0.02"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="2.4g"
+                                android:textAlignment="center"
+                                android:textColor="?attr/colorOnSecondary"
+                                android:background="@color/grey"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0"
+                                app:layout_constraintStart_toStartOf="@+id/roast_chicken_pieguideline7"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/roast_chicken_pie_methodsCV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/roast_chicken_pie_fats_caloriesCV"
+                    app:strokeColor="#16000000"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/roast_chicken_pie_methods_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:id="@+id/roast_chicken_pie_methods_prim"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Methods"
+                            android:textAlignment="center"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="Heat oven to 180C/160C fan/gas 5. Season the chicken and roast for 1 hr 30 mins until the juices run clear when you cut into the leg."
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="To make the pastry, sift the flour and salt into a bowl, then grate in the butter and lard. Rub the mixture with your fingers into breadcrumbs, then add 2 tbsp cold water. Continue to add cold water, 1 tbsp at a time, until the mixture binds together. Be careful not to add too much. Wrap in cling film and leave to rest while you make the filling. (Alternatively you can use ready-rolled shortcrust pastry)."
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="In a large, non-stick frying pan, heat the oil, then fry the bacon. Once browned, reduce the heat, add the leeks and cook until they have softened. Mix the butter and flour into a paste and add to the pan, stirring to coat the bacon and leeks. Slowly add the milk, stirring constantly to ensure the mixture doesn’t get lumpy. Add the chicken stock and petit pois, cook for 2 mins, then add the mustard and remove from the heat. Once the chicken is cooked, remove from the oven, leave to rest briefly and carve the meat, discarding the skin and bones. Add this to the pan along with the parsley."
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="Turn the oven up to 220C/200C fan/gas 6. Roll out two-thirds of the pastry and use to line a 25cm pie dish. Spoon your filling on top, then roll out the remaining pastry for the pie topping. Brush the edges of the pastry in the pie dish with water, then lay the top over it. Crimp and seal the edges and use any off-cuts for decoration. Brush with the beaten egg, then make an X-shaped cut in the middle for steam to escape. Bake for 45 mins until golden."
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:id="@+id/protein_pancakes_heading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Protein Pancakes"
+                    android:textColor="?attr/colorSecondary"
+                    android:textSize="18sp"
+                    android:layout_marginTop="25dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/roast_chicken_pie_methodsCV" />
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/protein_pancakes_ingredientsCV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/protein_pancakes_heading"
+                    app:strokeColor="#16000000"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/protein_pancakes_ingredients_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:id="@+id/protein_pancakes_ingredients_prim"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ingredients"
+                            android:textAlignment="center"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="18sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:text="For the batter"
+                            android:textColor="?attr/colorSecondary"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="2 tbsp ground flaxseeds"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="20g ground almonds"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="300ml soya milk"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="200g quinoa flour"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="1 medium banana , mashed"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="2 tbsp maple syrup"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="coconut oil , for frying"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:text="For the blueberry chia jam (makes 200ml)"
+                            android:textColor="?attr/colorSecondary"
+                            android:textSize="16sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="200g blueberries , mashed"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="2 tbsp chia seeds"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="1-2 tbsp maple syrup , to taste"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="2 tsp lemon juice"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:text="For the stack"
+                            android:textColor="?attr/colorSecondary"
+                            android:textSize="16sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="100g coconut yogurt or Greek yogurt"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="1 tbsp pistachio nuts or pumpkin seeds, chopped, toasted if you like"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="2 tsp hulled hemp seeds"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="mixed berrie"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/protein_pancakes_fats_caloriesCV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    app:strokeColor="#50000000"
+                    app:strokeWidth="1dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/protein_pancakes_ingredientsCV">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/protein_pancakes_calories_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:id="@+id/protein_pancakesfats_heading_prim"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Calories and Fats"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="18sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/protein_pancakeskcal_container"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/protein_pancakesfats_heading_prim">
+
+                            <androidx.constraintlayout.widget.Guideline
+                                android:id="@+id/protein_pancakesguideline4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintGuide_percent=".42" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="?attr/colorSecondary"
+                                android:text="kcal"
+                                android:textAlignment="center"
+                                android:textColor="?attr/colorPrimary"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/protein_pancakesguideline4"
+                                app:layout_constraintHorizontal_bias="0.02"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="798"
+                                android:textAlignment="center"
+                                android:textColor="?attr/colorOnSecondary"
+                                android:background="@color/grey"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0"
+                                app:layout_constraintStart_toStartOf="@+id/protein_pancakesguideline4"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/protein_pancakesfat_container"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/protein_pancakeskcal_container">
+
+                            <androidx.constraintlayout.widget.Guideline
+                                android:id="@+id/protein_pancakesguideline"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintGuide_percent=".42" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="?attr/colorSecondary"
+                                android:text="Fats"
+                                android:textAlignment="center"
+                                android:textColor="?attr/colorPrimary"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/protein_pancakesguideline"
+                                app:layout_constraintHorizontal_bias="0.02"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="32g"
+                                android:textAlignment="center"
+                                android:textColor="?attr/colorOnSecondary"
+                                android:background="@color/grey"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0"
+                                app:layout_constraintStart_toStartOf="@+id/protein_pancakesguideline"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/protein_pancakessaturates_container"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/protein_pancakesfat_container">
+
+                            <androidx.constraintlayout.widget.Guideline
+                                android:id="@+id/protein_pancakesguideline1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintGuide_percent=".42" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="?attr/colorSecondary"
+                                android:text="Saturates"
+                                android:textAlignment="center"
+                                android:textColor="?attr/colorPrimary"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/protein_pancakesguideline1"
+                                app:layout_constraintHorizontal_bias="0.02"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="8g"
+                                android:textAlignment="center"
+                                android:textColor="?attr/colorOnSecondary"
+                                android:background="@color/grey"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0"
+                                app:layout_constraintStart_toStartOf="@+id/protein_pancakesguideline1"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/protein_pancakescarbs_container"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/protein_pancakessaturates_container">
+
+                            <androidx.constraintlayout.widget.Guideline
+                                android:id="@+id/protein_pancakesguideline2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintGuide_percent=".42" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="?attr/colorSecondary"
+                                android:text="Carbs"
+                                android:textAlignment="center"
+                                android:textColor="?attr/colorPrimary"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/protein_pancakesguideline2"
+                                app:layout_constraintHorizontal_bias="0.02"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="91g"
+                                android:textAlignment="center"
+                                android:textColor="?attr/colorOnSecondary"
+                                android:background="@color/grey"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0"
+                                app:layout_constraintStart_toStartOf="@+id/protein_pancakesguideline2"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/protein_pancakessugars_container"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/protein_pancakescarbs_container">
+
+                            <androidx.constraintlayout.widget.Guideline
+                                android:id="@+id/protein_pancakesguideline3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintGuide_percent=".42" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="?attr/colorSecondary"
+                                android:text="Sugars"
+                                android:textAlignment="center"
+                                android:textColor="?attr/colorPrimary"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/protein_pancakesguideline3"
+                                app:layout_constraintHorizontal_bias="0.02"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="39g"
+                                android:textAlignment="center"
+                                android:textColor="?attr/colorOnSecondary"
+                                android:background="@color/grey"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0"
+                                app:layout_constraintStart_toStartOf="@+id/protein_pancakesguideline3"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/protein_pancakesfiber_container"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/protein_pancakessugars_container">
+
+                            <androidx.constraintlayout.widget.Guideline
+                                android:id="@+id/protein_pancakesguideline5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintGuide_percent=".42" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="?attr/colorSecondary"
+                                android:text="Fibers"
+                                android:textAlignment="center"
+                                android:textColor="?attr/colorPrimary"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/protein_pancakesguideline5"
+                                app:layout_constraintHorizontal_bias="0.02"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="15g"
+                                android:textAlignment="center"
+                                android:textColor="?attr/colorOnSecondary"
+                                android:background="@color/grey"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0"
+                                app:layout_constraintStart_toStartOf="@+id/protein_pancakesguideline5"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/protein_pancakesprotein_container"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/protein_pancakesfiber_container">
+
+                            <androidx.constraintlayout.widget.Guideline
+                                android:id="@+id/protein_pancakesguideline6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintGuide_percent=".42" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="?attr/colorSecondary"
+                                android:text="Proteins"
+                                android:textAlignment="center"
+                                android:textColor="?attr/colorPrimary"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/protein_pancakesguideline6"
+                                app:layout_constraintHorizontal_bias="0.02"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="29g"
+                                android:textAlignment="center"
+                                android:textColor="?attr/colorOnSecondary"
+                                android:background="@color/grey"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0"
+                                app:layout_constraintStart_toStartOf="@+id/protein_pancakesguideline6"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/protein_pancakessalt_container"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/protein_pancakesprotein_container">
+
+                            <androidx.constraintlayout.widget.Guideline
+                                android:id="@+id/protein_pancakesguideline7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintGuide_percent=".42" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="?attr/colorSecondary"
+                                android:text="Salts"
+                                android:textAlignment="center"
+                                android:textColor="?attr/colorPrimary"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/protein_pancakesguideline7"
+                                app:layout_constraintHorizontal_bias="0.02"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="0.3g"
+                                android:textAlignment="center"
+                                android:textColor="?attr/colorOnSecondary"
+                                android:background="@color/grey"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0"
+                                app:layout_constraintStart_toStartOf="@+id/protein_pancakesguideline7"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/protein_pancakes_methodsCV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/protein_pancakes_fats_caloriesCV"
+                    app:strokeColor="#16000000"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/protein_pancakes_methods_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:id="@+id/protein_pancakes_methods_prim"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Methods"
+                            android:textAlignment="center"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="In a small bowl stir the flaxseeds with 6 tbsp water and set aside to soak while you make the jam"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="Mash the blueberries with a fork in a pan then set over a low-medium heat until syrupy and bubbling. Remove from the heat and stir in the chia seeds, maple syrup and lemon juice. Leave to cool slightly then transfer to a small serving jar."
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="Put the ground almonds, milk, flour, banana, maple syrup and a pinch of salt in a blender. Stir the flax to make sure it has become thick and gloopy, like an egg, then tip into the mix and blitz until smooth and thick."
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="Heat 1 tsp of coconut oil in a large frying pan over a medium heat and add tablespoon dollops of batter into the pan. Cook for a couple of mins on one side until the edges are browning, and bubbles have formed on top. Once the pale, white batter has turned a sandy colour, flip over with a spatula and cook for another few mins till dark golden brown. Set aside and keep warm while you repeat the process with the remaining batter, adding another tsp of coconut oil with each batch. You should make about 16 pancakes."
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="Pile the pancakes high between two plates, alternating the layers with spoonfuls of jam and yogurt. Dollop any remaining yogurt and another spoonful of jam on top then scatter over the nuts, seeds and berries to serve. Leftover jam will keep in the fridge for up to 1 week."
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:id="@+id/chicken_burger_heading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cajun Chicken Burger"
+                    android:textColor="?attr/colorSecondary"
+                    android:textSize="18sp"
+                    android:layout_marginTop="25dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/protein_pancakes_methodsCV" />
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/chicken_burger_ingredientsCV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/chicken_burger_heading"
+                    app:strokeColor="#16000000"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/chicken_burger_ingredients_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:id="@+id/chicken_burger_ingredients_prim"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ingredients"
+                            android:textAlignment="center"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="4 skinless chicken breasts"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="2 tbsp olive oil"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="4 rashers smoked bacon"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="2 avocados"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="4 ciabatta rolls, split"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="4 thin slices of your favourite cheese"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="4 small handfuls baby spinach leaves"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="mayonnaise , to serve (optional)"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:text="For the cajun seasoning"
+                            android:textColor="?attr/colorSecondary"
+                            android:textSize="16sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="1 tbsp ground cumin"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="1 tbsp ground coriander"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="1 tbsp paprika"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/chicken_burger_fats_caloriesCV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    app:strokeColor="#50000000"
+                    app:strokeWidth="1dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/chicken_burger_ingredientsCV">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/chicken_burgerfats_calories_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:id="@+id/chicken_burgerfats_heading_prim"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Calories and Fats"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="18sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/chicken_burgerkcal_container"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/chicken_burgerfats_heading_prim">
+
+                            <androidx.constraintlayout.widget.Guideline
+                                android:id="@+id/chicken_burgerguideline4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintGuide_percent=".42" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="?attr/colorSecondary"
+                                android:text="kcal"
+                                android:textAlignment="center"
+                                android:textColor="?attr/colorPrimary"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/chicken_burgerguideline4"
+                                app:layout_constraintHorizontal_bias="0.02"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="721"
+                                android:textAlignment="center"
+                                android:textColor="?attr/colorOnSecondary"
+                                android:background="@color/grey"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0"
+                                app:layout_constraintStart_toStartOf="@+id/chicken_burgerguideline4"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/chicken_burgerfat_container"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/chicken_burgerkcal_container">
+
+                            <androidx.constraintlayout.widget.Guideline
+                                android:id="@+id/chicken_burgerguideline"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintGuide_percent=".42" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="?attr/colorSecondary"
+                                android:text="Fats"
+                                android:textAlignment="center"
+                                android:textColor="?attr/colorPrimary"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/chicken_burgerguideline"
+                                app:layout_constraintHorizontal_bias="0.02"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="36g"
+                                android:textAlignment="center"
+                                android:textColor="?attr/colorOnSecondary"
+                                android:background="@color/grey"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0"
+                                app:layout_constraintStart_toStartOf="@+id/chicken_burgerguideline"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/chicken_burgersaturates_container"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/chicken_burgerfat_container">
+
+                            <androidx.constraintlayout.widget.Guideline
+                                android:id="@+id/chicken_burgerguideline1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintGuide_percent=".42" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="?attr/colorSecondary"
+                                android:text="Saturates"
+                                android:textAlignment="center"
+                                android:textColor="?attr/colorPrimary"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/chicken_burgerguideline1"
+                                app:layout_constraintHorizontal_bias="0.02"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="10g"
+                                android:textAlignment="center"
+                                android:textColor="?attr/colorOnSecondary"
+                                android:background="@color/grey"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0"
+                                app:layout_constraintStart_toStartOf="@+id/chicken_burgerguideline1"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/chicken_burgercarbs_container"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/chicken_burgersaturates_container">
+
+                            <androidx.constraintlayout.widget.Guideline
+                                android:id="@+id/chicken_burgerguideline2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintGuide_percent=".42" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="?attr/colorSecondary"
+                                android:text="Carbs"
+                                android:textAlignment="center"
+                                android:textColor="?attr/colorPrimary"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/chicken_burgerguideline2"
+                                app:layout_constraintHorizontal_bias="0.02"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="51g"
+                                android:textAlignment="center"
+                                android:textColor="?attr/colorOnSecondary"
+                                android:background="@color/grey"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0"
+                                app:layout_constraintStart_toStartOf="@+id/chicken_burgerguideline2"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/chicken_burgersugars_container"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/chicken_burgercarbs_container">
+
+                            <androidx.constraintlayout.widget.Guideline
+                                android:id="@+id/chicken_burgerguideline3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintGuide_percent=".42" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="?attr/colorSecondary"
+                                android:text="Sugars"
+                                android:textAlignment="center"
+                                android:textColor="?attr/colorPrimary"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/chicken_burgerguideline3"
+                                app:layout_constraintHorizontal_bias="0.02"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="2g"
+                                android:textAlignment="center"
+                                android:textColor="?attr/colorOnSecondary"
+                                android:background="@color/grey"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0"
+                                app:layout_constraintStart_toStartOf="@+id/chicken_burgerguideline3"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/chicken_burgerfiber_container"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/chicken_burgersugars_container">
+
+                            <androidx.constraintlayout.widget.Guideline
+                                android:id="@+id/chicken_burgerguideline5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintGuide_percent=".42" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="?attr/colorSecondary"
+                                android:text="Fibers"
+                                android:textAlignment="center"
+                                android:textColor="?attr/colorPrimary"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/chicken_burgerguideline5"
+                                app:layout_constraintHorizontal_bias="0.02"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="5g"
+                                android:textAlignment="center"
+                                android:textColor="?attr/colorOnSecondary"
+                                android:background="@color/grey"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0"
+                                app:layout_constraintStart_toStartOf="@+id/chicken_burgerguideline5"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/chicken_burgerprotein_container"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/chicken_burgerfiber_container">
+
+                            <androidx.constraintlayout.widget.Guideline
+                                android:id="@+id/chicken_burgerguideline6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintGuide_percent=".42" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="?attr/colorSecondary"
+                                android:text="Proteins"
+                                android:textAlignment="center"
+                                android:textColor="?attr/colorPrimary"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/chicken_burgerguideline6"
+                                app:layout_constraintHorizontal_bias="0.02"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="51g"
+                                android:textAlignment="center"
+                                android:textColor="?attr/colorOnSecondary"
+                                android:background="@color/grey"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0"
+                                app:layout_constraintStart_toStartOf="@+id/chicken_burgerguideline6"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/chicken_burgersalt_container"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/chicken_burgerprotein_container">
+
+                            <androidx.constraintlayout.widget.Guideline
+                                android:id="@+id/chicken_burgerguideline7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintGuide_percent=".42" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="?attr/colorSecondary"
+                                android:text="Salts"
+                                android:textAlignment="center"
+                                android:textColor="?attr/colorPrimary"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/chicken_burgerguideline7"
+                                app:layout_constraintHorizontal_bias="0.02"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="2.84g"
+                                android:textAlignment="center"
+                                android:textColor="?attr/colorOnSecondary"
+                                android:background="@color/grey"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0"
+                                app:layout_constraintStart_toStartOf="@+id/chicken_burgerguideline7"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/chicken_burger_methodsCV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/chicken_burger_fats_caloriesCV"
+                    app:strokeColor="#16000000"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/chicken_burger_methods_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:id="@+id/chicken_burger_methods_prim"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Methods"
+                            android:textAlignment="center"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="Mix the seasoning ingredients together with a good grinding of black pepper and a sprinkling of salt, then set aside in a large dish. Heat grill to high. On a board, flatten out the chicken slightly, then drizzle half the oil over and toss in the seasoning until completely coated. Heat the remaining oil in a large frying pan, sizzle the chicken for 5 mins on each side until firm, push to one side of the pan, then fry the bacon for a few mins until cooked."
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="While the chicken is cooking, halve, stone, peel and slice the avocados, and toast the cut sides of the buns. Cover the tops of the buns with cheese, then grill until melted."
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:drawableStart="@drawable/list_bullet"
+                            android:drawablePadding="10dp"
+                            android:text="To assemble the burgers, spread the buns with mayonnaise if you want, top with a handful of spinach, then a rasher of bacon. To keep the avocado in place, slice the chicken, then alternate between a slice of chicken and avocado. Top with the bun, press down lightly and serve"
                             android:textColor="?attr/colorOnSecondary"
                             android:textSize="15sp" />
 
