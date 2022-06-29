@@ -34,7 +34,6 @@ public class WeightFragment extends Fragment {
         continueBtn = binding.continueBtn;
 
         weightFltr.setOnCheckedStateChangeListener((group, checkedIds) -> {
-            Toast.makeText(container.getContext(), checkedIds.toString() + " " + checkedIds.size() , Toast.LENGTH_SHORT).show();
             if(checkedIds.size()>0){
                 switch (checkedIds.get(0)){
                     case R.id.filter_1:
@@ -70,7 +69,7 @@ public class WeightFragment extends Fragment {
                 calorieCalculatorViewModel.getWeightFltr().setValue("");
 
             }
-            Toast.makeText(container.getContext(), calorieCalculatorViewModel.getWeightFltr().getValue(), Toast.LENGTH_SHORT).show();
+
         });
         continueBtn.setOnClickListener(view -> {
             if(calorieCalculatorViewModel.getWeightFltr().getValue().equals("")){

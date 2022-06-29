@@ -193,150 +193,114 @@ public class MuscleFragment extends Fragment {
             }
         });
         maleFrontCalves.setOnClickListener(view -> {
-            Toast.makeText(context, "maleFrontCalves", Toast.LENGTH_SHORT).show();
             getJson("PLrYt8ACqZS6eS_vaiVz7UtCf6iivuLV5I", maleFrontCalves, view);
         });
         maleFrontQuadriceps.setOnClickListener(view -> {
-            Toast.makeText(context, "maleFrontQuadriceps", Toast.LENGTH_SHORT).show();
             getJson("PLrYt8ACqZS6e0ofuTFtwCKFRq0dXZ69XH", maleFrontQuadriceps, view);
         });
         maleFrontAbs.setOnClickListener(view -> {
-            Toast.makeText(context, "maleFrontAbs", Toast.LENGTH_SHORT).show();
             getJson("PLrYt8ACqZS6dy-ARLAGWv0pgrvQrfNfUh", maleFrontAbs, view);
         });
         maleFrontBranchiallis.setOnClickListener(view -> {
-            Toast.makeText(context, "maleFrontBranchiallis", Toast.LENGTH_SHORT).show();
             getJson("PLrYt8ACqZS6eMVrEy3w4dz1pPw0yVb2vZ", maleFrontBranchiallis, view);
         });
         maleFrontBiceps.setOnClickListener(view -> {
-            Toast.makeText(context, "maleFrontBiceps", Toast.LENGTH_SHORT).show();
             getJson("PLrYt8ACqZS6cjtIJsOPt01czvo_FeCH5T", maleFrontBiceps, view);
         });
         maleFrontChest.setOnClickListener(view -> {
-            Toast.makeText(context, "maleFrontChest", Toast.LENGTH_SHORT).show();
             getJson("PLrYt8ACqZS6fRMuVHVK_3HmRniW0TlZeP", maleFrontChest, view);
         });
         maleFrontDelts.setOnClickListener(view -> {
-            Toast.makeText(context, "maleFrontDelts", Toast.LENGTH_SHORT).show();
             getJson("PLrYt8ACqZS6euB3Nh39ufwA8u1XZs6Cfq", maleFrontDelts, view);
         });
         maleFrontTraps.setOnClickListener(view -> {
-            Toast.makeText(context, "maleFrontTraps", Toast.LENGTH_SHORT).show();
             getJson("PLrYt8ACqZS6fw9oDmwlPex9cIlvbREN1N", maleFrontTraps, view);
         });
 
         maleBackCalves.setOnClickListener(view -> {
-            Toast.makeText(context, "maleBackCalves", Toast.LENGTH_SHORT).show();
             getJson("PLrYt8ACqZS6eS_vaiVz7UtCf6iivuLV5I", maleBackCalves, view);
         });
         maleBackHamstring.setOnClickListener(view -> {
-            Toast.makeText(context, "maleBackHamstring", Toast.LENGTH_SHORT).show();
             getJson("PLrYt8ACqZS6cLFCOcZj_hweoJp9KKh-_a", maleBackHamstring, view);
         });
         maleBackHips.setOnClickListener(view -> {
-            Toast.makeText(context, "maleBackHips", Toast.LENGTH_SHORT).show();
             getJson("PLrYt8ACqZS6e9IqbufYDPBRpR-Vnj9JXF", maleBackHips, view);
         });
         maleLowerBack.setOnClickListener(view -> {
-            Toast.makeText(context, "maleLowerBack", Toast.LENGTH_SHORT).show();
             getJson("PLrYt8ACqZS6cxK5qbSZ1NkYlQwpbfgPgS", maleLowerBack, view);
         });
         maleBackLats.setOnClickListener(view -> {
-            Toast.makeText(context, "maleBackLats", Toast.LENGTH_SHORT).show();
             getJson("PLrYt8ACqZS6dhVdZu0toY-RqFUK-zwJA7", maleBackLats, view);
         });
         maleUpperBack.setOnClickListener(view -> {
-            Toast.makeText(context, "maleUpperBack", Toast.LENGTH_SHORT).show();
             getJson("PLrYt8ACqZS6cjlLtbsN9wLU-Ok5yWDUJT", maleUpperBack, view);
         });
         maleBackBranchiallis.setOnClickListener(view -> {
-            Toast.makeText(context, "maleBackBranchiallis", Toast.LENGTH_SHORT).show();
             getJson("PLrYt8ACqZS6eMVrEy3w4dz1pPw0yVb2vZ", maleBackBranchiallis, view);
         });
         maleBackTriceps.setOnClickListener(view -> {
-            Toast.makeText(context, "maleBackTriceps", Toast.LENGTH_SHORT).show();
             getJson("PLrYt8ACqZS6dPvHs0urJvd0ED17VG1SMx", maleBackTriceps, view);
         });
         maleBackDelts.setOnClickListener(view -> {
-            Toast.makeText(context, "maleBackDelts", Toast.LENGTH_SHORT).show();
             getJson("PLrYt8ACqZS6euB3Nh39ufwA8u1XZs6Cfq", maleBackDelts, view);
         });
         maleBackTraps.setOnClickListener(view -> {
-            Toast.makeText(context, "maleBackTraps", Toast.LENGTH_SHORT).show();
             getJson("PLrYt8ACqZS6fw9oDmwlPex9cIlvbREN1N", maleBackTraps, view);
         });
 
         femaleBackCalves.setOnClickListener(view -> {
-            Toast.makeText(context, "femaleBackCalves", Toast.LENGTH_SHORT).show();
             getJson("PLrYt8ACqZS6eS_vaiVz7UtCf6iivuLV5I", femaleBackCalves, view);
         });
         femaleBackHamstring.setOnClickListener(view -> {
-            Toast.makeText(context, "femaleBackHamstring", Toast.LENGTH_SHORT).show();
             getJson("PLrYt8ACqZS6fvZnAWCY_OVE5GX8KVF_Cl", femaleBackHamstring, view);
         });
         femaleBackHips.setOnClickListener(view -> {
-            Toast.makeText(context, "femaleBackHips", Toast.LENGTH_SHORT).show();
             getJson("PLrYt8ACqZS6eX2VpWy89NK4P8qVU0KSQu", femaleBackHips, view);
         });
         femaleLowerBack.setOnClickListener(view -> {
-            Toast.makeText(context, "femaleLowerBack", Toast.LENGTH_SHORT).show();
             getJson("PLrYt8ACqZS6d9ciAIDX17G8i5SRoaezqN", femaleLowerBack, view);
         });
         femaleBackLats.setOnClickListener(view -> {
-            Toast.makeText(context, "femaleBackLats", Toast.LENGTH_SHORT).show();
             getJson("PLrYt8ACqZS6fsHQ3gFoIQzNtjNITydXnf", femaleBackLats, view);
         });
         femaleUpperBack.setOnClickListener(view -> {
-            Toast.makeText(context, "femaleUpperBack", Toast.LENGTH_SHORT).show();
             getJson("PLrYt8ACqZS6cjlLtbsN9wLU-Ok5yWDUJT", femaleUpperBack, view);
         });
         femaleBackBranchiallis.setOnClickListener(view -> {
-            Toast.makeText(context, "femaleBackBranchiallis", Toast.LENGTH_SHORT).show();
             getJson("PLrYt8ACqZS6dpCy4LfsZN1j72YNBcZ2bV", femaleBackBranchiallis, view);
         });
         femaleBackTriceps.setOnClickListener(view -> {
-            Toast.makeText(context, "femaleBackTriceps", Toast.LENGTH_SHORT).show();
             getJson("PLrYt8ACqZS6cxFVTK5paPCyw_kqYs3ERt", femaleBackTriceps, view);
         });
         femaleBackDelts.setOnClickListener(view -> {
-            Toast.makeText(context, "femaleBackDelts", Toast.LENGTH_SHORT).show();
             getJson("PLrYt8ACqZS6euB3Nh39ufwA8u1XZs6Cfq", femaleBackDelts, view);
         });
         femaleBackTraps.setOnClickListener(view -> {
-            Toast.makeText(context, "femaleBackTraps", Toast.LENGTH_SHORT).show();
             getJson("PLrYt8ACqZS6fw9oDmwlPex9cIlvbREN1N", femaleBackTraps, view);
         });
 
         femaleFrontCalves.setOnClickListener(view -> {
-            Toast.makeText(context, "femaleFrontCalves", Toast.LENGTH_SHORT).show();
             getJson("PLrYt8ACqZS6eS_vaiVz7UtCf6iivuLV5I", femaleFrontCalves, view);
         });
         femaleFrontQuadriceps.setOnClickListener(view -> {
-            Toast.makeText(context, "femaleFrontQuadriceps", Toast.LENGTH_SHORT).show();
             getJson("PLrYt8ACqZS6cARCSteDBG6pdNlDIqfx__", femaleFrontQuadriceps, view);
         });
         femaleFrontAbs.setOnClickListener(view -> {
-            Toast.makeText(context, "femaleFrontAbs", Toast.LENGTH_SHORT).show();
             getJson("PLrYt8ACqZS6fTq7fcGmOvCeI4MICvgzBy", femaleFrontAbs, view);
         });
         femaleFrontBranchiallis.setOnClickListener(view -> {
-            Toast.makeText(context, "femaleFrontBranchiallis", Toast.LENGTH_SHORT).show();
             getJson("PLrYt8ACqZS6dpCy4LfsZN1j72YNBcZ2bV", femaleFrontBranchiallis, view);
         });
         femaleFrontBiceps.setOnClickListener(view -> {
-            Toast.makeText(context, "femaleFrontBiceps", Toast.LENGTH_SHORT).show();
             getJson("PLrYt8ACqZS6cr43tCAlKcd5hO6iPNVpDD", femaleFrontBiceps, view);
         });
         femaleFrontChest.setOnClickListener(view -> {
-            Toast.makeText(context, "femaleFrontChest", Toast.LENGTH_SHORT).show();
             getJson("PLrYt8ACqZS6dhdH_0mcOd3dkLvw865zq4", femaleFrontChest, view);
         });
         femaleFrontDelts.setOnClickListener(view -> {
-            Toast.makeText(context, "femaleFrontDelts", Toast.LENGTH_SHORT).show();
             getJson("PLrYt8ACqZS6euB3Nh39ufwA8u1XZs6Cfq", femaleFrontDelts, view);
         });
         femaleFrontTraps.setOnClickListener(view -> {
-            Toast.makeText(context, "femaleFrontTraps", Toast.LENGTH_SHORT).show();
             getJson("PLrYt8ACqZS6fw9oDmwlPex9cIlvbREN1N", femaleFrontTraps, view);
         });
 

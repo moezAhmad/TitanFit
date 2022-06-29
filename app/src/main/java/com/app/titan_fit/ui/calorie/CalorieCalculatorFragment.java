@@ -14,7 +14,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
 
 
 import com.app.titan_fit.AppConstants;
@@ -197,7 +196,6 @@ public class CalorieCalculatorFragment extends Fragment {
         int weight = Objects.requireNonNull(calorieCalculatorViewModel.getWeight().getValue());
         double height = (Objects.requireNonNull(calorieCalculatorViewModel.getFt().getValue()) * 30.48)
                       + (Objects.requireNonNull(calorieCalculatorViewModel.getInches().getValue()) * 2.54);
-        Toast.makeText(context, age + "  "+weight + "  " + height, Toast.LENGTH_SHORT).show();
         double calories = 0;
         switch (Objects.requireNonNull(muscleViewModel.getUserType().getValue())){
             case AppConstants.MALE_USER:
@@ -207,7 +205,6 @@ public class CalorieCalculatorFragment extends Fragment {
                 calories = (10 * weight)  + (6.25 * height) - (5 * age)  - 161;
                 break;
         }
-        Toast.makeText(context, age + "  "+weight + "  " + height + "  " + calories, Toast.LENGTH_SHORT).show();
 
         switch (Objects.requireNonNull(calorieCalculatorViewModel.getExerciseFltr().getValue())){
             case AppConstants.EXERCISE_1:

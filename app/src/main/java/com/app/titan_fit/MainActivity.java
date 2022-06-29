@@ -8,7 +8,6 @@ import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.app.titan_fit.landing.Landing;
 import com.app.titan_fit.ui.calorie.CalorieCalculatorViewModel;
@@ -108,7 +107,6 @@ public class MainActivity extends AppCompatActivity {
         int carbs = sharedPrefs.getInt(AppConstants.CARBS_PREFS,-1);
         int proteins = sharedPrefs.getInt(AppConstants.PROTEINS_PREFS,-1);
         int fats = sharedPrefs.getInt(AppConstants.FATS_PREFS,-1);
-//        Toast.makeText(this, name+ " " + user + " " + weight_fltr+ " " +exercise_fltr+ " " +age + " " + weight + " " + feet + " " + inches + " " + diet, Toast.LENGTH_LONG).show();
         if(name.equals("")||user.equals("")||weight_fltr.equals("")||exercise_fltr.equals("")||age==-1||weight==-1||feet==-1||inches==-1||calories==-1||
                 diet.equals("")||carbs==-1||proteins==-1||fats==-1){
             mAuth.signOut();
