@@ -1,0 +1,1407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MealPlanFragment">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorSecondary"
+        android:padding="20dp"
+        android:text="Meal Plan"
+        android:textColor="?attr/colorOnPrimary"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/chosePlans"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:foreground="?attr/selectableItemBackground"
+        app:cardCornerRadius="10dp"
+        app:strokeColor="#16000000"
+        app:strokeWidth="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/chosePlans_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/chosePlans_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Choose From Options"
+                android:textColor="?attr/colorOnSecondary"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <Button
+                android:id="@+id/plans_filter"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="General Food Items"
+                android:textColor="?attr/colorSecondary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/chosePlans_text"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chosePlans">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/generalFoodItems"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/plan_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Food with most Proteins"
+                    android:textColor="?attr/colorSecondary"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/eggsCV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/plan_title"
+                    app:strokeColor="#16000000"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/eggs_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:id="@+id/eggs_heading_prim"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Eggs"
+                            android:textAlignment="center"
+                            android:textColor="?attr/colorSecondary"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/eggs_heading_sec"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Protein Content"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/eggs_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".7"
+                            android:text="One large egg (50 grams) provides 6.3 grams of protein."
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/almondsCV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/eggsCV"
+                    app:strokeColor="#16000000"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/almonds_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:id="@+id/almonds_heading_prim"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Almonds"
+                            android:textAlignment="center"
+                            android:textColor="?attr/colorSecondary"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/almonds_heading_sec"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Protein Content"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/almonds_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".7"
+                            android:text="@string/almonds_text"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/chickenCV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/almondsCV"
+                    app:strokeColor="#16000000"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/chicken_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:id="@+id/chicken_heading_prim"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Chicken"
+                            android:textAlignment="center"
+                            android:textColor="?attr/colorSecondary"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/chicken_heading_sec"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Protein Content"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/chicken_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".7"
+                            android:text="One half of a chicken breast (86 grams) provides 26.7 grams of protein."
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cottageCheeseCV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/chickenCV"
+                    app:strokeColor="#16000000"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/cottageCheese_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:id="@+id/cottageCheese_heading_prim"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Cottage cheese"
+                            android:textAlignment="center"
+                            android:textColor="?attr/colorSecondary"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/cottageCheese_heading_sec"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Protein Content"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/cottageCheese_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".7"
+                            android:text="@string/cottageCheese_text"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/greekYogurtCV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cottageCheeseCV"
+                    app:strokeColor="#16000000"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/greekYogurt_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:id="@+id/greekYogurt_heading_prim"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Greek Yogurt"
+                            android:textAlignment="center"
+                            android:textColor="?attr/colorSecondary"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/greekYogurt_heading_sec"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Protein Content"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/greekYogurt_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".7"
+                            android:text="@string/greekYogurt_text"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/milkCV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/greekYogurtCV"
+                    app:strokeColor="#16000000"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/milk_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:id="@+id/milk_heading_prim"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Milk"
+                            android:textAlignment="center"
+                            android:textColor="?attr/colorSecondary"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/milk_heading_sec"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Protein Content"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/milk_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".7"
+                            android:text="One cup (246 mL) of dairy milk provides 8.32 grams of protein."
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/lentilsCV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/milkCV"
+                    app:strokeColor="#16000000"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/lentils_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:id="@+id/lentils_heading_prim"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Lentils"
+                            android:textAlignment="center"
+                            android:textColor="?attr/colorSecondary"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/lentils_sec"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Protein Content"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/lentils_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".7"
+                            android:text="@string/lentils_text"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/leenBeefsCV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/lentilsCV"
+                    app:strokeColor="#16000000"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/leenBeefs_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:id="@+id/leenBeefs_heading_prim"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Leen Beef"
+                            android:textAlignment="center"
+                            android:textColor="?attr/colorSecondary"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/leenBeefs_sec"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Protein Content"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/leenBeefs_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".7"
+                            android:text="A 3-ounce (85-gram) serving of lean beef provides 24.6 grams of protein."
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/fishCV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/leenBeefsCV"
+                    app:strokeColor="#16000000"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/fish_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:id="@+id/fish_heading_prim"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Fish"
+                            android:textAlignment="center"
+                            android:textColor="?attr/colorSecondary"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/fish_sec"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Protein Content"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/fish_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".7"
+                            android:text="All types of fish are high in protein. For example, half a salmon fillet (124 grams) provides 30.5 grams of protein, while a cod fillet (180 grams) provides 41 grams of protein."
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/quinoaCV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/fishCV"
+                    app:strokeColor="#16000000"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/quinoa_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:id="@+id/quinoa_heading_prim"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Quinoa"
+                            android:textAlignment="center"
+                            android:textColor="?attr/colorSecondary"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/quinoa_sec"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Protein Content"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/quinoa_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".7"
+                            android:text="One cup (185 grams) of cooked quinoa provides 8 grams of protein."
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/proteinPowderCV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/quinoaCV"
+                    app:strokeColor="#16000000"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/proteinPowder_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:id="@+id/proteinPowder_heading_prim"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Protein Powder"
+                            android:textAlignment="center"
+                            android:textColor="?attr/colorSecondary"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/proteinPowder_sec"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Protein Content"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/proteinPowder_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".7"
+                            android:text="@string/proteinpowder_text"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/ezekielBreadCV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/proteinPowderCV"
+                    app:strokeColor="#16000000"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/ezekielBread_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:id="@+id/ezekielBread_heading_prim"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Ezekiel Bread"
+                            android:textAlignment="center"
+                            android:textColor="?attr/colorSecondary"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/ezekielBread_sec"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Protein Content"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/ezekielBread_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".7"
+                            android:text="One slice (60 grams) of Ezekiel bread provides 6 grams of protein."
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/pumpkinSeedsCV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/proteinPowderCV"
+                    app:strokeColor="#16000000"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/pumpkinSeeds_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:id="@+id/pumpkinSeeds_heading_prim"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Pumpkin Seeds"
+                            android:textAlignment="center"
+                            android:textColor="?attr/colorSecondary"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/pumpkinSeeds_sec"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Protein Content"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/pumpkinSeeds_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".7"
+                            android:text="@string/pumpkinSeeds_text"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/tukeyBreastCV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/pumpkinSeedsCV"
+                    app:strokeColor="#16000000"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/tukeyBreastcontainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:id="@+id/tukeyBreast_heading_prim"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Turkey Breast"
+                            android:textAlignment="center"
+                            android:textColor="?attr/colorSecondary"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/tukeyBreast_sec"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Protein Content"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/tukeyBreast_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".7"
+                            android:text="A 3-ounce (85-gram) serving of turkey provides 25.6 grams of protein."
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/shelFishCV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tukeyBreastCV"
+                    app:strokeColor="#16000000"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/shelFish_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:id="@+id/shelFish_heading_prim"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Shell Fish"
+                            android:textAlignment="center"
+                            android:textColor="?attr/colorSecondary"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/shelFish_sec"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Protein Content"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/shelFish_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".7"
+                            android:text="A 3-ounce (85-gram) serving of cooked clams provides 21.8 grams of protein, while the same serving of shrimp provides 20.4 grams of protein."
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/foodItems"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:padding="15dp"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/foodItems_title_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Eat these to maintain Weight"
+                    android:textColor="?attr/colorSecondary"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/animalCV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="0dp"
+                    android:backgroundTint="#4800FF00"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/foodItems_title_1"
+                    app:strokeColor="#16000000"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/animal_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:id="@+id/animal_heading"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Animal-Based Proteins"
+                            android:textAlignment="center"
+                            android:textColor="?attr/colorSecondary"
+                            android:textSize="18sp" />
+
+
+                        <TextView
+                            android:id="@+id/animal_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:text="Salmon, Chicken, Turkey, Bison, Whole eggs, and Lean cuts of beef (such as flank or sirloin steak)."
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/plantCV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardElevation="0dp"
+                    android:backgroundTint="#4800FF00"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/animalCV"
+                    app:strokeColor="#16000000"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/plant_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:id="@+id/plant_heading"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Plant-Based Proteins"
+                            android:textAlignment="center"
+                            android:textColor="?attr/colorSecondary"
+                            android:textSize="18sp" />
+
+
+                        <TextView
+                            android:id="@+id/plant_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:text="tofu, edamame, tempeh, peas, and chickpeas"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/grainsCV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardElevation="0dp"
+                    android:backgroundTint="#4800FF00"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/plantCV"
+                    app:strokeColor="#16000000"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/grains_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:id="@+id/grains_heading"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Grains"
+                            android:textAlignment="center"
+                            android:textColor="?attr/colorSecondary"
+                            android:textSize="18sp" />
+
+
+                        <TextView
+                            android:id="@+id/grains_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:text="oats, rice, breads, pastas, and quinoa"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/dairyCV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardElevation="0dp"
+                    android:backgroundTint="#4800FF00"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/grainsCV"
+                    app:strokeColor="#16000000"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/dairy_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:id="@+id/dairy_heading"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Dairy"
+                            android:textAlignment="center"
+                            android:textColor="?attr/colorSecondary"
+                            android:textSize="18sp" />
+
+
+                        <TextView
+                            android:id="@+id/dairy_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:text="milk, cottage cheese, kefir, and Greek yogurt"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/fatsCV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardElevation="0dp"
+                    android:backgroundTint="#4800FF00"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/dairyCV"
+                    app:strokeColor="#16000000"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/fats_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:id="@+id/fats_heading"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Fats and Oils"
+                            android:textAlignment="center"
+                            android:textColor="?attr/colorSecondary"
+                            android:textSize="18sp" />
+
+
+                        <TextView
+                            android:id="@+id/fats_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:text="almonds, walnuts, flax seeds, olive oil, and nut butters like natural peanut or almond butter"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/fruitsCV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardElevation="0dp"
+                    android:backgroundTint="#4800FF00"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/fatsCV"
+                    app:strokeColor="#16000000"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/fruits_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:id="@+id/fruits_heading"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Fruits"
+                            android:textAlignment="center"
+                            android:textColor="?attr/colorSecondary"
+                            android:textSize="18sp" />
+
+
+                        <TextView
+                            android:id="@+id/fruits_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:text="avocados, berries, apples, bananas, pears, oranges, grapes, etc."
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/vegetablesCV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="0dp"
+                    android:backgroundTint="#4800FF00"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/fruitsCV"
+                    app:strokeColor="#16000000"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/vegetables_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:id="@+id/vegetables_heading"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Vegetables"
+                            android:textAlignment="center"
+                            android:textColor="?attr/colorSecondary"
+                            android:textSize="18sp" />
+
+
+                        <TextView
+                            android:id="@+id/vegetables_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:text="squash, sweet potatoes, peas, kale, peppers, zucchini, broccoli, tomatoes, cauliflower, etc."
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+                <TextView
+                    android:id="@+id/foodItems_title_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Avoid these to maintain Weight"
+                    android:textColor="?attr/colorSecondary"
+                    android:textSize="20sp"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/vegetablesCV" />
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/friedCV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardElevation="0dp"
+                    android:backgroundTint="#48FF0000"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/foodItems_title_2"
+                    app:strokeColor="#16000000"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/fried_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:id="@+id/fried_heading"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Fried Foods"
+                            android:textAlignment="center"
+                            android:textColor="?attr/colorSecondary"
+                            android:textSize="18sp" />
+
+
+                        <TextView
+                            android:id="@+id/fried_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:text="French fries, onion rings, doughnuts, chicken strips, cheese sticks, etc"
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/fastCV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardElevation="0dp"
+                    android:backgroundTint="#48FF0000"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/friedCV"
+                    app:strokeColor="#16000000"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/fast_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:id="@+id/fast_heading"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Fast Foods"
+                            android:textAlignment="center"
+                            android:textColor="?attr/colorSecondary"
+                            android:textSize="18sp" />
+
+
+                        <TextView
+                            android:id="@+id/fast_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:text="tacos, burgers, pizza, hot dogs, etc."
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/sugaryCV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardElevation="0dp"
+                    android:backgroundTint="#48FF0000"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/fastCV"
+                    app:strokeColor="#16000000"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/sugary_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:id="@+id/sugary_heading"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Sugary Foods and Drinks"
+                            android:textAlignment="center"
+                            android:textColor="?attr/colorSecondary"
+                            android:textSize="18sp" />
+
+
+                        <TextView
+                            android:id="@+id/sugary_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:text="soda, candy, sports drinks, sugary baked goods, sweetened tea, ice cream, sweet coffee drinks, etc."
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/refinedCV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardElevation="0dp"
+                    android:backgroundTint="#48FF0000"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/sugaryCV"
+                    app:strokeColor="#16000000"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/refined_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:id="@+id/refined_heading"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Refined Carbs"
+                            android:textAlignment="center"
+                            android:textColor="?attr/colorSecondary"
+                            android:textSize="18sp" />
+
+
+                        <TextView
+                            android:id="@+id/refined_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:alpha=".9"
+                            android:text="cookies, chips, sugary cereals, pastries, etc."
+                            android:textColor="?attr/colorOnSecondary"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/detail_lose_weight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                android:padding="15dp"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -82,4 +82,9 @@
         android:name="com.app.titan_fit.ui.videos.VideosFragment"
         android:label="fragment_videos"
         tools:layout="@layout/fragment_videos" />
+    <fragment
+        android:id="@+id/mealPlanFragment"
+        android:name="com.app.titan_fit.MealPlanFragment"
+        android:label="fragment_diet_plan"
+        tools:layout="@layout/fragment_meal_plan" />
 </navigation>

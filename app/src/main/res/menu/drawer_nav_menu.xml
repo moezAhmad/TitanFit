@@ -13,7 +13,10 @@
                 android:id="@+id/contactUsFragment"
                 android:title="Contact Us"
                 android:checkable="true"/>
-
+            <item
+                android:id="@+id/mealPlanFragment"
+                android:title="Meal Plan"
+                android:checkable="true"/>
             <item
                 android:id="@+id/signOut"
                 android:title="Sign Out"
