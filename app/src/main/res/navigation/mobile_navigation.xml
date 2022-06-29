@@ -87,4 +87,9 @@
         android:name="com.app.titan_fit.ui.meal.MealPlanFragment"
         android:label="fragment_diet_plan"
         tools:layout="@layout/fragment_meal_plan" />
+    <fragment
+        android:id="@+id/notesFragment"
+        android:name="com.app.titan_fit.ui.notes.NotesFragment"
+        android:label="fragment_notes"
+        tools:layout="@layout/fragment_notes" />
 </navigation>

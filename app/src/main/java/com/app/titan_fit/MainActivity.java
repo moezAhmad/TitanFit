@@ -14,6 +14,7 @@ import com.app.titan_fit.landing.Landing;
 import com.app.titan_fit.ui.calorie.CalorieCalculatorViewModel;
 import com.app.titan_fit.ui.macro.MacroCalculatorViewModel;
 import com.app.titan_fit.ui.muscle.MuscleViewModel;
+import com.app.titan_fit.ui.notes.NotesViewModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.annotation.NonNull;
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
     private MuscleViewModel muscleViewModel;
     private CalorieCalculatorViewModel calorieCalculatorViewModel;
     private MacroCalculatorViewModel macroCalculatorViewModel;
+    private NotesViewModel notesViewModel;
     private SharedPreferences sharedPrefs;
 
 
@@ -59,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
         muscleViewModel = new ViewModelProvider(this).get(MuscleViewModel.class);
         calorieCalculatorViewModel = new ViewModelProvider(this).get(CalorieCalculatorViewModel.class);
         macroCalculatorViewModel = new ViewModelProvider(this).get(MacroCalculatorViewModel.class);
+        notesViewModel = new ViewModelProvider(this).get(NotesViewModel.class);
         setContentView(binding.getRoot());
         navView = binding.bottomNavView;
         drawer = binding.container;
@@ -127,6 +130,7 @@ public class MainActivity extends AppCompatActivity {
             macroCalculatorViewModel.getProteins().setValue(proteins);
             macroCalculatorViewModel.getFats().setValue(fats);
             macroCalculatorViewModel.getCalories().setValue(calories);
+            notesViewModel.getNotes().setValue(sharedPrefs.getString(AppConstants.NOTES_PREFS,""));
         }
 
     }

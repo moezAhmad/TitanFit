@@ -21,4 +21,6 @@
     <string name="proteinpowder_text">Whey protein powder provides about 16.6 grams of protein per scoop (28.6 grams), while pea protein provides 15 grams of protein per scoop (20 grams).\nNote that the protein content per scoop differs between products, even when the scoop size is the same. Check the label of the products you’re interested in for their specific protein content.</string>
     <string name="pumpkinSeeds_text">A 1/4 cup (29.5 grams) of pumpkin seeds provides 8.8 grams of protein.\nOther high protein seeds include sunflower seeds, which provide 7.25 grams per 1/4-cup (35-gram) serving, and flax seeds, which provide 7.5 grams of protein per 1/4-cup (42-gram) serving.
 </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

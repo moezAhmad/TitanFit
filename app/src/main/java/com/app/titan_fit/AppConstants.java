@@ -39,4 +39,6 @@ public class AppConstants {
     public static final String CARBS_PREFS = "carbs";
     public static final String PROTEINS_PREFS = "proteins";
     public static final String FATS_PREFS = "fats";
+
+    public static final String NOTES_PREFS = "notes";
 }
