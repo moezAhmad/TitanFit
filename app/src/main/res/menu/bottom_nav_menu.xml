@@ -16,12 +16,12 @@
     <item
         android:id="@+id/mealPlanFragment"
         android:title="Meal Plan"
-        android:icon="@drawable/ic_dashboard"
+        android:icon="@drawable/ic_meal_plan"
         />
     <item
         android:id="@+id/notesFragment"
         android:title="Notes"
-        android:icon="@drawable/ic_dashboard" />
+        android:icon="@drawable/ic_notes" />
 
 
 
