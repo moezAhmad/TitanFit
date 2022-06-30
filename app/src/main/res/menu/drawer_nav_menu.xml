@@ -9,14 +9,7 @@
                 android:id="@+id/macroCalculatorFragment"
                 android:title="Macro Calculator"
                 android:checkable="true"/>
-            <item
-                android:id="@+id/mealPlanFragment"
-                android:title="Meal Plan"
-                android:checkable="true"/>
-            <item
-                android:id="@+id/notesFragment"
-                android:title="Notes"
-                android:checkable="true"/>
+
             <item
                 android:id="@+id/signOut"
                 android:title="Sign Out"

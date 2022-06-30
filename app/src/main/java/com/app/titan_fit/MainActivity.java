@@ -41,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
     private BottomNavigationView navView;
     private DrawerLayout drawer;
     private NavigationView navDrawer;
-    private Boolean slideState = false;
     private ImageView closeButton;
     private MuscleViewModel muscleViewModel;
     private CalorieCalculatorViewModel calorieCalculatorViewModel;
@@ -74,6 +73,14 @@ public class MainActivity extends AppCompatActivity {
             mAuth.signOut();
             Intent intent = new Intent(this, Landing.class);
             startActivity(intent);
+            return true;
+        });
+        navView.getMenu().findItem(R.id.nav_drawer_toggle).setOnMenuItemClickListener(menuItem -> {
+            if (this.drawer.isDrawerOpen(GravityCompat.START)) {
+                this.drawer.closeDrawer(GravityCompat.START);
+            }else {
+                this.drawer.openDrawer(GravityCompat.START);
+            }
             return true;
         });
 
@@ -133,4 +140,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        if (this.drawer.isDrawerOpen(GravityCompat.START)) {
+            this.drawer.closeDrawer(GravityCompat.START);
+        }else {
+            super.onBackPressed();
+        }
+
+    }
 }

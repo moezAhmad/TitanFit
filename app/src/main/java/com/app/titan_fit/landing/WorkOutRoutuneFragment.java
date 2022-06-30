@@ -35,7 +35,7 @@ public class WorkOutRoutuneFragment extends Fragment {
         calorieCalculatorViewModel = new ViewModelProvider(requireActivity()).get(CalorieCalculatorViewModel.class);
         goals = binding.goals;
         goals.setOnCheckedStateChangeListener((group, checkedIds) -> {
-            Toast.makeText(container.getContext(), checkedIds.toString() + " " + checkedIds.size(), Toast.LENGTH_SHORT).show();
+
            if(checkedIds.size()>0){
                switch (checkedIds.get(0)){
                    case R.id.noExercise:
@@ -59,7 +59,7 @@ public class WorkOutRoutuneFragment extends Fragment {
                calorieCalculatorViewModel.getExerciseFltr().setValue("");
 
            }
-            Toast.makeText(container.getContext(), calorieCalculatorViewModel.getExerciseFltr().getValue(), Toast.LENGTH_SHORT).show();
+
         });
         View root = binding.getRoot();
         continueBtn = binding.continueBtn;

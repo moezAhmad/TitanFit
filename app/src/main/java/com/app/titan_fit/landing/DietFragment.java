@@ -30,7 +30,6 @@ public class DietFragment extends Fragment {
         macroCalculatorViewModel = new ViewModelProvider(requireActivity()).get(MacroCalculatorViewModel.class);
         diet = binding.diet;
         diet.setOnCheckedStateChangeListener((group, checkedIds) -> {
-            Toast.makeText(container.getContext(), checkedIds.toString() + " " + checkedIds.size(), Toast.LENGTH_SHORT).show();
             if(checkedIds.size()>0){
                 switch (checkedIds.get(0)){
                     case R.id.zone_diet:
@@ -48,7 +47,6 @@ public class DietFragment extends Fragment {
                 macroCalculatorViewModel.getDiet().setValue("");
 
             }
-            Toast.makeText(container.getContext(), macroCalculatorViewModel.getDiet().getValue(), Toast.LENGTH_SHORT).show();
         });
         View root = binding.getRoot();
         continueBtn = binding.continueBtn;
