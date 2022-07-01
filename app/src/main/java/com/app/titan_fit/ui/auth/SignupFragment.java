@@ -6,10 +6,12 @@ import androidx.navigation.Navigation;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,6 +35,8 @@ public class SignupFragment extends Fragment {
     private TextInputLayout confirmPassword;
     private Button signup;
     private TextView toSignin;
+    private CheckBox terms;
+    private TextView termsText;
 
     @Nullable
     @Override
@@ -47,6 +51,9 @@ public class SignupFragment extends Fragment {
         confirmPassword = binding.confirmPassword;
         signup = binding.signup;
         toSignin = binding.toSignin;
+        terms = binding.terms;
+        termsText = binding.termsText;
+        termsText.setMovementMethod(LinkMovementMethod.getInstance());
         signup.setOnClickListener(view -> {
             if(this.email.getEditText().getText().toString().trim().equals("")){
                 email.setError("required");
@@ -62,6 +69,10 @@ public class SignupFragment extends Fragment {
             }
             if(!this.password.getEditText().getText().toString().equals(this.confirmPassword.getEditText().getText().toString())){
                 confirmPassword.setError("Passwords don't match");
+                return;
+            }
+            if(!terms.isChecked()){
+                Toast.makeText(container.getContext(), "Please accept Terms and Conditions", Toast.LENGTH_SHORT).show();
                 return;
             }
             mAuth.createUserWithEmailAndPassword(email.getEditText().getText().toString(), password.getEditText().getText().toString())

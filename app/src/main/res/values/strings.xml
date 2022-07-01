@@ -19,8 +19,10 @@
     <string name="greekYogurt_text">One 7-ounce (200-gram) container provides 19.9 grams.\n Other yogurt products that are high in protein include unsweetened low fat yogurt, which provides 11.9 grams of protein per 8-ounce (227-gram) container, and kefir, which provides 9.21 grams of protein per 1 cup (243 mL).</string>
     <string name="lentils_text">One hundred grams (about 1/2 cup) of cooked lentils provides 9.02 grams of protein.\nOther high protein legumes include chickpeas, which provide 7.05 grams of protein per 100 grams cooked, and black beans, which provide 8.86 grams of protein 100 grams cooked.</string>
     <string name="proteinpowder_text">Whey protein powder provides about 16.6 grams of protein per scoop (28.6 grams), while pea protein provides 15 grams of protein per scoop (20 grams).\nNote that the protein content per scoop differs between products, even when the scoop size is the same. Check the label of the products you’re interested in for their specific protein content.</string>
-    <string name="pumpkinSeeds_text">A 1/4 cup (29.5 grams) of pumpkin seeds provides 8.8 grams of protein.\nOther high protein seeds include sunflower seeds, which provide 7.25 grams per 1/4-cup (35-gram) serving, and flax seeds, which provide 7.5 grams of protein per 1/4-cup (42-gram) serving.
-</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="pumpkinSeeds_text">A 1/4 cup (29.5 grams) of pumpkin seeds provides 8.8 grams of protein.\nOther high protein seeds include sunflower seeds, which provide 7.25 grams per 1/4-cup (35-gram) serving, and flax seeds, which provide 7.5 grams of protein per 1/4-cup (42-gram) serving.</string>
+
+    <string name="hyperlink">I accept <a href="https://www.freeprivacypolicy.com/live/03291b18-5d39-4089-87ac-6eefa8dc9b3e">Terms and Conditions</a></string>
+
+
+
 </resources>
