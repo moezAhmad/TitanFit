@@ -45,7 +45,7 @@
                     android:id="@+id/nameTV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="What is your name"
+                    android:text="What is your Full Name"
                     android:textColor="?attr/colorOnSecondary"
                     android:textSize="15sp" />
 
@@ -116,7 +116,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="What is your age"
+                    android:text="What is your Age"
                     android:textColor="?attr/colorOnSecondary"
                     android:textSize="15sp" />
 
@@ -150,7 +150,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="What is your weight"
+                    android:text="What is your Weight"
                     android:textColor="?attr/colorOnSecondary"
                     android:textSize="15sp" />
 
@@ -185,7 +185,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="What is your height"
+                    android:text="What is your Height"
                     android:textColor="?attr/colorOnSecondary"
                     android:textSize="15sp" />
 

@@ -6,13 +6,14 @@
         android:icon="@drawable/drawer_burger"
         android:title="" />
     <item
-        android:id="@+id/navigation_dashboard"
-        android:icon="@drawable/ic_dashboard"
-        android:title="Dashboard" />
-    <item
         android:id="@+id/navigation_muscle"
         android:icon="@drawable/nav_muscle_icon"
         android:title="Work Out" />
+    <item
+        android:id="@+id/navigation_dashboard"
+        android:icon="@drawable/ic_dashboard"
+        android:title="Dashboard" />
+
     <item
         android:id="@+id/mealPlanFragment"
         android:title="Meal Plan"
@@ -20,7 +21,7 @@
         />
     <item
         android:id="@+id/notesFragment"
-        android:title="Notes"
+        android:title="Diary"
         android:icon="@drawable/ic_notes" />
 
 

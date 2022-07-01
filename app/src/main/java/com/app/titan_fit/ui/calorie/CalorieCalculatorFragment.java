@@ -90,10 +90,10 @@ public class CalorieCalculatorFragment extends Fragment {
         alertDialog.setTitle("Choose an item");
         final String[] listItems = new String[]{
                 "Little to no exercise ",
-                "Little exercise (1-3 days per week",
-                "Moderate exercise (3-5 days per week)",
-                "Heavy exercise (6-7 days per week)",
-                "Very heavy exercise (twice per week)"};
+                "Little exercise (1-2 days per week",
+                "Moderate exercise (3-4 days per week)",
+                "Heavy exercise (5-6 days per week)",
+                "Very heavy exercise (7 days per week)"};
         alertDialog.setSingleChoiceItems(listItems, exerciseCheck[0], (dialogInterface, i) -> {
            exerciseCheck[0] = i;
             switch (i){

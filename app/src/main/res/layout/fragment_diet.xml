@@ -73,7 +73,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:checkable="true"
-                android:text="6/12/15 (High Carb) "
+                android:text="High Carb"
                 app:chipBackgroundColor="?attr/colorOnPrimary"
                 app:chipStrokeWidth="1dp"
                 app:chipCornerRadius="5dp" />
@@ -83,7 +83,7 @@
                 android:layout_height="?attr/actionBarSize"
                 android:checkable="true"
                 android:checked="true"
-                android:text="50/30/20 (Moderate)"
+                android:text="Moderate"
                 app:chipBackgroundColor="?attr/colorOnPrimary"
                 app:chipStrokeWidth="1dp"
                 app:chipCornerRadius="5dp" />
@@ -91,7 +91,7 @@
                 android:id="@+id/zone_diet"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"                android:checkable="true"
-                android:text="40/30/30 (Zone Diet)"
+                android:text="Zone Diet"
                 app:chipBackgroundColor="?attr/colorOnPrimary"
                 app:chipStrokeWidth="1dp"
                 app:chipCornerRadius="5dp" />
